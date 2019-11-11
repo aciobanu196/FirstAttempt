@@ -3,6 +3,7 @@ package db
 import DBrelated.Products
 import DBrelated.Cart
 import DBrelated.Customer
+import com.typesafe.scalalogging.LazyLogging
 import slick.jdbc.JdbcProfile
 
 // This should be correct, but incomplete,
