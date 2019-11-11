@@ -1,11 +1,9 @@
-Version 0.0.1
+# Changelog for FirstAttempt project 
 
-Added:
-
-- gitignore file
+## [0.0.1] - 2019-11-11
+### Added
+- .gitignore file
 - version.sbt file
 - comments to various classes to the code
-
-Changed:
-
+### Changed
 - The ShopService class and the Routes class as they require more work
