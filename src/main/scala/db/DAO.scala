@@ -5,7 +5,10 @@ import DBrelated.Cart
 import DBrelated.Customer
 import slick.jdbc.JdbcProfile
 
-// This should be correct, but incomplete, need to recheck the specification of the problem in order to make sure I dont need more complex queries, most likely what I am missing should be a relation between Products table and Cart
+// This should be correct, but incomplete,
+// need to recheck the specification of the problem in order to make sure I dont need more complex queries,
+// most likely what I am missing should be a relation between Products table and Cart
+// But I do need to have a closer look
 case class DAO(val driver: JdbcProfile) {
 
   import driver.api._

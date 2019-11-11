@@ -16,7 +16,7 @@ libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
 
 libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
 
-libraryDependencies += "io.spray" %% "spray-json" % "1.3.4"
+//libraryDependencies += "io.spray" %% "spray-json" % "1.3.4"
 
 //val circeVersion = "0.11.1"
 //
