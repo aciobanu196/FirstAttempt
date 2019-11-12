@@ -41,19 +41,19 @@ lazy val serviceDeps = Seq(
 lazy val api = (project in file("."))
   .dependsOn(persistence)
   .settings(
-    libraryDependencies += apiDeps
+    libraryDependencies ++= apiDeps
   )
 lazy val model = (project in file("."))
   .settings(
-    libraryDependencies += modelDeps
+    libraryDependencies ++= modelDeps
   )
 lazy val persistence = (project in file("."))
   .dependsOn(model)
   .settings(
-    libraryDependencies += persistenceDeps
+    libraryDependencies ++= persistenceDeps
   )
 lazy val services = (project in file("."))
   .dependsOn(persistence, api)
   .settings(
-    libraryDependencies += serviceDeps
+    libraryDependencies ++= serviceDeps
   )
