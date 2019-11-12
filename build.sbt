@@ -1,22 +1,23 @@
+import Dependencies._
 name := "EcommerceBegining"
 
 scalaVersion := "2.13.0"
 
-libraryDependencies += "com.typesafe.slick" %% "slick" % "3.3.2"
-
-libraryDependencies += "mysql" % "mysql-connector-java" % "6.0.6"
-
-libraryDependencies += "com.typesafe.akka" %% "akka-http" % "10.1.10"
-
-libraryDependencies += "com.typesafe.akka" %% "akka-stream" % "2.6.0"
-
-libraryDependencies += "com.typesafe.akka" %% "akka-actor-typed" % "2.6.0"
-
-libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
-
-libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
-
-libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.2"
+//libraryDependencies += "com.typesafe.slick" %% "slick" % "3.3.2"
+//
+//libraryDependencies += "mysql" % "mysql-connector-java" % "6.0.6"
+//
+//libraryDependencies += "com.typesafe.akka" %% "akka-http" % "10.1.10"
+//
+//libraryDependencies += "com.typesafe.akka" %% "akka-stream" % "2.6.0"
+//
+//libraryDependencies += "com.typesafe.akka" %% "akka-actor-typed" % "2.6.0"
+//
+//libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
+//
+//libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
+//
+//libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.2"
 //libraryDependencies += "io.spray" %% "spray-json" % "1.3.4"
 
 lazy val root = (project in file("."))
@@ -25,6 +26,10 @@ lazy val root = (project in file("."))
     buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
     buildInfoPackage := "EcommerceApplication"
   )
+
+lazy val api   = (project in file("."))
+lazy val model = (project in file("."))
+
 //val circeVersion = "0.11.1"
 //
 //libraryDependencies ++= Seq(
