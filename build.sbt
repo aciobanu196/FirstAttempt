@@ -11,7 +11,7 @@ lazy val api = (project in file("api"))
   .settings(apiDeps:_*)
   .enablePlugins(BuildInfoPlugin)
   .settings(
-    buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
+    buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion, "commit" -> { git.gitHeadCommit.value }),
     buildInfoPackage := "EcommerceApplication"
   )
 
