@@ -2,8 +2,8 @@
 
 //import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport - // Deprecated not available on Scala 2.13.0 need to have a closer look at circe :(
 import akka.http.scaladsl.server.Directives._
-import akka.http.scaladsl.model.StatusCodes._
-import DBrelated.Products
+//import akka.http.scaladsl.model.StatusCodes._
+//import DBrelated.Products
 //import Services.ShopService // Deprecated as well, used for testing purposes with Scala 2.12.1
 //import spray.json.DefaultJsonProtocol
 
