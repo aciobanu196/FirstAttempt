@@ -8,20 +8,27 @@ lazy val root = (project in file("."))
 //Assigning the relationship between modules and the dependencies that each module will use
 lazy val api = (project in file("api"))
   .dependsOn(services)
-  .settings(apiDeps:_*)
+  .settings(apiDeps: _*)
   .enablePlugins(BuildInfoPlugin)
   .settings(
-    buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion, "commit" -> { git.gitHeadCommit.value }),
+    buildInfoKeys := Seq[BuildInfoKey](name,
+                                       version,
+                                       scalaVersion,
+                                       sbtVersion,
+                                       "commit" -> { git.gitHeadCommit.value }),
     buildInfoPackage := "EcommerceApplication"
   )
 
 lazy val services = (project in file("services"))
   .dependsOn(persistence)
-  .settings(serviceDeps:_*)
+  .settings(serviceDeps: _*)
 
 lazy val persistence = (project in file("persistence"))
   .dependsOn(model)
-  .settings(persistenceDeps:_*)
+  .settings(persistenceDeps: _*)
 
 lazy val model = (project in file("model"))
-  .settings(modelDeps:_*)
+  .settings(modelDeps: _*)
+
+//Enabling Plugins
+enablePlugins(FlywayPlugin)
