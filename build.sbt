@@ -1,65 +1,27 @@
 import Dependencies._
-name := "EcommerceBegining"
 
-scalaVersion := "2.13.0"
+name := "EcommerceBegining"
 
 lazy val root = (project in file("."))
   .aggregate(api, model, persistence, services)
+
+//Assigning the relationship between modules and the dependencies that each module will use
+lazy val api = (project in file("api"))
+  .dependsOn(services)
+  .settings(apiDeps:_*)
   .enablePlugins(BuildInfoPlugin)
   .settings(
-    buildInfoKeys := Seq[BuildInfoKey](name,
-                                       version,
-                                       scalaVersion,
-                                       sbtVersion,
-                                       "commit" -> { git.gitHeadCommit.value }),
+    buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion, "commit" -> { git.gitHeadCommit.value }),
     buildInfoPackage := "EcommerceApplication"
   )
 
-//A list of dependencies that will be used per module
-lazy val apiDeps = Seq(
-  akkaActor,
-  akkaStream,
-  akkaHttp,
-  logback,
-  scalaLogging
-)
-
-lazy val modelDeps = Seq(
-  slick,
-  logback,
-  scalaLogging
-)
-
-lazy val persistenceDeps = Seq(
-  slick,
-  logback,
-  scalaLogging
-)
-
-lazy val serviceDeps = Seq(
-  logback,
-  scalaLogging
-)
-
-//Assigning the relationship between modules and the dependencies that each module will use
-lazy val api = (project in file("/home/aciobanu/EcommerceBegining/api"))
+lazy val services = (project in file("services"))
   .dependsOn(persistence)
-  .settings(
-    libraryDependencies ++= apiDeps
-  )
-lazy val model = (project in file("/home/aciobanu/EcommerceBegining/model"))
-  .settings(
-    libraryDependencies ++= modelDeps
-  )
-lazy val persistence =
-  (project in file("/home/aciobanu/EcommerceBegining/persistence"))
-    .dependsOn(model)
-    .settings(
-      libraryDependencies ++= persistenceDeps
-    )
-lazy val services =
-  (project in file("/home/aciobanu/EcommerceBegining/services"))
-    .dependsOn(persistence, api)
-    .settings(
-      libraryDependencies ++= serviceDeps
-    )
+  .settings(serviceDeps:_*)
+
+lazy val persistence = (project in file("persistence"))
+  .dependsOn(model)
+  .settings(persistenceDeps:_*)
+
+lazy val model = (project in file("model"))
+  .settings(modelDeps:_*)
