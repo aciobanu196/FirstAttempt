@@ -38,22 +38,24 @@ lazy val serviceDeps = Seq(
 )
 
 //Assigning the relationship between modules and the dependencies that each module will use
-lazy val api = (project in file("."))
+lazy val api = (project in file("/home/aciobanu/EcommerceBegining/api"))
   .dependsOn(persistence)
   .settings(
     libraryDependencies ++= apiDeps
   )
-lazy val model = (project in file("."))
+lazy val model = (project in file("/home/aciobanu/EcommerceBegining/model"))
   .settings(
     libraryDependencies ++= modelDeps
   )
-lazy val persistence = (project in file("."))
-  .dependsOn(model)
-  .settings(
-    libraryDependencies ++= persistenceDeps
-  )
-lazy val services = (project in file("."))
-  .dependsOn(persistence, api)
-  .settings(
-    libraryDependencies ++= serviceDeps
-  )
+lazy val persistence =
+  (project in file("/home/aciobanu/EcommerceBegining/persistence"))
+    .dependsOn(model)
+    .settings(
+      libraryDependencies ++= persistenceDeps
+    )
+lazy val services =
+  (project in file("/home/aciobanu/EcommerceBegining/services"))
+    .dependsOn(persistence, api)
+    .settings(
+      libraryDependencies ++= serviceDeps
+    )
