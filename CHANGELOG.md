@@ -21,3 +21,4 @@
 ### Changed
 
 - build.sbt file updated with a new configuration for dependencies
+- BuildInfo to include gitCommitHead value

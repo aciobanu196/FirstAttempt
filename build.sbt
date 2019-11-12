@@ -7,7 +7,11 @@ lazy val root = (project in file("."))
   .aggregate(api, model, persistence, services)
   .enablePlugins(BuildInfoPlugin)
   .settings(
-    buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
+    buildInfoKeys := Seq[BuildInfoKey](name,
+                                       version,
+                                       scalaVersion,
+                                       sbtVersion,
+                                       "commit" -> { git.gitHeadCommit.value }),
     buildInfoPackage := "EcommerceApplication"
   )
 
