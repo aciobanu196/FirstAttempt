@@ -8,3 +8,16 @@
 - new plugins.sbt file in order to add the scalafmt plugin
 ### Changed
 - The ShopService class and the Routes class as they require more work
+
+## [0.0.1] - 2019-11-12
+### Added
+
+- Dependencies.scala object
+- api module
+- model module
+- persistence module
+- services module
+
+### Changed
+
+- build.sbt file updated with a new configuration for dependencies
