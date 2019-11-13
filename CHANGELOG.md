@@ -23,3 +23,15 @@
 - build.sbt file updated with a new configuration for dependencies
 - BuildInfo to include gitCommitHead value
 - removed the iml files
+
+##[0.0.1] - 2019-11-12
+
+### Added
+
+- db.migration directories
+- V1_CREATE_TABLES.sql file
+- flyway plugin
+
+### Changed
+
+- sbt.build  

@@ -10,6 +10,8 @@ object Dependencies {
   private[this] val akkaActorVersion    = "2.6.0"
   private[this] val logbackVersion      = "1.2.3"
   private[this] val scalaLoggingVersion = "3.9.2"
+  private[this] val flyWayVersion       = "2.4.0"
+  private[this] val mysqlDriverVersion  = "8.0.18"
 
   val slick        = "com.typesafe.slick"         %% "slick"               % slickVersion
   val sql          = "mysql"                      % "mysql-connector-java" % mySqlVersion
@@ -18,6 +20,8 @@ object Dependencies {
   val akkaActor    = "com.typesafe.akka"          %% "akka-actor-typed"    % akkaActorVersion
   val logback      = "ch.qos.logback"             % "logback-classic"      % logbackVersion
   val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging"       % scalaLoggingVersion
+  val flyWay       = "org.hsqldb"                 % "hsqldb"               % flyWayVersion
+  val mysqlDriver  = "mysql"                      % "mysql-connector-java" % mysqlDriverVersion
 
   //A list of dependencies that will be used per module
   lazy val commonDeps = Seq(
@@ -32,12 +36,13 @@ object Dependencies {
     commonDeps ++ (libraryDependencies ++= Seq(
       akkaActor,
       akkaStream,
-      akkaHttp
+      akkaHttp,
+      mysqlDriver
     ))
 
   lazy val modelDeps =
     commonDeps ++ (libraryDependencies ++= Seq(
-    ))
+      ))
 
   lazy val persistenceDeps =
     commonDeps ++ (libraryDependencies ++= Seq(
@@ -46,7 +51,7 @@ object Dependencies {
 
   lazy val serviceDeps =
     commonDeps ++ (libraryDependencies ++= Seq(
-    ))
+      ))
 }
 
 //val circeVersion = "0.11.1"

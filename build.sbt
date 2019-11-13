@@ -9,6 +9,13 @@ lazy val root = (project in file("."))
 lazy val api = (project in file("api"))
   .dependsOn(services)
   .settings(apiDeps: _*)
+  .enablePlugins(FlywayPlugin)
+  .settings(
+    Seq(
+      flywayUrl := "jdbc:mysql://172.17.0.2:3306/ecommerce",
+      flywayUser := "firstAttemptDBUser",
+      flywayPassword := "Test1234!"
+    ))
   .enablePlugins(BuildInfoPlugin)
   .settings(
     buildInfoKeys := Seq[BuildInfoKey](name,
@@ -29,6 +36,3 @@ lazy val persistence = (project in file("persistence"))
 
 lazy val model = (project in file("model"))
   .settings(modelDeps: _*)
-
-//Enabling Plugins
-enablePlugins(FlywayPlugin)
