@@ -4,6 +4,11 @@ name := "EcommerceBegining"
 
 lazy val root = (project in file("."))
   .aggregate(api, model, persistence, services)
+
+//Assigning the relationship between modules and the dependencies that each module will use
+lazy val api = (project in file("api"))
+  .dependsOn(services)
+  .settings(apiDeps: _*)
   .enablePlugins(FlywayPlugin)
   .settings(
     Seq(
@@ -11,12 +16,6 @@ lazy val root = (project in file("."))
       flywayUser := "firstAttemptDBUser",
       flywayPassword := "Test1234!"
     ))
-  .settings(commonDeps: _*)
-
-//Assigning the relationship between modules and the dependencies that each module will use
-lazy val api = (project in file("api"))
-  .dependsOn(services)
-  .settings(apiDeps: _*)
   .enablePlugins(BuildInfoPlugin)
   .settings(
     buildInfoKeys := Seq[BuildInfoKey](name,

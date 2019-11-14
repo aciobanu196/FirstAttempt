@@ -34,4 +34,4 @@
 
 ### Changed
 
-- sbt.build file changed in order to be able to migrate files 
+- sbt.build  
