@@ -38,6 +38,9 @@
 
 ##[0.1.0] - 2019-11-14
 
+### Added
+- new file V2__INSERT INTO TABLES.sql in order to see that the data is being populated successfully
+
 ### Changed
 - the version to 0.1.0 as a new minor piece of functionality was added
 - the location of the .sql migration file
