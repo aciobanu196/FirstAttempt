@@ -1,3 +1,4 @@
+import Dependencies.mysqlDriver
 import sbt._
 import Keys._
 
@@ -27,7 +28,8 @@ object Dependencies {
   lazy val commonDeps = Seq(
     libraryDependencies ++= Seq(
       logback,
-      scalaLogging
+      scalaLogging,
+      mysqlDriver
     ),
     scalaVersion := "2.13.0"
   )
@@ -36,8 +38,8 @@ object Dependencies {
     commonDeps ++ (libraryDependencies ++= Seq(
       akkaActor,
       akkaStream,
-      akkaHttp,
-      mysqlDriver
+      akkaHttp
+//      mysqlDriver
     ))
 
   lazy val modelDeps =

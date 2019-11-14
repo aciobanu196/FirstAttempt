@@ -24,7 +24,7 @@
 - BuildInfo to include gitCommitHead value
 - removed the iml files
 
-##[0.0.1] - 2019-11-12
+##[0.0.1] - 2019-11-13
 
 ### Added
 
@@ -35,3 +35,14 @@
 ### Changed
 
 - sbt.build  
+
+##[0.1.0] - 2019-11-14
+
+### Changed
+- the version to 0.1.0 as a new minor piece of functionality was added
+- the location of the .sql migration file
+- the configuration of the build.sbt file in order to respect the new location of the migration file
+
+### Removed
+- the migration directories db and migration
+- the migration file from api module  
