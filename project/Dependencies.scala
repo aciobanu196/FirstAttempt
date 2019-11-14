@@ -44,7 +44,8 @@ object Dependencies {
 
   lazy val modelDeps =
     commonDeps ++ (libraryDependencies ++= Seq(
-      ))
+      slick
+    ))
 
   lazy val persistenceDeps =
     commonDeps ++ (libraryDependencies ++= Seq(
