@@ -23,6 +23,7 @@ object Dependencies {
   val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging"       % scalaLoggingVersion
   val flyWay       = "org.hsqldb"                 % "hsqldb"               % flyWayVersion
   val mysqlDriver  = "mysql"                      % "mysql-connector-java" % mysqlDriverVersion
+  val hikari       = "com.typesafe.slick"         %% "slick-hikaricp"      % slickVersion
 
   //A list of dependencies that will be used per module
   lazy val commonDeps = Seq(
@@ -39,7 +40,6 @@ object Dependencies {
       akkaActor,
       akkaStream,
       akkaHttp
-//      mysqlDriver
     ))
 
   lazy val modelDeps =
@@ -49,7 +49,8 @@ object Dependencies {
 
   lazy val persistenceDeps =
     commonDeps ++ (libraryDependencies ++= Seq(
-      slick
+      slick,
+      hikari
     ))
 
   lazy val serviceDeps =

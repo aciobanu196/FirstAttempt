@@ -49,3 +49,17 @@
 ### Removed
 - the migration directories db and migration
 - the migration file from api module  
+
+###[0.2.0] - 2019-11-15
+
+### Added
+
+- models of the tables
+- tables schema
+- independent location of the used variables
+
+### Changed
+
+- the version to 0.2.0 as a new minor piece of functionality was added
+- the table definitions in V1_CREATE_TABLE
+

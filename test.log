@@ -1,0 +1,134 @@
+13:55:15.209 [main] DEBUG slick.compiler.QueryCompiler - Source:
+| TableExpansion
+|   table s2: Table USERS
+|   columns: ProductNode
+|     1: Path s2.user_id : Int'
+|     2: Path s2.user_name : String'
+|     3: Path s2.user_email : String'
+|     4: Path s2.user_bankId : Int'
+
+13:55:15.225 [main] DEBUG slick.compiler.AssignUniqueSymbols - Detected features: UsedFeatures(false,false,false,false)
+13:55:15.230 [main] DEBUG slick.compiler.QueryCompiler - After phase assignUniqueSymbols:
+| TableExpansion
+|   table s3: Table USERS
+|   columns: ProductNode
+|     1: Path s3.user_id : Int'
+|     2: Path s3.user_name : String'
+|     3: Path s3.user_email : String'
+|     4: Path s3.user_bankId : Int'
+
+13:55:15.239 [main] DEBUG slick.compiler.QueryCompiler - After phase inferTypes: (no change)
+13:55:15.258 [main] DEBUG slick.compiler.QueryCompiler - After phase insertCompiler:
+| ResultSetMapping : Vector[(Int', String', String', Int')]
+|   from s5: Insert allFields=[user_id, user_name, user_email, user_bankId] : (Int', String', String', Int')
+|     table s6: Table USERS : Vector[@t4<UnassignedType>]
+|     linear: ProductNode : (Int', String', String', Int')
+|       1: Path s6.user_id : Int'
+|       2: Path s6.user_name : String'
+|       3: Path s6.user_email : String'
+|       4: Path s6.user_bankId : Int'
+|   map: ProductNode : (Int', String', String', Int')
+|     1: InsertColumn user_id : Int'
+|       0: Path s5._1 : Int'
+|     2: InsertColumn user_name : String'
+|       0: Path s5._2 : String'
+|     3: InsertColumn user_email : String'
+|       0: Path s5._3 : String'
+|     4: InsertColumn user_bankId : Int'
+|       0: Path s5._4 : Int'
+
+13:55:15.265 [main] DEBUG slick.compiler.CodeGen - Compiling server-side and mapping with server-side:
+| Insert allFields=[user_id, user_name, user_email, user_bankId] : (Int', String', String', Int')
+|   table s6: Table USERS : Vector[@t4<UnassignedType>]
+|   linear: ProductNode : (Int', String', String', Int')
+|     1: Path s6.user_id : Int'
+|     2: Path s6.user_name : String'
+|     3: Path s6.user_email : String'
+|     4: Path s6.user_bankId : Int'
+
+13:55:15.285 [main] DEBUG s.relational.ResultConverterCompiler - Compiled ResultConverter
+| ProductResultConverter
+|   1: BaseResultConverter$mcI$sp idx=1, name=user_id : Int'
+|   2: SpecializedJdbcResultConverter$$anon$1 idx=2, name=user_name : String'
+|   3: SpecializedJdbcResultConverter$$anon$1 idx=3, name=user_email : String'
+|   4: BaseResultConverter$mcI$sp idx=4, name=user_bankId : Int'
+
+13:55:15.287 [main] DEBUG slick.compiler.CodeGen - Compiled server-side to:
+| CompiledStatement "insert into `USERS` (`user_id`,`user_name`,`user_email`,`user_bankId`)  values (?,?,?,?)" : (Int', String', String', Int')
+
+13:55:15.291 [main] DEBUG slick.compiler.QueryCompiler - After phase codeGen:
+| ResultSetMapping : Vector[(Int', String', String', Int')]
+|   from s5: CompiledStatement "insert into `USERS` (`user_id`,`user_name`,`user_email`,`user_bankId`)  values (?,?,?,?)" : (Int', String', String', Int')
+|   map: CompiledMapping : (Int', String', String', Int')
+|     converter: ProductResultConverter
+|       1: BaseResultConverter$mcI$sp idx=1, name=user_id : Int'
+|       2: SpecializedJdbcResultConverter$$anon$1 idx=2, name=user_name : String'
+|       3: SpecializedJdbcResultConverter$$anon$1 idx=3, name=user_email : String'
+|       4: BaseResultConverter$mcI$sp idx=4, name=user_bankId : Int'
+
+13:55:15.292 [main] DEBUG s.compiler.QueryCompilerBenchmark - ------------------- Phase: Time ---------
+13:55:15.298 [main] DEBUG s.compiler.QueryCompilerBenchmark -       assignUniqueSymbols:   19.049317 ms
+13:55:15.298 [main] DEBUG s.compiler.QueryCompilerBenchmark -                inferTypes:    9.158512 ms
+13:55:15.299 [main] DEBUG s.compiler.QueryCompilerBenchmark -            insertCompiler:   18.946015 ms
+13:55:15.299 [main] DEBUG s.compiler.QueryCompilerBenchmark -                   codeGen:   33.014713 ms
+13:55:15.299 [main] DEBUG s.compiler.QueryCompilerBenchmark -                     TOTAL:   80.168557 ms
+13:55:15.302 [main] DEBUG slick.basic.BasicBackend.action - #1: SingleInsertAction [insert into `USERS` (`user_id`,`user_name`,`user_email`,`user_bankId`)  values (?,?,?,?)]
+13:55:15.645 [mydb-1] DEBUG slick.compiler.QueryCompiler - Source:
+| Bind
+|   from s2: TableExpansion
+|     table s3: Table USERS
+|     columns: ProductNode
+|       1: Path s3.user_id : Int'
+|       2: Path s3.user_name : String'
+|       3: Path s3.user_email : String'
+|       4: Path s3.user_bankId : Int'
+|   select: Pure t4
+|     value: Path s2.user_id : Int'
+
+13:55:15.645 [mydb-1] DEBUG slick.compiler.AssignUniqueSymbols - Detected features: UsedFeatures(false,false,false,false)
+13:55:15.647 [mydb-1] DEBUG slick.compiler.QueryCompiler - After phase assignUniqueSymbols:
+| Bind
+|   from s5: TableExpansion
+|     table s6: Table USERS
+|     columns: ProductNode
+|       1: Path s6.user_id : Int'
+|       2: Path s6.user_name : String'
+|       3: Path s6.user_email : String'
+|       4: Path s6.user_bankId : Int'
+|   select: Pure t8
+|     value: Path s5.user_id : Int'
+
+13:55:15.648 [mydb-1] DEBUG slick.compiler.QueryCompiler - After phase inferTypes: (no change)
+13:55:15.653 [mydb-1] DEBUG slick.compiler.QueryCompiler - After phase insertCompiler:
+| ResultSetMapping : Vector[(Int')]
+|   from s9: Insert allFields=[user_id] : (Int')
+|     table s10: Table USERS : Vector[@t7<UnassignedType>]
+|     linear: ProductNode : (Int')
+|       1: Path s10.user_id : Int'
+|   map: InsertColumn user_id : Int'
+|     0: Path s9._1 : Int'
+
+13:55:15.654 [mydb-1] DEBUG slick.compiler.CodeGen - Compiling server-side and mapping with server-side:
+| Insert allFields=[user_id] : (Int')
+|   table s10: Table USERS : Vector[@t7<UnassignedType>]
+|   linear: ProductNode : (Int')
+|     1: Path s10.user_id : Int'
+
+13:55:15.654 [mydb-1] DEBUG s.relational.ResultConverterCompiler - Compiled ResultConverter
+| BaseResultConverter$mcI$sp idx=1, name=user_id : Int'
+
+13:55:15.655 [mydb-1] DEBUG slick.compiler.CodeGen - Compiled server-side to:
+| CompiledStatement "insert into `USERS` (`user_id`)  values (?)" : (Int')
+
+13:55:15.656 [mydb-1] DEBUG slick.compiler.QueryCompiler - After phase codeGen:
+| ResultSetMapping : Vector[(Int')]
+|   from s9: CompiledStatement "insert into `USERS` (`user_id`)  values (?)" : (Int')
+|   map: CompiledMapping : Int'
+|     converter: BaseResultConverter$mcI$sp idx=1, name=user_id : Int'
+
+13:55:15.656 [mydb-1] DEBUG s.compiler.QueryCompilerBenchmark - ------------------- Phase: Time ---------
+13:55:15.656 [mydb-1] DEBUG s.compiler.QueryCompilerBenchmark -       assignUniqueSymbols:    2.630099 ms
+13:55:15.656 [mydb-1] DEBUG s.compiler.QueryCompilerBenchmark -                inferTypes:    0.354498 ms
+13:55:15.656 [mydb-1] DEBUG s.compiler.QueryCompilerBenchmark -            insertCompiler:    5.316359 ms
+13:55:15.656 [mydb-1] DEBUG s.compiler.QueryCompilerBenchmark -                   codeGen:    2.371110 ms
+13:55:15.656 [mydb-1] DEBUG s.compiler.QueryCompilerBenchmark -                     TOTAL:   10.672066 ms
