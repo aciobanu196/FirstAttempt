@@ -22,9 +22,4 @@ trait TableVariables {
   final val cartTotal           = "CART_TOTAL"
   final val banksID             = "BANK_ID"
   final val bankBalance         = "BANK_BALANCE"
-
-//  def id = column[Int]("BANK_ID", O.PrimaryKey)
-//
-//  def balance = column[Int]("BANK_BALANCE")
-
 }

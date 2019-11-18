@@ -8,7 +8,7 @@ lazy val root = (project in file("."))
   .enablePlugins(FlywayPlugin)
   .settings(
     Seq(
-      flywayUrl := "jdbc:mysql://172.17.0.2:3306/com.codefactory.ecommerce",
+      flywayUrl := "jdbc:mysql://172.17.0.2:3306/ecommerce",
       flywayUser := "firstAttemptDBUser",
       flywayPassword := "Test1234!"
     )

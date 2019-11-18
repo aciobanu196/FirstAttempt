@@ -11,5 +11,4 @@ class BankT(tag: Tag) extends Table[Bank](tag, "BANK") with TableVariables {
 
   def * = (id, balance) <> ((Bank.apply _).tupled, Bank.unapply)
 
-  //  val banks = TableQuery[Bank]
 }
