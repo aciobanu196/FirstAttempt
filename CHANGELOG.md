@@ -63,3 +63,8 @@
 - the version to 0.2.0 as a new minor piece of functionality was added
 - the table definitions in V1_CREATE_TABLE
 
+###[0.2.0] - 2019-11-18
+
+### Added
+
+- first part of queries which will be used for building the services 

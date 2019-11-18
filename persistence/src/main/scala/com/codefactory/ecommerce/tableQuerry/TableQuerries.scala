@@ -29,12 +29,13 @@ object TableQuerries extends App with QuerryVariable with TableVariables {
 
   // I saw that you can encapsulate everything and sort by something specific , but how can you sort by both if you do not have 2 distinct values
 
+  // Adding products to cart the result will be as follows:
   val productToCart = for {
     (c, p) <- carts join products on (_.productID === _.id)
   } yield
     (c.id, c.quantity, c.status, c.quantity, c.total, p.id, p.name, p.price)
 
-  // Join to bring the balance for a specific user
+  // Bring balance for a specific user
 
   val bringBalanceForUser = for {
     (u, b) <- users join banks on (_.bankID === _.id)
@@ -44,17 +45,30 @@ object TableQuerries extends App with QuerryVariable with TableVariables {
   Await.result(result2, Duration.Inf)
   result2.foreach(println)
 
+  // Check if the quantity in the cart is lower or equal than the quantity in the products - THIS IS NOT OK
   val StatusRetrievalLower = for {
     (c, p) <- carts join products on (_.productID === _.id)
     if c.quantity <= p.quantity
   } yield c.status
 
-  val updateStatusRetrievalLower = StatusRetrievalLower.update("In stock")
+//  val updateStatusRetrievalLower = StatusRetrievalLower.update("In stock")
 
+  // Check if the quantity in the cart is higher than the quantity in the products - THIS IS NOT OK
   val StatusRetrievalHigher = for {
     (c, p) <- carts join products on (_.productID === _.id)
     if c.quantity > p.quantity
   } yield c.status
 
-  val updateStatusRetrievalHigher = StatusRetrievalHigher.update("Out of stock")
+//  val updateStatusRetrievalHigher = StatusRetrievalHigher.update("Out of stock")
+
+  //Get product by ID
+  def getProductById(id: Int): Future[Option[Product]] =
+    db.run(products.filter(_.id === id).result.headOption)
+
+  // Add one product into DB
+  def addProduct(product: Product): Future[Product] =
+    db.run(
+      products returning products
+        .map(_.id) into ((product, id) => product.copy(id = id)) += product)
+
 }
