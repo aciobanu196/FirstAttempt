@@ -13,43 +13,48 @@ object TableQuerries extends App with QuerryVariable with TableVariables {
 
   val db = Database.forConfig("mydb")
 
-  // This one will be used to return the products by type
+  //returnează produsele valabile filtrate după tip
   val productsWithType = for {
     (p, t) <- products join types on (_.typeID === _.id)
   } yield (p.id, p.name, p.price, p.quantity, t.tname)
 
   val actionDesc = productsWithType.sortBy(_._5.desc).result
   val actionAsc  = productsWithType.sortBy(_._5.asc).result
-  val resultDesc = db.run(actionDesc)
-  val resultAsc  = db.run(actionAsc)
+  val resultDesc = db.run(actionDesc) // Part of services
+  val resultAsc  = db.run(actionAsc) // Part of services
   Await.result(resultDesc, Duration.Inf)
   Await.result(resultAsc, Duration.Inf)
-  resultDesc.foreach(println)
-  resultAsc.foreach(println)
+  resultDesc.foreach(println) // To check if it works - need to write tests - TO BE DELETED
+  resultAsc.foreach(println)  // To check if it works - need to write tests - TO BE DELETED
 
-  // Don't know yet if this is exactly how it will be used/ need to further think at it - Need to add up the total
-//  val productToCart = for {
-//    (c, p) <- carts join products on (_.productID === _.id)
-//  } yield (c.id, c.quantity, c.status, c.quantity, p.price)
-//
-//  // Join to bring the balance for a specific user
-//
-//  val bringBalanceForUser = for {
-//    (u, b) <- users join banks on (_.bankID === _.id)
-//  } yield
-//    (u.id, b.balance) // Might need some extra work - I mean I need that the balance for each individual user to be returned
-//  val action2 = bringBalanceForUser.result
-//  val result2 = db.run(action2)
-//  Await.result(result2, Duration.Inf)
-//  result2.foreach(println)
+  // I saw that you can encapsulate everything and sort by something specific , but how can you sort by both if you do not have 2 distinct values
 
-//  val userId =
-//    (users returning users.map(_.id)) += User(3,
-//                                              "Alin Ciobanu 2",
-//                                              "alin.ciobanu2test@gmail.com",
-//                                              3)
-//
-//  val result3 = db.run(userId)
-//  Await.result(result3, Duration.Inf)
+  val productToCart = for {
+    (c, p) <- carts join products on (_.productID === _.id)
+  } yield
+    (c.id, c.quantity, c.status, c.quantity, c.total, p.id, p.name, p.price)
 
+  // Join to bring the balance for a specific user
+
+  val bringBalanceForUser = for {
+    (u, b) <- users join banks on (_.bankID === _.id)
+  } yield (u.id, b.balance) // Might need some extra work
+  val action2 = bringBalanceForUser.result
+  val result2 = db.run(action2)
+  Await.result(result2, Duration.Inf)
+  result2.foreach(println)
+
+  val StatusRetrievalLower = for {
+    (c, p) <- carts join products on (_.productID === _.id)
+    if c.quantity <= p.quantity
+  } yield c.status
+
+  val updateStatusRetrievalLower = StatusRetrievalLower.update("In stock")
+
+  val StatusRetrievalHigher = for {
+    (c, p) <- carts join products on (_.productID === _.id)
+    if c.quantity > p.quantity
+  } yield c.status
+
+  val updateStatusRetrievalHigher = StatusRetrievalHigher.update("Out of stock")
 }
