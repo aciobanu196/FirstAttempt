@@ -1,4 +1,4 @@
-15:27:26.633 [main] DEBUG slick.compiler.QueryCompiler - Source:
+15:37:56.115 [main] DEBUG slick.compiler.QueryCompiler - Source:
 | SortBy Ordering(Desc,NullsDefault)
 |   from s2: Bind
 |     from s3: Join Inner
@@ -29,8 +29,8 @@
 |         5: Path s3._2.TYPE_NAME : String'
 |   by0: Path s2._5
 
-15:27:26.647 [main] DEBUG slick.compiler.AssignUniqueSymbols - Detected features: UsedFeatures(false,true,false,false)
-15:27:26.656 [main] DEBUG slick.compiler.QueryCompiler - After phase assignUniqueSymbols:
+15:37:56.127 [main] DEBUG slick.compiler.AssignUniqueSymbols - Detected features: UsedFeatures(false,true,false,false)
+15:37:56.140 [main] DEBUG slick.compiler.QueryCompiler - After phase assignUniqueSymbols:
 | SortBy Ordering(Desc,NullsDefault)
 |   from s9: Bind
 |     from s10: Join Inner
@@ -61,10 +61,10 @@
 |         5: Path s10._2.TYPE_NAME : String'
 |   by0: Path s9._5
 
-15:27:26.658 [main] DEBUG slick.compiler.QueryCompiler - After phase unrollTailBinds: (no change)
-15:27:26.666 [main] DEBUG slick.compiler.QueryCompiler - After phase inferTypes: (no change)
-15:27:26.677 [main] DEBUG slick.compiler.ExpandTables - Found Selects for NominalTypes: @(slick.jdbc.MySQLProfile$._.PRODUCTS), @(slick.jdbc.MySQLProfile$._.TYPES)
-15:27:26.688 [main] DEBUG slick.compiler.ExpandTables - With correct table types:
+15:37:56.142 [main] DEBUG slick.compiler.QueryCompiler - After phase unrollTailBinds: (no change)
+15:37:56.151 [main] DEBUG slick.compiler.QueryCompiler - After phase inferTypes: (no change)
+15:37:56.165 [main] DEBUG slick.compiler.ExpandTables - Found Selects for NominalTypes: @(slick.jdbc.MySQLProfile$._.PRODUCTS), @(slick.jdbc.MySQLProfile$._.TYPES)
+15:37:56.180 [main] DEBUG slick.compiler.ExpandTables - With correct table types:
 | SortBy Ordering(Desc,NullsDefault) : Vector[t17<(Int', String', Int', Int', String')>]
 |   from s9: Bind : Vector[t17<(Int', String', Int', Int', String')>]
 |     from s10: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
@@ -82,8 +82,8 @@
 |         5: Path s10._2.TYPE_NAME : String'
 |   by0: Path s9._5 : String'
 
-15:27:26.690 [main] DEBUG slick.compiler.ExpandTables - Table expansions: @t16 -> (s15,TypeMapping), @t14 -> (s13,TypeMapping)
-15:27:26.696 [main] DEBUG slick.compiler.QueryCompiler - After phase expandTables:
+15:37:56.182 [main] DEBUG slick.compiler.ExpandTables - Table expansions: @t16 -> (s15,TypeMapping), @t14 -> (s13,TypeMapping)
+15:37:56.190 [main] DEBUG slick.compiler.QueryCompiler - After phase expandTables:
 | SortBy Ordering(Desc,NullsDefault) : Vector[t17<(Int', String', Int', Int', String')>]
 |   from s9: Bind : Vector[t17<(Int', String', Int', Int', String')>]
 |     from s10: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
@@ -101,10 +101,10 @@
 |         5: Path s10._2.TYPE_NAME : String'
 |   by0: Path s9._5 : String'
 
-15:27:26.699 [main] DEBUG slick.compiler.ForceOuterBinds - Introducing new Bind s18 for Table PRODUCTS
-15:27:26.699 [main] DEBUG slick.compiler.ForceOuterBinds - Introducing new Bind s19 for Table TYPES
-15:27:26.700 [main] DEBUG slick.compiler.ForceOuterBinds - Introducing new Bind s20 for SortBy Ordering(Desc,NullsDefault)
-15:27:26.707 [main] DEBUG slick.compiler.QueryCompiler - After phase forceOuterBinds:
+15:37:56.194 [main] DEBUG slick.compiler.ForceOuterBinds - Introducing new Bind s18 for Table PRODUCTS
+15:37:56.195 [main] DEBUG slick.compiler.ForceOuterBinds - Introducing new Bind s19 for Table TYPES
+15:37:56.195 [main] DEBUG slick.compiler.ForceOuterBinds - Introducing new Bind s20 for SortBy Ordering(Desc,NullsDefault)
+15:37:56.204 [main] DEBUG slick.compiler.QueryCompiler - After phase forceOuterBinds:
 | Bind : Vector[t21<t17<(Int', String', Int', Int', String')>>]
 |   from s20: SortBy Ordering(Desc,NullsDefault) : Vector[t17<(Int', String', Int', Int', String')>]
 |     from s9: Bind : Vector[t17<(Int', String', Int', Int', String')>]
@@ -131,10 +131,10 @@
 |   select: Pure t21 : Vector[t21<t17<(Int', String', Int', Int', String')>>]
 |     value: Ref s20 : t17<(Int', String', Int', Int', String')>
 
-15:27:26.710 [main] DEBUG slick.compiler.QueryCompiler - After phase removeMappedTypes: (no change)
-15:27:26.711 [main] DEBUG slick.compiler.QueryCompiler - After phase expandSums: (no change)
-15:27:26.713 [main] DEBUG slick.compiler.QueryCompiler - After phase emulateOuterJoins: (no change)
-15:27:26.725 [main] DEBUG slick.compiler.QueryCompiler - After phase expandRecords:
+15:37:56.207 [main] DEBUG slick.compiler.QueryCompiler - After phase removeMappedTypes: (no change)
+15:37:56.208 [main] DEBUG slick.compiler.QueryCompiler - After phase expandSums: (no change)
+15:37:56.210 [main] DEBUG slick.compiler.QueryCompiler - After phase emulateOuterJoins: (no change)
+15:37:56.222 [main] DEBUG slick.compiler.QueryCompiler - After phase expandRecords:
 | Bind : Vector[t21<(Int', String', Int', Int', String')>]
 |   from s20: SortBy Ordering(Desc,NullsDefault) : Vector[t17<(Int', String', Int', Int', String')>]
 |     from s9: Bind : Vector[t17<(Int', String', Int', Int', String')>]
@@ -173,38 +173,38 @@
 |       4: Path s20._4 : Int'
 |       5: Path s20._5 : String'
 
-15:27:26.728 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t22
-15:27:26.730 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_NAME with symbols 
+15:37:56.225 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t22
+15:37:56.227 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_NAME with symbols 
 | Path s18.PRODUCT_NAME : String'
 
-15:27:26.731 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_NAME to:
+15:37:56.227 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_NAME to:
 | Path s18.PRODUCT_NAME
 
-15:27:26.731 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_QUANTITY with symbols 
+15:37:56.228 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_QUANTITY with symbols 
 | Path s18.PRODUCT_QUANTITY : Int'
 
-15:27:26.731 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_QUANTITY to:
+15:37:56.228 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_QUANTITY to:
 | Path s18.PRODUCT_QUANTITY
 
-15:27:26.731 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_TYPE_ID with symbols 
+15:37:56.228 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_TYPE_ID with symbols 
 | Path s18.PRODUCT_TYPE_ID : Int'
 
-15:27:26.731 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_TYPE_ID to:
+15:37:56.228 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_TYPE_ID to:
 | Path s18.PRODUCT_TYPE_ID
 
-15:27:26.732 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_ID with symbols 
+15:37:56.228 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_ID with symbols 
 | Path s18.PRODUCT_ID : Int'
 
-15:27:26.732 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_ID to:
+15:37:56.228 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_ID to:
 | Path s18.PRODUCT_ID
 
-15:27:26.732 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_PRICE with symbols 
+15:37:56.229 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_PRICE with symbols 
 | Path s18.PRODUCT_PRICE : Int'
 
-15:27:26.732 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_PRICE to:
+15:37:56.229 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_PRICE to:
 | Path s18.PRODUCT_PRICE
 
-15:27:26.741 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
+15:37:56.237 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
 | StructNode
 |   PRODUCT_NAME: Path s18.PRODUCT_NAME
 |   PRODUCT_QUANTITY: Path s18.PRODUCT_QUANTITY
@@ -212,28 +212,28 @@
 |   PRODUCT_ID: Path s18.PRODUCT_ID
 |   PRODUCT_PRICE: Path s18.PRODUCT_PRICE
 
-15:27:26.742 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_NAME
+15:37:56.239 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_NAME
 | Path s18.PRODUCT_NAME
 
-15:27:26.743 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s24 -> Path s18.PRODUCT_NAME
-15:27:26.744 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_QUANTITY
+15:37:56.239 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s24 -> Path s18.PRODUCT_NAME
+15:37:56.240 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_QUANTITY
 | Path s18.PRODUCT_QUANTITY
 
-15:27:26.744 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s25 -> Path s18.PRODUCT_QUANTITY
-15:27:26.744 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_TYPE_ID
+15:37:56.240 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s25 -> Path s18.PRODUCT_QUANTITY
+15:37:56.240 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_TYPE_ID
 | Path s18.PRODUCT_TYPE_ID
 
-15:27:26.744 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s26 -> Path s18.PRODUCT_TYPE_ID
-15:27:26.745 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_ID
+15:37:56.240 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s26 -> Path s18.PRODUCT_TYPE_ID
+15:37:56.241 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_ID
 | Path s18.PRODUCT_ID
 
-15:27:26.745 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s27 -> Path s18.PRODUCT_ID
-15:27:26.745 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_PRICE
+15:37:56.241 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s27 -> Path s18.PRODUCT_ID
+15:37:56.241 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_PRICE
 | Path s18.PRODUCT_PRICE
 
-15:27:26.745 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s28 -> Path s18.PRODUCT_PRICE
-15:27:26.747 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t22: (HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24), UnassignedType)
-15:27:26.749 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
+15:37:56.241 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s28 -> Path s18.PRODUCT_PRICE
+15:37:56.244 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t22: (HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24), UnassignedType)
+15:37:56.246 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
 | Pure t22
 |   value: StructNode
 |     s24: Path s18.PRODUCT_NAME
@@ -242,97 +242,97 @@
 |     s27: Path s18.PRODUCT_ID
 |     s28: Path s18.PRODUCT_PRICE
 
-15:27:26.749 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t23
-15:27:26.749 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s19.TYPE_ID with symbols t22
+15:37:56.246 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t23
+15:37:56.247 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s19.TYPE_ID with symbols t22
 | Path s19.TYPE_ID : Int'
 
-15:27:26.749 [main] DEBUG slick.compiler.FlattenProjections - Translated s19.TYPE_ID to:
+15:37:56.247 [main] DEBUG slick.compiler.FlattenProjections - Translated s19.TYPE_ID to:
 | Path s19.TYPE_ID
 
-15:27:26.750 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s19.TYPE_NAME with symbols t22
+15:37:56.247 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s19.TYPE_NAME with symbols t22
 | Path s19.TYPE_NAME : String'
 
-15:27:26.750 [main] DEBUG slick.compiler.FlattenProjections - Translated s19.TYPE_NAME to:
+15:37:56.248 [main] DEBUG slick.compiler.FlattenProjections - Translated s19.TYPE_NAME to:
 | Path s19.TYPE_NAME
 
-15:27:26.750 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
+15:37:56.248 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
 | StructNode
 |   TYPE_ID: Path s19.TYPE_ID
 |   TYPE_NAME: Path s19.TYPE_NAME
 
-15:27:26.750 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path TYPE_ID
+15:37:56.248 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path TYPE_ID
 | Path s19.TYPE_ID
 
-15:27:26.751 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s29 -> Path s19.TYPE_ID
-15:27:26.751 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path TYPE_NAME
+15:37:56.249 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s29 -> Path s19.TYPE_ID
+15:37:56.249 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path TYPE_NAME
 | Path s19.TYPE_NAME
 
-15:27:26.751 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s30 -> Path s19.TYPE_NAME
-15:27:26.751 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t23: (Map(List(TYPE_NAME) -> s30, List(TYPE_ID) -> s29), UnassignedType)
-15:27:26.752 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
+15:37:56.249 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s30 -> Path s19.TYPE_NAME
+15:37:56.250 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t23: (Map(List(TYPE_NAME) -> s30, List(TYPE_ID) -> s29), UnassignedType)
+15:37:56.251 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
 | Pure t23
 |   value: StructNode
 |     s29: Path s19.TYPE_ID
 |     s30: Path s19.TYPE_NAME
 
-15:27:26.752 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s11.PRODUCT_TYPE_ID with symbols t23, t22
+15:37:56.251 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s11.PRODUCT_TYPE_ID with symbols t23, t22
 | Path s11.PRODUCT_TYPE_ID : Int'
 
-15:27:26.753 [main] DEBUG slick.compiler.FlattenProjections - Found s11.PRODUCT_TYPE_ID with local part Path PRODUCT_TYPE_ID over t22
-15:27:26.753 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
-15:27:26.754 [main] DEBUG slick.compiler.FlattenProjections - Translated s11.PRODUCT_TYPE_ID to:
+15:37:56.252 [main] DEBUG slick.compiler.FlattenProjections - Found s11.PRODUCT_TYPE_ID with local part Path PRODUCT_TYPE_ID over t22
+15:37:56.253 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
+15:37:56.253 [main] DEBUG slick.compiler.FlattenProjections - Translated s11.PRODUCT_TYPE_ID to:
 | Path s11.s26
 
-15:27:26.754 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s12.TYPE_ID with symbols t23, t22
+15:37:56.253 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s12.TYPE_ID with symbols t23, t22
 | Path s12.TYPE_ID : Int'
 
-15:27:26.754 [main] DEBUG slick.compiler.FlattenProjections - Found s12.TYPE_ID with local part Path TYPE_ID over t23
-15:27:26.754 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t23: Map(List(TYPE_NAME) -> s30, List(TYPE_ID) -> s29)
-15:27:26.754 [main] DEBUG slick.compiler.FlattenProjections - Translated s12.TYPE_ID to:
+15:37:56.253 [main] DEBUG slick.compiler.FlattenProjections - Found s12.TYPE_ID with local part Path TYPE_ID over t23
+15:37:56.254 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t23: Map(List(TYPE_NAME) -> s30, List(TYPE_ID) -> s29)
+15:37:56.254 [main] DEBUG slick.compiler.FlattenProjections - Translated s12.TYPE_ID to:
 | Path s12.s29
 
-15:27:26.754 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t17
-15:27:26.754 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_ID with symbols t23, t22
+15:37:56.254 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t17
+15:37:56.254 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_ID with symbols t23, t22
 | Path s10._1.PRODUCT_ID : Int'
 
-15:27:26.754 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_ID with local part Path PRODUCT_ID over t22
-15:27:26.755 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
-15:27:26.755 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_ID to:
+15:37:56.254 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_ID with local part Path PRODUCT_ID over t22
+15:37:56.254 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
+15:37:56.255 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_ID to:
 | Path s10._1.s27
 
-15:27:26.755 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_NAME with symbols t23, t22
+15:37:56.255 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_NAME with symbols t23, t22
 | Path s10._1.PRODUCT_NAME : String'
 
-15:27:26.755 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_NAME with local part Path PRODUCT_NAME over t22
-15:27:26.755 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
-15:27:26.755 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_NAME to:
+15:37:56.255 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_NAME with local part Path PRODUCT_NAME over t22
+15:37:56.255 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
+15:37:56.255 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_NAME to:
 | Path s10._1.s24
 
-15:27:26.756 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_PRICE with symbols t23, t22
+15:37:56.256 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_PRICE with symbols t23, t22
 | Path s10._1.PRODUCT_PRICE : Int'
 
-15:27:26.756 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_PRICE with local part Path PRODUCT_PRICE over t22
-15:27:26.756 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
-15:27:26.756 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_PRICE to:
+15:37:56.256 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_PRICE with local part Path PRODUCT_PRICE over t22
+15:37:56.256 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
+15:37:56.256 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_PRICE to:
 | Path s10._1.s28
 
-15:27:26.756 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_QUANTITY with symbols t23, t22
+15:37:56.256 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_QUANTITY with symbols t23, t22
 | Path s10._1.PRODUCT_QUANTITY : Int'
 
-15:27:26.756 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_QUANTITY with local part Path PRODUCT_QUANTITY over t22
-15:27:26.756 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
-15:27:26.756 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_QUANTITY to:
+15:37:56.257 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_QUANTITY with local part Path PRODUCT_QUANTITY over t22
+15:37:56.257 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
+15:37:56.257 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_QUANTITY to:
 | Path s10._1.s25
 
-15:27:26.757 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._2.TYPE_NAME with symbols t23, t22
+15:37:56.257 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._2.TYPE_NAME with symbols t23, t22
 | Path s10._2.TYPE_NAME : String'
 
-15:27:26.757 [main] DEBUG slick.compiler.FlattenProjections - Found s10._2.TYPE_NAME with local part Path TYPE_NAME over t23
-15:27:26.757 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t23: Map(List(TYPE_NAME) -> s30, List(TYPE_ID) -> s29)
-15:27:26.757 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._2.TYPE_NAME to:
+15:37:56.257 [main] DEBUG slick.compiler.FlattenProjections - Found s10._2.TYPE_NAME with local part Path TYPE_NAME over t23
+15:37:56.257 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t23: Map(List(TYPE_NAME) -> s30, List(TYPE_ID) -> s29)
+15:37:56.258 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._2.TYPE_NAME to:
 | Path s10._2.s30
 
-15:27:26.758 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
+15:37:56.259 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
 | ProductNode
 |   1: Path s10._1.s27
 |   2: Path s10._1.s24
@@ -340,28 +340,28 @@
 |   4: Path s10._1.s25
 |   5: Path s10._2.s30
 
-15:27:26.759 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _1
+15:37:56.260 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _1
 | Path s10._1.s27
 
-15:27:26.759 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s31 -> Path s10._1.s27
-15:27:26.759 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _2
+15:37:56.260 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s31 -> Path s10._1.s27
+15:37:56.260 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _2
 | Path s10._1.s24
 
-15:27:26.759 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s32 -> Path s10._1.s24
-15:27:26.759 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _3
+15:37:56.261 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s32 -> Path s10._1.s24
+15:37:56.261 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _3
 | Path s10._1.s28
 
-15:27:26.760 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s33 -> Path s10._1.s28
-15:27:26.760 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _4
+15:37:56.261 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s33 -> Path s10._1.s28
+15:37:56.261 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _4
 | Path s10._1.s25
 
-15:27:26.760 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s34 -> Path s10._1.s25
-15:27:26.760 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _5
+15:37:56.261 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s34 -> Path s10._1.s25
+15:37:56.261 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _5
 | Path s10._2.s30
 
-15:27:26.760 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s35 -> Path s10._2.s30
-15:27:26.760 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t17: (HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33), UnassignedType)
-15:27:26.761 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
+15:37:56.262 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s35 -> Path s10._2.s30
+15:37:56.262 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t17: (HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33), UnassignedType)
+15:37:56.263 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
 | Pure t17
 |   value: StructNode
 |     s31: Path s10._1.s27
@@ -370,56 +370,56 @@
 |     s34: Path s10._1.s25
 |     s35: Path s10._2.s30
 
-15:27:26.761 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s9._5 with symbols t23, t22, t17
+15:37:56.263 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s9._5 with symbols t23, t22, t17
 | Path s9._5 : String'
 
-15:27:26.762 [main] DEBUG slick.compiler.FlattenProjections - Found s9._5 with local part Path _5 over t17
-15:27:26.762 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
-15:27:26.762 [main] DEBUG slick.compiler.FlattenProjections - Translated s9._5 to:
+15:37:56.263 [main] DEBUG slick.compiler.FlattenProjections - Found s9._5 with local part Path _5 over t17
+15:37:56.264 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.264 [main] DEBUG slick.compiler.FlattenProjections - Translated s9._5 to:
 | Path s9.s35
 
-15:27:26.762 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t21
-15:27:26.762 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._1 with symbols t23, t22, t17
+15:37:56.264 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t21
+15:37:56.264 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._1 with symbols t23, t22, t17
 | Path s20._1 : Int'
 
-15:27:26.762 [main] DEBUG slick.compiler.FlattenProjections - Found s20._1 with local part Path _1 over t17
-15:27:26.762 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
-15:27:26.762 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._1 to:
+15:37:56.264 [main] DEBUG slick.compiler.FlattenProjections - Found s20._1 with local part Path _1 over t17
+15:37:56.264 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.265 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._1 to:
 | Path s20.s31
 
-15:27:26.763 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._2 with symbols t23, t22, t17
+15:37:56.265 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._2 with symbols t23, t22, t17
 | Path s20._2 : String'
 
-15:27:26.763 [main] DEBUG slick.compiler.FlattenProjections - Found s20._2 with local part Path _2 over t17
-15:27:26.763 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
-15:27:26.763 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._2 to:
+15:37:56.265 [main] DEBUG slick.compiler.FlattenProjections - Found s20._2 with local part Path _2 over t17
+15:37:56.265 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.265 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._2 to:
 | Path s20.s32
 
-15:27:26.763 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._3 with symbols t23, t22, t17
+15:37:56.265 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._3 with symbols t23, t22, t17
 | Path s20._3 : Int'
 
-15:27:26.763 [main] DEBUG slick.compiler.FlattenProjections - Found s20._3 with local part Path _3 over t17
-15:27:26.763 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
-15:27:26.764 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._3 to:
+15:37:56.265 [main] DEBUG slick.compiler.FlattenProjections - Found s20._3 with local part Path _3 over t17
+15:37:56.265 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.265 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._3 to:
 | Path s20.s33
 
-15:27:26.764 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._4 with symbols t23, t22, t17
+15:37:56.266 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._4 with symbols t23, t22, t17
 | Path s20._4 : Int'
 
-15:27:26.764 [main] DEBUG slick.compiler.FlattenProjections - Found s20._4 with local part Path _4 over t17
-15:27:26.764 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
-15:27:26.764 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._4 to:
+15:37:56.266 [main] DEBUG slick.compiler.FlattenProjections - Found s20._4 with local part Path _4 over t17
+15:37:56.266 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.266 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._4 to:
 | Path s20.s34
 
-15:27:26.764 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._5 with symbols t23, t22, t17
+15:37:56.266 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._5 with symbols t23, t22, t17
 | Path s20._5 : String'
 
-15:27:26.764 [main] DEBUG slick.compiler.FlattenProjections - Found s20._5 with local part Path _5 over t17
-15:27:26.764 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
-15:27:26.765 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._5 to:
+15:37:56.266 [main] DEBUG slick.compiler.FlattenProjections - Found s20._5 with local part Path _5 over t17
+15:37:56.266 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.266 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._5 to:
 | Path s20.s35
 
-15:27:26.765 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
+15:37:56.267 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
 | ProductNode
 |   1: Path s20.s31
 |   2: Path s20.s32
@@ -427,28 +427,28 @@
 |   4: Path s20.s34
 |   5: Path s20.s35
 
-15:27:26.765 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _1
+15:37:56.267 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _1
 | Path s20.s31
 
-15:27:26.766 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s36 -> Path s20.s31
-15:27:26.766 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _2
+15:37:56.268 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s36 -> Path s20.s31
+15:37:56.268 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _2
 | Path s20.s32
 
-15:27:26.766 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s37 -> Path s20.s32
-15:27:26.766 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _3
+15:37:56.268 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s37 -> Path s20.s32
+15:37:56.268 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _3
 | Path s20.s33
 
-15:27:26.766 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s38 -> Path s20.s33
-15:27:26.767 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _4
+15:37:56.268 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s38 -> Path s20.s33
+15:37:56.268 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _4
 | Path s20.s34
 
-15:27:26.767 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s39 -> Path s20.s34
-15:27:26.767 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _5
+15:37:56.268 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s39 -> Path s20.s34
+15:37:56.269 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _5
 | Path s20.s35
 
-15:27:26.767 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s40 -> Path s20.s35
-15:27:26.767 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t21: (HashMap(List(_5) -> s40, List(_2) -> s37, List(_4) -> s39, List(_1) -> s36, List(_3) -> s38), UnassignedType)
-15:27:26.768 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
+15:37:56.269 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s40 -> Path s20.s35
+15:37:56.269 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t21: (HashMap(List(_5) -> s40, List(_2) -> s37, List(_4) -> s39, List(_1) -> s36, List(_3) -> s38), UnassignedType)
+15:37:56.270 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
 | Pure t21
 |   value: StructNode
 |     s36: Path s20.s31
@@ -457,7 +457,7 @@
 |     s39: Path s20.s34
 |     s40: Path s20.s35
 
-15:27:26.774 [main] DEBUG slick.compiler.QueryCompiler - After phase flattenProjections:
+15:37:56.274 [main] DEBUG slick.compiler.QueryCompiler - After phase flattenProjections:
 | Bind : Vector[t21<{s36: Int', s37: String', s38: Int', s39: Int', s40: String'}>]
 |   from s20: SortBy Ordering(Desc,NullsDefault) : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
 |     from s9: Bind : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
@@ -496,22 +496,22 @@
 |       s39: Path s20.s34 : Int'
 |       s40: Path s20.s35 : String'
 
-15:27:26.780 [main] DEBUG slick.compiler.QueryCompiler - After phase rewriteJoins: (no change)
-15:27:26.783 [main] DEBUG slick.compiler.QueryCompiler - After phase verifySymbols: (no change)
-15:27:26.786 [main] DEBUG slick.compiler.QueryCompiler - After phase relabelUnions: (no change)
-15:27:26.787 [main] DEBUG slick.compiler.QueryCompiler - After phase createAggregates: (no change)
-15:27:26.789 [main] DEBUG slick.compiler.QueryCompiler - After phase resolveZipJoins: (no change)
-15:27:26.793 [main] DEBUG slick.compiler.PruneProjections - Unreferenced: t21; Field refs: (t23,s29), (@t14,PRODUCT_PRICE), (t17,s32), (@t14,PRODUCT_TYPE_ID), (t22,s24), (t22,s28), (t17,s35), (t17,s34), (t17,s33), (@t16,TYPE_NAME), (@t14,PRODUCT_NAME), (t22,s26), (@t16,TYPE_ID), (@t14,PRODUCT_ID), (t23,s30), (t22,s25), (t22,s27), (@t14,PRODUCT_QUANTITY), (t17,s31)
-15:27:26.799 [main] DEBUG slick.compiler.QueryCompiler - After phase pruneProjections: (no change)
-15:27:26.800 [main] DEBUG slick.compiler.RewriteDistinct - No DISTINCT used as determined by assignUniqueSymbols - skipping phase
-15:27:26.800 [main] DEBUG slick.compiler.QueryCompiler - After phase rewriteDistinct: (no change)
-15:27:26.803 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from t21<t17<(Int', String', Int', Int', String')>>
-15:27:26.804 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from Int'
-15:27:26.805 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from String'
-15:27:26.805 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from Int'
-15:27:26.805 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from Int'
-15:27:26.806 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from String'
-15:27:26.814 [main] DEBUG slick.compiler.QueryCompiler - After phase createResultSetMapping:
+15:37:56.276 [main] DEBUG slick.compiler.QueryCompiler - After phase rewriteJoins: (no change)
+15:37:56.279 [main] DEBUG slick.compiler.QueryCompiler - After phase verifySymbols: (no change)
+15:37:56.281 [main] DEBUG slick.compiler.QueryCompiler - After phase relabelUnions: (no change)
+15:37:56.283 [main] DEBUG slick.compiler.QueryCompiler - After phase createAggregates: (no change)
+15:37:56.285 [main] DEBUG slick.compiler.QueryCompiler - After phase resolveZipJoins: (no change)
+15:37:56.289 [main] DEBUG slick.compiler.PruneProjections - Unreferenced: t21; Field refs: (t23,s29), (@t14,PRODUCT_PRICE), (t17,s32), (@t14,PRODUCT_TYPE_ID), (t22,s24), (t22,s28), (t17,s35), (t17,s34), (t17,s33), (@t16,TYPE_NAME), (@t14,PRODUCT_NAME), (t22,s26), (@t16,TYPE_ID), (@t14,PRODUCT_ID), (t23,s30), (t22,s25), (t22,s27), (@t14,PRODUCT_QUANTITY), (t17,s31)
+15:37:56.294 [main] DEBUG slick.compiler.QueryCompiler - After phase pruneProjections: (no change)
+15:37:56.295 [main] DEBUG slick.compiler.RewriteDistinct - No DISTINCT used as determined by assignUniqueSymbols - skipping phase
+15:37:56.295 [main] DEBUG slick.compiler.QueryCompiler - After phase rewriteDistinct: (no change)
+15:37:56.298 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from t21<t17<(Int', String', Int', Int', String')>>
+15:37:56.298 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from Int'
+15:37:56.298 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from String'
+15:37:56.299 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from Int'
+15:37:56.299 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from Int'
+15:37:56.299 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from String'
+15:37:56.304 [main] DEBUG slick.compiler.QueryCompiler - After phase createResultSetMapping:
 | ResultSetMapping : Vector[(Int', String', Int', Int', String')]
 |   from s41: Bind : Vector[t21<{s36: Int', s37: String', s38: Int', s39: Int', s40: String'}>]
 |     from s20: SortBy Ordering(Desc,NullsDefault) : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
@@ -557,9 +557,9 @@
 |     4: Path s41.s39 : Int'
 |     5: Path s41.s40 : String'
 
-15:27:26.820 [main] DEBUG slick.compiler.HoistClientOps - Hoisting operations from defs: 
-15:27:26.822 [main] DEBUG slick.compiler.HoistClientOps - New defs: HashMap(0 -> (Path s20.s31,s42), 1 -> (Path s20.s32,s43), 2 -> (Path s20.s33,s44), 3 -> (Path s20.s34,s45), 4 -> (Path s20.s35,s46))
-15:27:26.865 [main] DEBUG slick.compiler.HoistClientOps - New ResultSetMapping:
+15:37:56.309 [main] DEBUG slick.compiler.HoistClientOps - Hoisting operations from defs: 
+15:37:56.310 [main] DEBUG slick.compiler.HoistClientOps - New defs: HashMap(0 -> (Path s20.s31,s42), 1 -> (Path s20.s32,s43), 2 -> (Path s20.s33,s44), 3 -> (Path s20.s34,s45), 4 -> (Path s20.s35,s46))
+15:37:56.350 [main] DEBUG slick.compiler.HoistClientOps - New ResultSetMapping:
 | ResultSetMapping : Vector[(Int', String', Int', Int', String')]
 |   from s41: Bind : Vector[t47<{s45: Int', s44: Int', s43: String', s42: Int', s46: String'}>]
 |     from s20: ...
@@ -577,7 +577,7 @@
 |     4: Path s41.s45 : Int'
 |     5: Path s41.s46 : String'
 
-15:27:26.872 [main] DEBUG slick.compiler.QueryCompiler - After phase hoistClientOps:
+15:37:56.355 [main] DEBUG slick.compiler.QueryCompiler - After phase hoistClientOps:
 | ResultSetMapping : Vector[(Int', String', Int', Int', String')]
 |   from s41: Bind : Vector[t47<{s45: Int', s44: Int', s43: String', s42: Int', s46: String'}>]
 |     from s20: SortBy Ordering(Desc,NullsDefault) : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
@@ -623,9 +623,9 @@
 |     4: Path s41.s45 : Int'
 |     5: Path s41.s46 : String'
 
-15:27:26.875 [main] DEBUG slick.compiler.QueryCompiler - After phase reorderOperations: (no change)
-15:27:26.878 [main] DEBUG slick.compiler.MergeToComprehensions - Table fields: MapView(<not computed>)
-15:27:26.883 [main] DEBUG slick.compiler.MergeToComprehensions - Creating source from Join s11/s12:
+15:37:56.358 [main] DEBUG slick.compiler.QueryCompiler - After phase reorderOperations: (no change)
+15:37:56.360 [main] DEBUG slick.compiler.MergeToComprehensions - Table fields: MapView(<not computed>)
+15:37:56.367 [main] DEBUG slick.compiler.MergeToComprehensions - Creating source from Join s11/s12:
 | Join Inner : Vector[(t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>, t23<{s29: Int', s30: String'}>)]
 |   left s11: Bind : Vector[t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>]
 |     from s18: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
@@ -646,31 +646,31 @@
 |     0: Path s11.s26 : Int'
 |     1: Path s12.s29 : Int'
 
-15:27:26.885 [main] DEBUG slick.compiler.MergeToComprehensions - Bind from s18 is aliasing: true
-15:27:26.886 [main] DEBUG slick.compiler.MergeToComprehensions - Creating source from TableNode:
+15:37:56.368 [main] DEBUG slick.compiler.MergeToComprehensions - Bind from s18 is aliasing: true
+15:37:56.369 [main] DEBUG slick.compiler.MergeToComprehensions - Creating source from TableNode:
 | Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
 
-15:27:26.888 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings are: ConstArray(((@t14,PRODUCT_NAME),List(PRODUCT_NAME)), ((@t14,PRODUCT_QUANTITY),List(PRODUCT_QUANTITY)), ((@t14,PRODUCT_TYPE_ID),List(PRODUCT_TYPE_ID)), ((@t14,PRODUCT_ID),List(PRODUCT_ID)), ((@t14,PRODUCT_PRICE),List(PRODUCT_PRICE)))
-15:27:26.889 [main] DEBUG slick.compiler.MergeToComprehensions - Recombining aliasing Bind mappings ConstArray((s24,Path s18.PRODUCT_NAME), (s25,Path s18.PRODUCT_QUANTITY), (s26,Path s18.PRODUCT_TYPE_ID), (s27,Path s18.PRODUCT_ID), (s28,Path s18.PRODUCT_PRICE))
-15:27:26.891 [main] DEBUG slick.compiler.MergeToComprehensions - Bind from s19 is aliasing: true
-15:27:26.891 [main] DEBUG slick.compiler.MergeToComprehensions - Creating source from TableNode:
+15:37:56.371 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings are: ConstArray(((@t14,PRODUCT_NAME),List(PRODUCT_NAME)), ((@t14,PRODUCT_QUANTITY),List(PRODUCT_QUANTITY)), ((@t14,PRODUCT_TYPE_ID),List(PRODUCT_TYPE_ID)), ((@t14,PRODUCT_ID),List(PRODUCT_ID)), ((@t14,PRODUCT_PRICE),List(PRODUCT_PRICE)))
+15:37:56.373 [main] DEBUG slick.compiler.MergeToComprehensions - Recombining aliasing Bind mappings ConstArray((s24,Path s18.PRODUCT_NAME), (s25,Path s18.PRODUCT_QUANTITY), (s26,Path s18.PRODUCT_TYPE_ID), (s27,Path s18.PRODUCT_ID), (s28,Path s18.PRODUCT_PRICE))
+15:37:56.375 [main] DEBUG slick.compiler.MergeToComprehensions - Bind from s19 is aliasing: true
+15:37:56.375 [main] DEBUG slick.compiler.MergeToComprehensions - Creating source from TableNode:
 | Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
 
-15:27:26.892 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings are: ConstArray(((@t16,TYPE_ID),List(TYPE_ID)), ((@t16,TYPE_NAME),List(TYPE_NAME)))
-15:27:26.892 [main] DEBUG slick.compiler.MergeToComprehensions - Recombining aliasing Bind mappings ConstArray((s29,Path s19.TYPE_ID), (s30,Path s19.TYPE_NAME))
-15:27:26.893 [main] DEBUG slick.compiler.MergeToComprehensions - Converted left side of Join s11/s12:
+15:37:56.375 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings are: ConstArray(((@t16,TYPE_ID),List(TYPE_ID)), ((@t16,TYPE_NAME),List(TYPE_NAME)))
+15:37:56.375 [main] DEBUG slick.compiler.MergeToComprehensions - Recombining aliasing Bind mappings ConstArray((s29,Path s19.TYPE_ID), (s30,Path s19.TYPE_NAME))
+15:37:56.377 [main] DEBUG slick.compiler.MergeToComprehensions - Converted left side of Join s11/s12:
 | Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
 
-15:27:26.894 [main] DEBUG slick.compiler.MergeToComprehensions - Converted right side of Join s11/s12:
+15:37:56.378 [main] DEBUG slick.compiler.MergeToComprehensions - Converted right side of Join s11/s12:
 | Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
 
-15:27:26.895 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings for `on` clause in Join s11/s12: HashMap((t22,s26) -> List(_1, PRODUCT_TYPE_ID), (t23,s29) -> List(_2, TYPE_ID), (t23,s30) -> List(_2, TYPE_NAME), (t22,s24) -> List(_1, PRODUCT_NAME), (t22,s28) -> List(_1, PRODUCT_PRICE), (t22,s25) -> List(_1, PRODUCT_QUANTITY), (t22,s27) -> List(_1, PRODUCT_ID))
-15:27:26.898 [main] DEBUG slick.compiler.MergeToComprehensions - Transformed `on` clause in Join s11/s12:
+15:37:56.380 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings for `on` clause in Join s11/s12: HashMap((t22,s26) -> List(_1, PRODUCT_TYPE_ID), (t23,s29) -> List(_2, TYPE_ID), (t23,s30) -> List(_2, TYPE_NAME), (t22,s24) -> List(_1, PRODUCT_NAME), (t22,s28) -> List(_1, PRODUCT_PRICE), (t22,s25) -> List(_1, PRODUCT_QUANTITY), (t22,s27) -> List(_1, PRODUCT_ID))
+15:37:56.384 [main] DEBUG slick.compiler.MergeToComprehensions - Transformed `on` clause in Join s11/s12:
 | Apply Function = : Boolean
 |   0: Path s11.PRODUCT_TYPE_ID : Int'
 |   1: Path s12.TYPE_ID : Int'
 
-15:27:26.900 [main] DEBUG slick.compiler.MergeToComprehensions - Created source from Join s11/s12:
+15:37:56.386 [main] DEBUG slick.compiler.MergeToComprehensions - Created source from Join s11/s12:
 | Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
 |   left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
 |   right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
@@ -678,7 +678,7 @@
 |     0: Path s11.PRODUCT_TYPE_ID : Int'
 |     1: Path s12.TYPE_ID : Int'
 
-15:27:26.901 [main] DEBUG slick.compiler.MergeToComprehensions - Building new Comprehension from:
+15:37:56.388 [main] DEBUG slick.compiler.MergeToComprehensions - Building new Comprehension from:
 | Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
 |   left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
 |   right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
@@ -686,7 +686,7 @@
 |     0: Path s11.PRODUCT_TYPE_ID : Int'
 |     1: Path s12.TYPE_ID : Int'
 
-15:27:26.914 [main] DEBUG slick.compiler.MergeToComprehensions - Built new Comprehension:
+15:37:56.405 [main] DEBUG slick.compiler.MergeToComprehensions - Built new Comprehension:
 | Comprehension s48, None, None, ConstArray(), None, None, None, None, false : Vector[t49<{s50: String', s51: Int', s52: Int', s53: Int', s54: Int', s55: Int', s56: String'}>]
 |   from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
 |     left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
@@ -704,8 +704,8 @@
 |       s55: Path s48._2.TYPE_ID : Int'
 |       s56: Path s48._2.TYPE_NAME : String'
 
-15:27:26.915 [main] DEBUG slick.compiler.MergeToComprehensions - Replacements are: HashMap((t22,s26) -> s52, (t23,s29) -> s55, (t23,s30) -> s56, (t22,s24) -> s50, (t22,s28) -> s54, (t22,s25) -> s51, (t22,s27) -> s53)
-15:27:26.917 [main] DEBUG slick.compiler.MergeToComprehensions - Merging Bind into Comprehension as 'select':
+15:37:56.406 [main] DEBUG slick.compiler.MergeToComprehensions - Replacements are: HashMap((t22,s26) -> s52, (t23,s29) -> s55, (t23,s30) -> s56, (t22,s24) -> s50, (t22,s28) -> s54, (t22,s25) -> s51, (t22,s27) -> s53)
+15:37:56.408 [main] DEBUG slick.compiler.MergeToComprehensions - Merging Bind into Comprehension as 'select':
 | Bind : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
 |   from s10: ...
 |   select: Pure t17 : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
@@ -716,7 +716,7 @@
 |       s34: Path s10._1.s25 : Int'
 |       s35: Path s10._2.s30 : String'
 
-15:27:26.922 [main] DEBUG slick.compiler.MergeToComprehensions - Merged Bind into Comprehension as 'select':
+15:37:56.413 [main] DEBUG slick.compiler.MergeToComprehensions - Merged Bind into Comprehension as 'select':
 | Comprehension s48, None, None, ConstArray(), None, None, None, None, false : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
 |   from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
 |     left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
@@ -732,13 +732,13 @@
 |       s34: Path s48._1.PRODUCT_QUANTITY : Int'
 |       s35: Path s48._2.TYPE_NAME : String'
 
-15:27:26.923 [main] DEBUG slick.compiler.MergeToComprehensions - Replacements are: HashMap((t17,s32) -> s32, (t17,s31) -> s31, (t17,s35) -> s35, (t17,s34) -> s34, (t17,s33) -> s33)
-15:27:26.924 [main] DEBUG slick.compiler.MergeToComprehensions - Merging SortBy into Comprehension:
+15:37:56.414 [main] DEBUG slick.compiler.MergeToComprehensions - Replacements are: HashMap((t17,s32) -> s32, (t17,s31) -> s31, (t17,s35) -> s35, (t17,s34) -> s34, (t17,s33) -> s33)
+15:37:56.416 [main] DEBUG slick.compiler.MergeToComprehensions - Merging SortBy into Comprehension:
 | SortBy Ordering(Desc,NullsDefault) : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
 |   from s9: ...
 |   by0: Path s9.s35 : String'
 
-15:27:26.928 [main] DEBUG slick.compiler.MergeToComprehensions - Merged SortBy into Comprehension:
+15:37:56.420 [main] DEBUG slick.compiler.MergeToComprehensions - Merged SortBy into Comprehension:
 | Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Desc,NullsDefault))), None, None, None, None, false : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
 |   from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
 |     left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
@@ -755,7 +755,7 @@
 |       s35: Path s48._2.TYPE_NAME : String'
 |   orderBy Ordering(Desc,NullsDefault): Path s48._2.TYPE_NAME : String'
 
-15:27:26.930 [main] DEBUG slick.compiler.MergeToComprehensions - Merging Bind into Comprehension as 'select':
+15:37:56.421 [main] DEBUG slick.compiler.MergeToComprehensions - Merging Bind into Comprehension as 'select':
 | Bind : Vector[t47<{s45: Int', s44: Int', s43: String', s42: Int', s46: String'}>]
 |   from s20: ...
 |   select: Pure t47 : Vector[t47<{s45: Int', s44: Int', s43: String', s42: Int', s46: String'}>]
@@ -766,7 +766,7 @@
 |       s42: Path s20.s31 : Int'
 |       s46: Path s20.s35 : String'
 
-15:27:26.932 [main] DEBUG slick.compiler.MergeToComprehensions - Merged Bind into Comprehension as 'select':
+15:37:56.424 [main] DEBUG slick.compiler.MergeToComprehensions - Merged Bind into Comprehension as 'select':
 | Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Desc,NullsDefault))), None, None, None, None, false : Vector[t47<{s45: Int', s44: Int', s43: String', s42: Int', s46: String'}>]
 |   from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
 |     left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
@@ -783,9 +783,9 @@
 |       s46: Path s48._2.TYPE_NAME : String'
 |   orderBy Ordering(Desc,NullsDefault): Path s48._2.TYPE_NAME : String'
 
-15:27:26.933 [main] DEBUG slick.compiler.MergeToComprehensions - Replacements are: HashMap((t47,s45) -> s45, (t47,s43) -> s43, (t47,s42) -> s42, (t47,s46) -> s46, (t47,s44) -> s44)
-15:27:26.934 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings are: ConstArray(((t47,s45),List(s45)), ((t47,s43),List(s43)), ((t47,s42),List(s42)), ((t47,s46),List(s46)), ((t47,s44),List(s44)))
-15:27:26.937 [main] DEBUG slick.compiler.QueryCompiler - After phase mergeToComprehensions:
+15:37:56.424 [main] DEBUG slick.compiler.MergeToComprehensions - Replacements are: HashMap((t47,s45) -> s45, (t47,s43) -> s43, (t47,s42) -> s42, (t47,s46) -> s46, (t47,s44) -> s44)
+15:37:56.425 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings are: ConstArray(((t47,s45),List(s45)), ((t47,s43),List(s43)), ((t47,s42),List(s42)), ((t47,s46),List(s46)), ((t47,s44),List(s44)))
+15:37:56.430 [main] DEBUG slick.compiler.QueryCompiler - After phase mergeToComprehensions:
 | ResultSetMapping : Vector[(Int', String', Int', Int', String')]
 |   from s41: Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Desc,NullsDefault))), None, None, None, None, false : Vector[t47<{s45: Int', s44: Int', s43: String', s42: Int', s46: String'}>]
 |     from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
@@ -809,9 +809,9 @@
 |     4: Path s41.s45 : Int'
 |     5: Path s41.s46 : String'
 
-15:27:26.939 [main] DEBUG slick.compiler.QueryCompiler - After phase optimizeScalar: (no change)
-15:27:26.942 [main] DEBUG slick.compiler.RemoveFieldNames - Required symbols: s45 -> 3, s44 -> 2, s43 -> 1, s42 -> 0, s46 -> 4
-15:27:26.951 [main] DEBUG slick.compiler.RemoveFieldNames - Transformed RSM: 
+15:37:56.433 [main] DEBUG slick.compiler.QueryCompiler - After phase optimizeScalar: (no change)
+15:37:56.436 [main] DEBUG slick.compiler.RemoveFieldNames - Required symbols: s45 -> 3, s44 -> 2, s43 -> 1, s42 -> 0, s46 -> 4
+15:37:56.449 [main] DEBUG slick.compiler.RemoveFieldNames - Transformed RSM: 
 | ResultSetMapping
 |   from s41: Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Desc,NullsDefault))), None, None, None, None, false : Vector[t47<(Int', String', Int', Int', String')>]
 |     from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
@@ -835,7 +835,7 @@
 |     4: Path s41.s45 : Int'
 |     5: Path s41.s46 : String'
 
-15:27:26.954 [main] DEBUG slick.compiler.QueryCompiler - After phase removeFieldNames:
+15:37:56.452 [main] DEBUG slick.compiler.QueryCompiler - After phase removeFieldNames:
 | ResultSetMapping : Vector[(Int', String', Int', Int', String')]
 |   from s41: Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Desc,NullsDefault))), None, None, None, None, false : Vector[t47<(Int', String', Int', Int', String')>]
 |     from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
@@ -859,7 +859,7 @@
 |     4: Path s41._4 : Int'
 |     5: Path s41._5 : String'
 
-15:27:26.957 [main] DEBUG slick.compiler.CodeGen - Compiling server-side and mapping with server-side:
+15:37:56.456 [main] DEBUG slick.compiler.CodeGen - Compiling server-side and mapping with server-side:
 | Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Desc,NullsDefault))), None, None, None, None, false : Vector[t47<(Int', String', Int', Int', String')>]
 |   from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
 |     left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
@@ -876,7 +876,7 @@
 |       5: Path s48._2.TYPE_NAME : String'
 |   orderBy Ordering(Desc,NullsDefault): Path s48._2.TYPE_NAME : String'
 
-15:27:26.987 [main] DEBUG s.relational.ResultConverterCompiler - Compiled ResultConverter
+15:37:56.492 [main] DEBUG s.relational.ResultConverterCompiler - Compiled ResultConverter
 | ProductResultConverter
 |   1: BaseResultConverter$mcI$sp idx=1, name=<computed> : Int'
 |   2: SpecializedJdbcResultConverter$$anon$1 idx=2, name=<computed> : String'
@@ -884,10 +884,10 @@
 |   4: BaseResultConverter$mcI$sp idx=4, name=<computed> : Int'
 |   5: SpecializedJdbcResultConverter$$anon$1 idx=5, name=<computed> : String'
 
-15:27:26.988 [main] DEBUG slick.compiler.CodeGen - Compiled server-side to:
+15:37:56.494 [main] DEBUG slick.compiler.CodeGen - Compiled server-side to:
 | CompiledStatement "select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME` desc" : Vector[t47<(Int', String', Int', Int', String')>]
 
-15:27:26.990 [main] DEBUG slick.compiler.QueryCompiler - After phase codeGen:
+15:37:56.496 [main] DEBUG slick.compiler.QueryCompiler - After phase codeGen:
 | ResultSetMapping : Vector[(Int', String', Int', Int', String')]
 |   from s41: CompiledStatement "select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME` desc" : Vector[t47<(Int', String', Int', Int', String')>]
 |   map: CompiledMapping : (Int', String', Int', Int', String')
@@ -898,42 +898,981 @@
 |       4: BaseResultConverter$mcI$sp idx=4, name=<computed> : Int'
 |       5: SpecializedJdbcResultConverter$$anon$1 idx=5, name=<computed> : String'
 
-15:27:26.990 [main] DEBUG s.compiler.QueryCompilerBenchmark - ------------------- Phase: Time ---------
-15:27:26.997 [main] DEBUG s.compiler.QueryCompilerBenchmark -       assignUniqueSymbols:   20.757567 ms
-15:27:26.998 [main] DEBUG s.compiler.QueryCompilerBenchmark -           unrollTailBinds:    1.553655 ms
-15:27:26.998 [main] DEBUG s.compiler.QueryCompilerBenchmark -                inferTypes:    8.117933 ms
-15:27:26.998 [main] DEBUG s.compiler.QueryCompilerBenchmark -              expandTables:   29.913816 ms
-15:27:26.998 [main] DEBUG s.compiler.QueryCompilerBenchmark -           forceOuterBinds:   11.381110 ms
-15:27:26.998 [main] DEBUG s.compiler.QueryCompilerBenchmark -         removeMappedTypes:    2.698946 ms
-15:27:26.998 [main] DEBUG s.compiler.QueryCompilerBenchmark -                expandSums:    1.087725 ms
-15:27:26.999 [main] DEBUG s.compiler.QueryCompilerBenchmark -         emulateOuterJoins:    2.005686 ms
-15:27:26.999 [main] DEBUG s.compiler.QueryCompilerBenchmark -             expandRecords:   12.254302 ms
-15:27:26.999 [main] DEBUG s.compiler.QueryCompilerBenchmark -        flattenProjections:   48.862047 ms
-15:27:26.999 [main] DEBUG s.compiler.QueryCompilerBenchmark -              rewriteJoins:    5.726945 ms
-15:27:27.000 [main] DEBUG s.compiler.QueryCompilerBenchmark -             verifySymbols:    3.693741 ms
-15:27:27.000 [main] DEBUG s.compiler.QueryCompilerBenchmark -             relabelUnions:    2.514630 ms
-15:27:27.000 [main] DEBUG s.compiler.QueryCompilerBenchmark -          createAggregates:    0.885389 ms
-15:27:27.000 [main] DEBUG s.compiler.QueryCompilerBenchmark -           resolveZipJoins:    2.149163 ms
-15:27:27.000 [main] DEBUG s.compiler.QueryCompilerBenchmark -          pruneProjections:    9.666617 ms
-15:27:27.000 [main] DEBUG s.compiler.QueryCompilerBenchmark -           rewriteDistinct:    1.166849 ms
-15:27:27.001 [main] DEBUG s.compiler.QueryCompilerBenchmark -    createResultSetMapping:   14.581329 ms
-15:27:27.001 [main] DEBUG s.compiler.QueryCompilerBenchmark -            hoistClientOps:   57.603482 ms
-15:27:27.001 [main] DEBUG s.compiler.QueryCompilerBenchmark -         reorderOperations:    2.641215 ms
-15:27:27.001 [main] DEBUG s.compiler.QueryCompilerBenchmark -     mergeToComprehensions:   62.838400 ms
-15:27:27.001 [main] DEBUG s.compiler.QueryCompilerBenchmark -            optimizeScalar:    1.846802 ms
-15:27:27.001 [main] DEBUG s.compiler.QueryCompilerBenchmark -          removeFieldNames:   14.201009 ms
-15:27:27.001 [main] DEBUG s.compiler.QueryCompilerBenchmark -                   codeGen:   36.372181 ms
-15:27:27.001 [main] DEBUG s.compiler.QueryCompilerBenchmark -                     TOTAL:  354.520539 ms
-15:27:27.006 [main] DEBUG slick.basic.BasicBackend.action - #1: result [select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME` desc]
-15:27:27.332 [mydb-1] DEBUG slick.jdbc.JdbcBackend.statement - Preparing statement: select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME` desc
-15:27:27.348 [mydb-1] DEBUG slick.jdbc.JdbcBackend.statement - Executing prepared statement: com.mysql.cj.jdbc.ClientPreparedStatement: select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME` desc
-15:27:27.348 [mydb-1] DEBUG s.j.J.statementAndParameter - Executing prepared statement: com.mysql.cj.jdbc.ClientPreparedStatement: select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME` desc
-15:27:27.355 [mydb-1] DEBUG slick.jdbc.JdbcBackend.benchmark - Execution of prepared statement took 6ms
-15:27:27.376 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - /------------+--------------+---------------+------------------+-------------\
-15:27:27.376 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - | 1          | 2            | 3             | 4                | 5           |
-15:27:27.376 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - | PRODUCT_ID | PRODUCT_NAME | PRODUCT_PRICE | PRODUCT_QUANTITY | TYPE_NAME   |
-15:27:27.376 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - |------------+--------------+---------------+------------------+-------------|
-15:27:27.376 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - | 1          | cana         | 20            | 100              | vesela      |
-15:27:27.376 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - | 3          | pian         | 5000          | 3                | muzica      |
-15:27:27.376 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - | 2          | vaza         | 80            | 20               | decoratiuni |
-15:27:27.376 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - \------------+--------------+---------------+------------------+-------------/
+15:37:56.497 [main] DEBUG s.compiler.QueryCompilerBenchmark - ------------------- Phase: Time ---------
+15:37:56.503 [main] DEBUG s.compiler.QueryCompilerBenchmark -       assignUniqueSymbols:   22.017284 ms
+15:37:56.504 [main] DEBUG s.compiler.QueryCompilerBenchmark -           unrollTailBinds:    2.120098 ms
+15:37:56.504 [main] DEBUG s.compiler.QueryCompilerBenchmark -                inferTypes:    9.260145 ms
+15:37:56.504 [main] DEBUG s.compiler.QueryCompilerBenchmark -              expandTables:   38.868689 ms
+15:37:56.504 [main] DEBUG s.compiler.QueryCompilerBenchmark -           forceOuterBinds:   13.971861 ms
+15:37:56.505 [main] DEBUG s.compiler.QueryCompilerBenchmark -         removeMappedTypes:    3.302392 ms
+15:37:56.505 [main] DEBUG s.compiler.QueryCompilerBenchmark -                expandSums:    0.761475 ms
+15:37:56.505 [main] DEBUG s.compiler.QueryCompilerBenchmark -         emulateOuterJoins:    1.770591 ms
+15:37:56.505 [main] DEBUG s.compiler.QueryCompilerBenchmark -             expandRecords:   11.715233 ms
+15:37:56.505 [main] DEBUG s.compiler.QueryCompilerBenchmark -        flattenProjections:   52.671883 ms
+15:37:56.506 [main] DEBUG s.compiler.QueryCompilerBenchmark -              rewriteJoins:    1.221490 ms
+15:37:56.506 [main] DEBUG s.compiler.QueryCompilerBenchmark -             verifySymbols:    2.931158 ms
+15:37:56.506 [main] DEBUG s.compiler.QueryCompilerBenchmark -             relabelUnions:    2.959732 ms
+15:37:56.506 [main] DEBUG s.compiler.QueryCompilerBenchmark -          createAggregates:    1.104544 ms
+15:37:56.506 [main] DEBUG s.compiler.QueryCompilerBenchmark -           resolveZipJoins:    1.952427 ms
+15:37:56.507 [main] DEBUG s.compiler.QueryCompilerBenchmark -          pruneProjections:    9.215145 ms
+15:37:56.507 [main] DEBUG s.compiler.QueryCompilerBenchmark -           rewriteDistinct:    1.051082 ms
+15:37:56.507 [main] DEBUG s.compiler.QueryCompilerBenchmark -    createResultSetMapping:    9.405407 ms
+15:37:56.507 [main] DEBUG s.compiler.QueryCompilerBenchmark -            hoistClientOps:   50.477253 ms
+15:37:56.507 [main] DEBUG s.compiler.QueryCompilerBenchmark -         reorderOperations:    2.844939 ms
+15:37:56.507 [main] DEBUG s.compiler.QueryCompilerBenchmark -     mergeToComprehensions:   72.484987 ms
+15:37:56.508 [main] DEBUG s.compiler.QueryCompilerBenchmark -            optimizeScalar:    2.616809 ms
+15:37:56.508 [main] DEBUG s.compiler.QueryCompilerBenchmark -          removeFieldNames:   19.140818 ms
+15:37:56.508 [main] DEBUG s.compiler.QueryCompilerBenchmark -                   codeGen:   44.485126 ms
+15:37:56.508 [main] DEBUG s.compiler.QueryCompilerBenchmark -                     TOTAL:  378.350568 ms
+15:37:56.515 [main] DEBUG slick.compiler.QueryCompiler - Source:
+| SortBy Ordering(Asc,NullsDefault)
+|   from s2: Bind
+|     from s3: Join Inner
+|       left s4: TableExpansion
+|         table s6: Table PRODUCTS
+|         columns: TypeMapping
+|           0: ProductNode
+|             1: Path s6.PRODUCT_ID : Int'
+|             2: Path s6.PRODUCT_NAME : String'
+|             3: Path s6.PRODUCT_PRICE : Int'
+|             4: Path s6.PRODUCT_TYPE_ID : Int'
+|             5: Path s6.PRODUCT_QUANTITY : Int'
+|       right s5: TableExpansion
+|         table s7: Table TYPES
+|         columns: TypeMapping
+|           0: ProductNode
+|             1: Path s7.TYPE_ID : Int'
+|             2: Path s7.TYPE_NAME : String'
+|       on: Apply Function =
+|         0: Path s4.PRODUCT_TYPE_ID : Int'
+|         1: Path s5.TYPE_ID : Int'
+|     select: Pure t8
+|       value: ProductNode
+|         1: Path s3._1.PRODUCT_ID : Int'
+|         2: Path s3._1.PRODUCT_NAME : String'
+|         3: Path s3._1.PRODUCT_PRICE : Int'
+|         4: Path s3._1.PRODUCT_QUANTITY : Int'
+|         5: Path s3._2.TYPE_NAME : String'
+|   by0: Path s2._5
+
+15:37:56.516 [main] DEBUG slick.compiler.AssignUniqueSymbols - Detected features: UsedFeatures(false,true,false,false)
+15:37:56.518 [main] DEBUG slick.compiler.QueryCompiler - After phase assignUniqueSymbols:
+| SortBy Ordering(Asc,NullsDefault)
+|   from s9: Bind
+|     from s10: Join Inner
+|       left s11: TableExpansion
+|         table s13: Table PRODUCTS
+|         columns: TypeMapping
+|           0: ProductNode
+|             1: Path s13.PRODUCT_ID : Int'
+|             2: Path s13.PRODUCT_NAME : String'
+|             3: Path s13.PRODUCT_PRICE : Int'
+|             4: Path s13.PRODUCT_TYPE_ID : Int'
+|             5: Path s13.PRODUCT_QUANTITY : Int'
+|       right s12: TableExpansion
+|         table s15: Table TYPES
+|         columns: TypeMapping
+|           0: ProductNode
+|             1: Path s15.TYPE_ID : Int'
+|             2: Path s15.TYPE_NAME : String'
+|       on: Apply Function =
+|         0: Path s11.PRODUCT_TYPE_ID : Int'
+|         1: Path s12.TYPE_ID : Int'
+|     select: Pure t17
+|       value: ProductNode
+|         1: Path s10._1.PRODUCT_ID : Int'
+|         2: Path s10._1.PRODUCT_NAME : String'
+|         3: Path s10._1.PRODUCT_PRICE : Int'
+|         4: Path s10._1.PRODUCT_QUANTITY : Int'
+|         5: Path s10._2.TYPE_NAME : String'
+|   by0: Path s9._5
+
+15:37:56.519 [main] DEBUG slick.compiler.QueryCompiler - After phase unrollTailBinds: (no change)
+15:37:56.519 [main] DEBUG slick.compiler.QueryCompiler - After phase inferTypes: (no change)
+15:37:56.520 [main] DEBUG slick.compiler.ExpandTables - Found Selects for NominalTypes: @(slick.jdbc.MySQLProfile$._.PRODUCTS), @(slick.jdbc.MySQLProfile$._.TYPES)
+15:37:56.521 [main] DEBUG slick.compiler.ExpandTables - With correct table types:
+| SortBy Ordering(Asc,NullsDefault) : Vector[t17<(Int', String', Int', Int', String')>]
+|   from s9: Bind : Vector[t17<(Int', String', Int', Int', String')>]
+|     from s10: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|       left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|       right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|       on: Apply Function = : Boolean
+|         0: Path s11.PRODUCT_TYPE_ID : Int'
+|         1: Path s12.TYPE_ID : Int'
+|     select: Pure t17 : Vector[t17<(Int', String', Int', Int', String')>]
+|       value: ProductNode : (Int', String', Int', Int', String')
+|         1: Path s10._1.PRODUCT_ID : Int'
+|         2: Path s10._1.PRODUCT_NAME : String'
+|         3: Path s10._1.PRODUCT_PRICE : Int'
+|         4: Path s10._1.PRODUCT_QUANTITY : Int'
+|         5: Path s10._2.TYPE_NAME : String'
+|   by0: Path s9._5 : String'
+
+15:37:56.522 [main] DEBUG slick.compiler.ExpandTables - Table expansions: @t16 -> (s15,TypeMapping), @t14 -> (s13,TypeMapping)
+15:37:56.523 [main] DEBUG slick.compiler.QueryCompiler - After phase expandTables:
+| SortBy Ordering(Asc,NullsDefault) : Vector[t17<(Int', String', Int', Int', String')>]
+|   from s9: Bind : Vector[t17<(Int', String', Int', Int', String')>]
+|     from s10: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|       left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|       right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|       on: Apply Function = : Boolean
+|         0: Path s11.PRODUCT_TYPE_ID : Int'
+|         1: Path s12.TYPE_ID : Int'
+|     select: Pure t17 : Vector[t17<(Int', String', Int', Int', String')>]
+|       value: ProductNode : (Int', String', Int', Int', String')
+|         1: Path s10._1.PRODUCT_ID : Int'
+|         2: Path s10._1.PRODUCT_NAME : String'
+|         3: Path s10._1.PRODUCT_PRICE : Int'
+|         4: Path s10._1.PRODUCT_QUANTITY : Int'
+|         5: Path s10._2.TYPE_NAME : String'
+|   by0: Path s9._5 : String'
+
+15:37:56.523 [main] DEBUG slick.compiler.ForceOuterBinds - Introducing new Bind s18 for Table PRODUCTS
+15:37:56.524 [main] DEBUG slick.compiler.ForceOuterBinds - Introducing new Bind s19 for Table TYPES
+15:37:56.524 [main] DEBUG slick.compiler.ForceOuterBinds - Introducing new Bind s20 for SortBy Ordering(Asc,NullsDefault)
+15:37:56.527 [main] DEBUG slick.compiler.QueryCompiler - After phase forceOuterBinds:
+| Bind : Vector[t21<t17<(Int', String', Int', Int', String')>>]
+|   from s20: SortBy Ordering(Asc,NullsDefault) : Vector[t17<(Int', String', Int', Int', String')>]
+|     from s9: Bind : Vector[t17<(Int', String', Int', Int', String')>]
+|       from s10: Join Inner : Vector[(t22<@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>>, t23<@t16<{TYPE_ID: Int', TYPE_NAME: String'}>>)]
+|         left s11: Bind : Vector[t22<@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>>]
+|           from s18: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|           select: Pure t22 : Vector[t22<@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>>]
+|             value: Ref s18 : @t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>
+|         right s12: Bind : Vector[t23<@t16<{TYPE_ID: Int', TYPE_NAME: String'}>>]
+|           from s19: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|           select: Pure t23 : Vector[t23<@t16<{TYPE_ID: Int', TYPE_NAME: String'}>>]
+|             value: Ref s19 : @t16<{TYPE_ID: Int', TYPE_NAME: String'}>
+|         on: Apply Function = : Boolean
+|           0: Path s11.PRODUCT_TYPE_ID : Int'
+|           1: Path s12.TYPE_ID : Int'
+|       select: Pure t17 : Vector[t17<(Int', String', Int', Int', String')>]
+|         value: ProductNode : (Int', String', Int', Int', String')
+|           1: Path s10._1.PRODUCT_ID : Int'
+|           2: Path s10._1.PRODUCT_NAME : String'
+|           3: Path s10._1.PRODUCT_PRICE : Int'
+|           4: Path s10._1.PRODUCT_QUANTITY : Int'
+|           5: Path s10._2.TYPE_NAME : String'
+|     by0: Path s9._5 : String'
+|   select: Pure t21 : Vector[t21<t17<(Int', String', Int', Int', String')>>]
+|     value: Ref s20 : t17<(Int', String', Int', Int', String')>
+
+15:37:56.528 [main] DEBUG slick.compiler.QueryCompiler - After phase removeMappedTypes: (no change)
+15:37:56.528 [main] DEBUG slick.compiler.QueryCompiler - After phase expandSums: (no change)
+15:37:56.528 [main] DEBUG slick.compiler.QueryCompiler - After phase emulateOuterJoins: (no change)
+15:37:56.531 [main] DEBUG slick.compiler.QueryCompiler - After phase expandRecords:
+| Bind : Vector[t21<(Int', String', Int', Int', String')>]
+|   from s20: SortBy Ordering(Asc,NullsDefault) : Vector[t17<(Int', String', Int', Int', String')>]
+|     from s9: Bind : Vector[t17<(Int', String', Int', Int', String')>]
+|       from s10: Join Inner : Vector[(t22<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, t23<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|         left s11: Bind : Vector[t22<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|           from s18: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|           select: Pure t22 : Vector[t22<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|             value: StructNode : {PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}
+|               PRODUCT_NAME: Path s18.PRODUCT_NAME : String'
+|               PRODUCT_QUANTITY: Path s18.PRODUCT_QUANTITY : Int'
+|               PRODUCT_TYPE_ID: Path s18.PRODUCT_TYPE_ID : Int'
+|               PRODUCT_ID: Path s18.PRODUCT_ID : Int'
+|               PRODUCT_PRICE: Path s18.PRODUCT_PRICE : Int'
+|         right s12: Bind : Vector[t23<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|           from s19: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|           select: Pure t23 : Vector[t23<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|             value: StructNode : {TYPE_ID: Int', TYPE_NAME: String'}
+|               TYPE_ID: Path s19.TYPE_ID : Int'
+|               TYPE_NAME: Path s19.TYPE_NAME : String'
+|         on: Apply Function = : Boolean
+|           0: Path s11.PRODUCT_TYPE_ID : Int'
+|           1: Path s12.TYPE_ID : Int'
+|       select: Pure t17 : Vector[t17<(Int', String', Int', Int', String')>]
+|         value: ProductNode : (Int', String', Int', Int', String')
+|           1: Path s10._1.PRODUCT_ID : Int'
+|           2: Path s10._1.PRODUCT_NAME : String'
+|           3: Path s10._1.PRODUCT_PRICE : Int'
+|           4: Path s10._1.PRODUCT_QUANTITY : Int'
+|           5: Path s10._2.TYPE_NAME : String'
+|     by0: Path s9._5 : String'
+|   select: Pure t21 : Vector[t21<(Int', String', Int', Int', String')>]
+|     value: ProductNode : (Int', String', Int', Int', String')
+|       1: Path s20._1 : Int'
+|       2: Path s20._2 : String'
+|       3: Path s20._3 : Int'
+|       4: Path s20._4 : Int'
+|       5: Path s20._5 : String'
+
+15:37:56.531 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t22
+15:37:56.531 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_NAME with symbols 
+| Path s18.PRODUCT_NAME : String'
+
+15:37:56.531 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_NAME to:
+| Path s18.PRODUCT_NAME
+
+15:37:56.532 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_QUANTITY with symbols 
+| Path s18.PRODUCT_QUANTITY : Int'
+
+15:37:56.532 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_QUANTITY to:
+| Path s18.PRODUCT_QUANTITY
+
+15:37:56.532 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_TYPE_ID with symbols 
+| Path s18.PRODUCT_TYPE_ID : Int'
+
+15:37:56.532 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_TYPE_ID to:
+| Path s18.PRODUCT_TYPE_ID
+
+15:37:56.532 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_ID with symbols 
+| Path s18.PRODUCT_ID : Int'
+
+15:37:56.532 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_ID to:
+| Path s18.PRODUCT_ID
+
+15:37:56.532 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s18.PRODUCT_PRICE with symbols 
+| Path s18.PRODUCT_PRICE : Int'
+
+15:37:56.532 [main] DEBUG slick.compiler.FlattenProjections - Translated s18.PRODUCT_PRICE to:
+| Path s18.PRODUCT_PRICE
+
+15:37:56.533 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
+| StructNode
+|   PRODUCT_NAME: Path s18.PRODUCT_NAME
+|   PRODUCT_QUANTITY: Path s18.PRODUCT_QUANTITY
+|   PRODUCT_TYPE_ID: Path s18.PRODUCT_TYPE_ID
+|   PRODUCT_ID: Path s18.PRODUCT_ID
+|   PRODUCT_PRICE: Path s18.PRODUCT_PRICE
+
+15:37:56.533 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_NAME
+| Path s18.PRODUCT_NAME
+
+15:37:56.533 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s24 -> Path s18.PRODUCT_NAME
+15:37:56.533 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_QUANTITY
+| Path s18.PRODUCT_QUANTITY
+
+15:37:56.533 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s25 -> Path s18.PRODUCT_QUANTITY
+15:37:56.533 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_TYPE_ID
+| Path s18.PRODUCT_TYPE_ID
+
+15:37:56.533 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s26 -> Path s18.PRODUCT_TYPE_ID
+15:37:56.533 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_ID
+| Path s18.PRODUCT_ID
+
+15:37:56.533 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s27 -> Path s18.PRODUCT_ID
+15:37:56.533 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path PRODUCT_PRICE
+| Path s18.PRODUCT_PRICE
+
+15:37:56.534 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s28 -> Path s18.PRODUCT_PRICE
+15:37:56.534 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t22: (HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24), UnassignedType)
+15:37:56.534 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
+| Pure t22
+|   value: StructNode
+|     s24: Path s18.PRODUCT_NAME
+|     s25: Path s18.PRODUCT_QUANTITY
+|     s26: Path s18.PRODUCT_TYPE_ID
+|     s27: Path s18.PRODUCT_ID
+|     s28: Path s18.PRODUCT_PRICE
+
+15:37:56.535 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t23
+15:37:56.535 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s19.TYPE_ID with symbols t22
+| Path s19.TYPE_ID : Int'
+
+15:37:56.535 [main] DEBUG slick.compiler.FlattenProjections - Translated s19.TYPE_ID to:
+| Path s19.TYPE_ID
+
+15:37:56.535 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s19.TYPE_NAME with symbols t22
+| Path s19.TYPE_NAME : String'
+
+15:37:56.535 [main] DEBUG slick.compiler.FlattenProjections - Translated s19.TYPE_NAME to:
+| Path s19.TYPE_NAME
+
+15:37:56.536 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
+| StructNode
+|   TYPE_ID: Path s19.TYPE_ID
+|   TYPE_NAME: Path s19.TYPE_NAME
+
+15:37:56.536 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path TYPE_ID
+| Path s19.TYPE_ID
+
+15:37:56.536 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s29 -> Path s19.TYPE_ID
+15:37:56.536 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path TYPE_NAME
+| Path s19.TYPE_NAME
+
+15:37:56.536 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s30 -> Path s19.TYPE_NAME
+15:37:56.536 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t23: (Map(List(TYPE_NAME) -> s30, List(TYPE_ID) -> s29), UnassignedType)
+15:37:56.537 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
+| Pure t23
+|   value: StructNode
+|     s29: Path s19.TYPE_ID
+|     s30: Path s19.TYPE_NAME
+
+15:37:56.537 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s11.PRODUCT_TYPE_ID with symbols t22, t23
+| Path s11.PRODUCT_TYPE_ID : Int'
+
+15:37:56.537 [main] DEBUG slick.compiler.FlattenProjections - Found s11.PRODUCT_TYPE_ID with local part Path PRODUCT_TYPE_ID over t22
+15:37:56.537 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
+15:37:56.537 [main] DEBUG slick.compiler.FlattenProjections - Translated s11.PRODUCT_TYPE_ID to:
+| Path s11.s26
+
+15:37:56.537 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s12.TYPE_ID with symbols t22, t23
+| Path s12.TYPE_ID : Int'
+
+15:37:56.537 [main] DEBUG slick.compiler.FlattenProjections - Found s12.TYPE_ID with local part Path TYPE_ID over t23
+15:37:56.538 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t23: Map(List(TYPE_NAME) -> s30, List(TYPE_ID) -> s29)
+15:37:56.538 [main] DEBUG slick.compiler.FlattenProjections - Translated s12.TYPE_ID to:
+| Path s12.s29
+
+15:37:56.538 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t17
+15:37:56.538 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_ID with symbols t22, t23
+| Path s10._1.PRODUCT_ID : Int'
+
+15:37:56.538 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_ID with local part Path PRODUCT_ID over t22
+15:37:56.538 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
+15:37:56.538 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_ID to:
+| Path s10._1.s27
+
+15:37:56.538 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_NAME with symbols t22, t23
+| Path s10._1.PRODUCT_NAME : String'
+
+15:37:56.538 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_NAME with local part Path PRODUCT_NAME over t22
+15:37:56.539 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
+15:37:56.539 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_NAME to:
+| Path s10._1.s24
+
+15:37:56.539 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_PRICE with symbols t22, t23
+| Path s10._1.PRODUCT_PRICE : Int'
+
+15:37:56.539 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_PRICE with local part Path PRODUCT_PRICE over t22
+15:37:56.539 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
+15:37:56.539 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_PRICE to:
+| Path s10._1.s28
+
+15:37:56.539 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._1.PRODUCT_QUANTITY with symbols t22, t23
+| Path s10._1.PRODUCT_QUANTITY : Int'
+
+15:37:56.539 [main] DEBUG slick.compiler.FlattenProjections - Found s10._1.PRODUCT_QUANTITY with local part Path PRODUCT_QUANTITY over t22
+15:37:56.540 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t22: HashMap(List(PRODUCT_ID) -> s27, List(PRODUCT_PRICE) -> s28, List(PRODUCT_QUANTITY) -> s25, List(PRODUCT_TYPE_ID) -> s26, List(PRODUCT_NAME) -> s24)
+15:37:56.540 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._1.PRODUCT_QUANTITY to:
+| Path s10._1.s25
+
+15:37:56.540 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s10._2.TYPE_NAME with symbols t22, t23
+| Path s10._2.TYPE_NAME : String'
+
+15:37:56.540 [main] DEBUG slick.compiler.FlattenProjections - Found s10._2.TYPE_NAME with local part Path TYPE_NAME over t23
+15:37:56.540 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t23: Map(List(TYPE_NAME) -> s30, List(TYPE_ID) -> s29)
+15:37:56.540 [main] DEBUG slick.compiler.FlattenProjections - Translated s10._2.TYPE_NAME to:
+| Path s10._2.s30
+
+15:37:56.541 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
+| ProductNode
+|   1: Path s10._1.s27
+|   2: Path s10._1.s24
+|   3: Path s10._1.s28
+|   4: Path s10._1.s25
+|   5: Path s10._2.s30
+
+15:37:56.541 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _1
+| Path s10._1.s27
+
+15:37:56.541 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s31 -> Path s10._1.s27
+15:37:56.541 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _2
+| Path s10._1.s24
+
+15:37:56.541 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s32 -> Path s10._1.s24
+15:37:56.541 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _3
+| Path s10._1.s28
+
+15:37:56.541 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s33 -> Path s10._1.s28
+15:37:56.541 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _4
+| Path s10._1.s25
+
+15:37:56.541 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s34 -> Path s10._1.s25
+15:37:56.541 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _5
+| Path s10._2.s30
+
+15:37:56.541 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s35 -> Path s10._2.s30
+15:37:56.542 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t17: (HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33), UnassignedType)
+15:37:56.542 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
+| Pure t17
+|   value: StructNode
+|     s31: Path s10._1.s27
+|     s32: Path s10._1.s24
+|     s33: Path s10._1.s28
+|     s34: Path s10._1.s25
+|     s35: Path s10._2.s30
+
+15:37:56.542 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s9._5 with symbols t17, t22, t23
+| Path s9._5 : String'
+
+15:37:56.542 [main] DEBUG slick.compiler.FlattenProjections - Found s9._5 with local part Path _5 over t17
+15:37:56.542 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.543 [main] DEBUG slick.compiler.FlattenProjections - Translated s9._5 to:
+| Path s9.s35
+
+15:37:56.543 [main] DEBUG slick.compiler.FlattenProjections - Flattening projection t21
+15:37:56.543 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._1 with symbols t17, t22, t23
+| Path s20._1 : Int'
+
+15:37:56.543 [main] DEBUG slick.compiler.FlattenProjections - Found s20._1 with local part Path _1 over t17
+15:37:56.543 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.543 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._1 to:
+| Path s20.s31
+
+15:37:56.543 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._2 with symbols t17, t22, t23
+| Path s20._2 : String'
+
+15:37:56.543 [main] DEBUG slick.compiler.FlattenProjections - Found s20._2 with local part Path _2 over t17
+15:37:56.543 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.543 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._2 to:
+| Path s20.s32
+
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._3 with symbols t17, t22, t23
+| Path s20._3 : Int'
+
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections - Found s20._3 with local part Path _3 over t17
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._3 to:
+| Path s20.s33
+
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._4 with symbols t17, t22, t23
+| Path s20._4 : Int'
+
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections - Found s20._4 with local part Path _4 over t17
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._4 to:
+| Path s20.s34
+
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections - Analyzing s20._5 with symbols t17, t22, t23
+| Path s20._5 : String'
+
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections - Found s20._5 with local part Path _5 over t17
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections -   Translation for t17: HashMap(List(_5) -> s35, List(_2) -> s32, List(_4) -> s34, List(_1) -> s31, List(_3) -> s33)
+15:37:56.544 [main] DEBUG slick.compiler.FlattenProjections - Translated s20._5 to:
+| Path s20.s35
+
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path 
+| ProductNode
+|   1: Path s20.s31
+|   2: Path s20.s32
+|   3: Path s20.s33
+|   4: Path s20.s34
+|   5: Path s20.s35
+
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _1
+| Path s20.s31
+
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s36 -> Path s20.s31
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _2
+| Path s20.s32
+
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s37 -> Path s20.s32
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _3
+| Path s20.s33
+
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s38 -> Path s20.s33
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _4
+| Path s20.s34
+
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s39 -> Path s20.s34
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Flattening node at Path _5
+| Path s20.s35
+
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Adding definition: s40 -> Path s20.s35
+15:37:56.545 [main] DEBUG slick.compiler.FlattenProjections - Adding translation for t21: (HashMap(List(_5) -> s40, List(_2) -> s37, List(_4) -> s39, List(_1) -> s36, List(_3) -> s38), UnassignedType)
+15:37:56.546 [main] DEBUG slick.compiler.FlattenProjections - Flattened projection to
+| Pure t21
+|   value: StructNode
+|     s36: Path s20.s31
+|     s37: Path s20.s32
+|     s38: Path s20.s33
+|     s39: Path s20.s34
+|     s40: Path s20.s35
+
+15:37:56.549 [main] DEBUG slick.compiler.QueryCompiler - After phase flattenProjections:
+| Bind : Vector[t21<{s36: Int', s37: String', s38: Int', s39: Int', s40: String'}>]
+|   from s20: SortBy Ordering(Asc,NullsDefault) : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|     from s9: Bind : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|       from s10: Join Inner : Vector[(t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>, t23<{s29: Int', s30: String'}>)]
+|         left s11: Bind : Vector[t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>]
+|           from s18: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|           select: Pure t22 : Vector[t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>]
+|             value: StructNode : {s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}
+|               s24: Path s18.PRODUCT_NAME : String'
+|               s25: Path s18.PRODUCT_QUANTITY : Int'
+|               s26: Path s18.PRODUCT_TYPE_ID : Int'
+|               s27: Path s18.PRODUCT_ID : Int'
+|               s28: Path s18.PRODUCT_PRICE : Int'
+|         right s12: Bind : Vector[t23<{s29: Int', s30: String'}>]
+|           from s19: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|           select: Pure t23 : Vector[t23<{s29: Int', s30: String'}>]
+|             value: StructNode : {s29: Int', s30: String'}
+|               s29: Path s19.TYPE_ID : Int'
+|               s30: Path s19.TYPE_NAME : String'
+|         on: Apply Function = : Boolean
+|           0: Path s11.s26 : Int'
+|           1: Path s12.s29 : Int'
+|       select: Pure t17 : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|         value: StructNode : {s31: Int', s32: String', s33: Int', s34: Int', s35: String'}
+|           s31: Path s10._1.s27 : Int'
+|           s32: Path s10._1.s24 : String'
+|           s33: Path s10._1.s28 : Int'
+|           s34: Path s10._1.s25 : Int'
+|           s35: Path s10._2.s30 : String'
+|     by0: Path s9.s35 : String'
+|   select: Pure t21 : Vector[t21<{s36: Int', s37: String', s38: Int', s39: Int', s40: String'}>]
+|     value: StructNode : {s36: Int', s37: String', s38: Int', s39: Int', s40: String'}
+|       s36: Path s20.s31 : Int'
+|       s37: Path s20.s32 : String'
+|       s38: Path s20.s33 : Int'
+|       s39: Path s20.s34 : Int'
+|       s40: Path s20.s35 : String'
+
+15:37:56.550 [main] DEBUG slick.compiler.QueryCompiler - After phase rewriteJoins: (no change)
+15:37:56.550 [main] DEBUG slick.compiler.QueryCompiler - After phase verifySymbols: (no change)
+15:37:56.550 [main] DEBUG slick.compiler.QueryCompiler - After phase relabelUnions: (no change)
+15:37:56.550 [main] DEBUG slick.compiler.QueryCompiler - After phase createAggregates: (no change)
+15:37:56.551 [main] DEBUG slick.compiler.QueryCompiler - After phase resolveZipJoins: (no change)
+15:37:56.552 [main] DEBUG slick.compiler.PruneProjections - Unreferenced: t21; Field refs: (t23,s29), (@t14,PRODUCT_ID), (t22,s27), (t22,s25), (@t14,PRODUCT_PRICE), (t23,s30), (t22,s24), (t17,s31), (@t16,TYPE_NAME), (t17,s35), (@t16,TYPE_ID), (t17,s32), (@t14,PRODUCT_QUANTITY), (t22,s26), (@t14,PRODUCT_TYPE_ID), (t22,s28), (t17,s34), (t17,s33), (@t14,PRODUCT_NAME)
+15:37:56.553 [main] DEBUG slick.compiler.QueryCompiler - After phase pruneProjections: (no change)
+15:37:56.553 [main] DEBUG slick.compiler.RewriteDistinct - No DISTINCT used as determined by assignUniqueSymbols - skipping phase
+15:37:56.553 [main] DEBUG slick.compiler.QueryCompiler - After phase rewriteDistinct: (no change)
+15:37:56.553 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from t21<t17<(Int', String', Int', Int', String')>>
+15:37:56.553 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from Int'
+15:37:56.553 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from String'
+15:37:56.553 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from Int'
+15:37:56.553 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from Int'
+15:37:56.553 [main] DEBUG s.compiler.CreateResultSetMapping - Creating mapping from String'
+15:37:56.556 [main] DEBUG slick.compiler.QueryCompiler - After phase createResultSetMapping:
+| ResultSetMapping : Vector[(Int', String', Int', Int', String')]
+|   from s41: Bind : Vector[t21<{s36: Int', s37: String', s38: Int', s39: Int', s40: String'}>]
+|     from s20: SortBy Ordering(Asc,NullsDefault) : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|       from s9: Bind : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|         from s10: Join Inner : Vector[(t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>, t23<{s29: Int', s30: String'}>)]
+|           left s11: Bind : Vector[t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>]
+|             from s18: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|             select: Pure t22 : Vector[t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>]
+|               value: StructNode : {s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}
+|                 s24: Path s18.PRODUCT_NAME : String'
+|                 s25: Path s18.PRODUCT_QUANTITY : Int'
+|                 s26: Path s18.PRODUCT_TYPE_ID : Int'
+|                 s27: Path s18.PRODUCT_ID : Int'
+|                 s28: Path s18.PRODUCT_PRICE : Int'
+|           right s12: Bind : Vector[t23<{s29: Int', s30: String'}>]
+|             from s19: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|             select: Pure t23 : Vector[t23<{s29: Int', s30: String'}>]
+|               value: StructNode : {s29: Int', s30: String'}
+|                 s29: Path s19.TYPE_ID : Int'
+|                 s30: Path s19.TYPE_NAME : String'
+|           on: Apply Function = : Boolean
+|             0: Path s11.s26 : Int'
+|             1: Path s12.s29 : Int'
+|         select: Pure t17 : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|           value: StructNode : {s31: Int', s32: String', s33: Int', s34: Int', s35: String'}
+|             s31: Path s10._1.s27 : Int'
+|             s32: Path s10._1.s24 : String'
+|             s33: Path s10._1.s28 : Int'
+|             s34: Path s10._1.s25 : Int'
+|             s35: Path s10._2.s30 : String'
+|       by0: Path s9.s35 : String'
+|     select: Pure t21 : Vector[t21<{s36: Int', s37: String', s38: Int', s39: Int', s40: String'}>]
+|       value: StructNode : {s36: Int', s37: String', s38: Int', s39: Int', s40: String'}
+|         s36: Path s20.s31 : Int'
+|         s37: Path s20.s32 : String'
+|         s38: Path s20.s33 : Int'
+|         s39: Path s20.s34 : Int'
+|         s40: Path s20.s35 : String'
+|   map: ProductNode : (Int', String', Int', Int', String')
+|     1: Path s41.s36 : Int'
+|     2: Path s41.s37 : String'
+|     3: Path s41.s38 : Int'
+|     4: Path s41.s39 : Int'
+|     5: Path s41.s40 : String'
+
+15:37:56.557 [main] DEBUG slick.compiler.HoistClientOps - Hoisting operations from defs: 
+15:37:56.557 [main] DEBUG slick.compiler.HoistClientOps - New defs: HashMap(0 -> (Path s20.s31,s42), 1 -> (Path s20.s32,s43), 2 -> (Path s20.s33,s44), 3 -> (Path s20.s34,s45), 4 -> (Path s20.s35,s46))
+15:37:56.559 [main] DEBUG slick.compiler.HoistClientOps - New ResultSetMapping:
+| ResultSetMapping : Vector[(Int', String', Int', Int', String')]
+|   from s41: Bind : Vector[t47<{s42: Int', s44: Int', s43: String', s46: String', s45: Int'}>]
+|     from s20: ...
+|     select: Pure t47 : Vector[t47<{s42: Int', s44: Int', s43: String', s46: String', s45: Int'}>]
+|       value: StructNode : {s42: Int', s44: Int', s43: String', s46: String', s45: Int'}
+|         s42: Path s20.s31 : Int'
+|         s44: Path s20.s33 : Int'
+|         s43: Path s20.s32 : String'
+|         s46: Path s20.s35 : String'
+|         s45: Path s20.s34 : Int'
+|   map: ProductNode : (Int', String', Int', Int', String')
+|     1: Path s41.s42 : Int'
+|     2: Path s41.s43 : String'
+|     3: Path s41.s44 : Int'
+|     4: Path s41.s45 : Int'
+|     5: Path s41.s46 : String'
+
+15:37:56.561 [main] DEBUG slick.compiler.QueryCompiler - After phase hoistClientOps:
+| ResultSetMapping : Vector[(Int', String', Int', Int', String')]
+|   from s41: Bind : Vector[t47<{s42: Int', s44: Int', s43: String', s46: String', s45: Int'}>]
+|     from s20: SortBy Ordering(Asc,NullsDefault) : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|       from s9: Bind : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|         from s10: Join Inner : Vector[(t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>, t23<{s29: Int', s30: String'}>)]
+|           left s11: Bind : Vector[t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>]
+|             from s18: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|             select: Pure t22 : Vector[t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>]
+|               value: StructNode : {s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}
+|                 s24: Path s18.PRODUCT_NAME : String'
+|                 s25: Path s18.PRODUCT_QUANTITY : Int'
+|                 s26: Path s18.PRODUCT_TYPE_ID : Int'
+|                 s27: Path s18.PRODUCT_ID : Int'
+|                 s28: Path s18.PRODUCT_PRICE : Int'
+|           right s12: Bind : Vector[t23<{s29: Int', s30: String'}>]
+|             from s19: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|             select: Pure t23 : Vector[t23<{s29: Int', s30: String'}>]
+|               value: StructNode : {s29: Int', s30: String'}
+|                 s29: Path s19.TYPE_ID : Int'
+|                 s30: Path s19.TYPE_NAME : String'
+|           on: Apply Function = : Boolean
+|             0: Path s11.s26 : Int'
+|             1: Path s12.s29 : Int'
+|         select: Pure t17 : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|           value: StructNode : {s31: Int', s32: String', s33: Int', s34: Int', s35: String'}
+|             s31: Path s10._1.s27 : Int'
+|             s32: Path s10._1.s24 : String'
+|             s33: Path s10._1.s28 : Int'
+|             s34: Path s10._1.s25 : Int'
+|             s35: Path s10._2.s30 : String'
+|       by0: Path s9.s35 : String'
+|     select: Pure t47 : Vector[t47<{s42: Int', s44: Int', s43: String', s46: String', s45: Int'}>]
+|       value: StructNode : {s42: Int', s44: Int', s43: String', s46: String', s45: Int'}
+|         s42: Path s20.s31 : Int'
+|         s44: Path s20.s33 : Int'
+|         s43: Path s20.s32 : String'
+|         s46: Path s20.s35 : String'
+|         s45: Path s20.s34 : Int'
+|   map: ProductNode : (Int', String', Int', Int', String')
+|     1: Path s41.s42 : Int'
+|     2: Path s41.s43 : String'
+|     3: Path s41.s44 : Int'
+|     4: Path s41.s45 : Int'
+|     5: Path s41.s46 : String'
+
+15:37:56.561 [main] DEBUG slick.compiler.QueryCompiler - After phase reorderOperations: (no change)
+15:37:56.561 [main] DEBUG slick.compiler.MergeToComprehensions - Table fields: MapView(<not computed>)
+15:37:56.563 [main] DEBUG slick.compiler.MergeToComprehensions - Creating source from Join s11/s12:
+| Join Inner : Vector[(t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>, t23<{s29: Int', s30: String'}>)]
+|   left s11: Bind : Vector[t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>]
+|     from s18: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|     select: Pure t22 : Vector[t22<{s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}>]
+|       value: StructNode : {s24: String', s25: Int', s26: Int', s27: Int', s28: Int'}
+|         s24: Path s18.PRODUCT_NAME : String'
+|         s25: Path s18.PRODUCT_QUANTITY : Int'
+|         s26: Path s18.PRODUCT_TYPE_ID : Int'
+|         s27: Path s18.PRODUCT_ID : Int'
+|         s28: Path s18.PRODUCT_PRICE : Int'
+|   right s12: Bind : Vector[t23<{s29: Int', s30: String'}>]
+|     from s19: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|     select: Pure t23 : Vector[t23<{s29: Int', s30: String'}>]
+|       value: StructNode : {s29: Int', s30: String'}
+|         s29: Path s19.TYPE_ID : Int'
+|         s30: Path s19.TYPE_NAME : String'
+|   on: Apply Function = : Boolean
+|     0: Path s11.s26 : Int'
+|     1: Path s12.s29 : Int'
+
+15:37:56.563 [main] DEBUG slick.compiler.MergeToComprehensions - Bind from s18 is aliasing: true
+15:37:56.563 [main] DEBUG slick.compiler.MergeToComprehensions - Creating source from TableNode:
+| Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+
+15:37:56.563 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings are: ConstArray(((@t14,PRODUCT_NAME),List(PRODUCT_NAME)), ((@t14,PRODUCT_QUANTITY),List(PRODUCT_QUANTITY)), ((@t14,PRODUCT_TYPE_ID),List(PRODUCT_TYPE_ID)), ((@t14,PRODUCT_ID),List(PRODUCT_ID)), ((@t14,PRODUCT_PRICE),List(PRODUCT_PRICE)))
+15:37:56.563 [main] DEBUG slick.compiler.MergeToComprehensions - Recombining aliasing Bind mappings ConstArray((s24,Path s18.PRODUCT_NAME), (s25,Path s18.PRODUCT_QUANTITY), (s26,Path s18.PRODUCT_TYPE_ID), (s27,Path s18.PRODUCT_ID), (s28,Path s18.PRODUCT_PRICE))
+15:37:56.564 [main] DEBUG slick.compiler.MergeToComprehensions - Bind from s19 is aliasing: true
+15:37:56.564 [main] DEBUG slick.compiler.MergeToComprehensions - Creating source from TableNode:
+| Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+
+15:37:56.564 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings are: ConstArray(((@t16,TYPE_ID),List(TYPE_ID)), ((@t16,TYPE_NAME),List(TYPE_NAME)))
+15:37:56.564 [main] DEBUG slick.compiler.MergeToComprehensions - Recombining aliasing Bind mappings ConstArray((s29,Path s19.TYPE_ID), (s30,Path s19.TYPE_NAME))
+15:37:56.564 [main] DEBUG slick.compiler.MergeToComprehensions - Converted left side of Join s11/s12:
+| Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+
+15:37:56.564 [main] DEBUG slick.compiler.MergeToComprehensions - Converted right side of Join s11/s12:
+| Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+
+15:37:56.565 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings for `on` clause in Join s11/s12: HashMap((t23,s29) -> List(_2, TYPE_ID), (t22,s27) -> List(_1, PRODUCT_ID), (t22,s26) -> List(_1, PRODUCT_TYPE_ID), (t22,s25) -> List(_1, PRODUCT_QUANTITY), (t22,s28) -> List(_1, PRODUCT_PRICE), (t23,s30) -> List(_2, TYPE_NAME), (t22,s24) -> List(_1, PRODUCT_NAME))
+15:37:56.565 [main] DEBUG slick.compiler.MergeToComprehensions - Transformed `on` clause in Join s11/s12:
+| Apply Function = : Boolean
+|   0: Path s11.PRODUCT_TYPE_ID : Int'
+|   1: Path s12.TYPE_ID : Int'
+
+15:37:56.566 [main] DEBUG slick.compiler.MergeToComprehensions - Created source from Join s11/s12:
+| Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|   left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|   right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|   on: Apply Function = : Boolean
+|     0: Path s11.PRODUCT_TYPE_ID : Int'
+|     1: Path s12.TYPE_ID : Int'
+
+15:37:56.567 [main] DEBUG slick.compiler.MergeToComprehensions - Building new Comprehension from:
+| Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|   left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|   right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|   on: Apply Function = : Boolean
+|     0: Path s11.PRODUCT_TYPE_ID : Int'
+|     1: Path s12.TYPE_ID : Int'
+
+15:37:56.568 [main] DEBUG slick.compiler.MergeToComprehensions - Built new Comprehension:
+| Comprehension s48, None, None, ConstArray(), None, None, None, None, false : Vector[t49<{s50: String', s51: Int', s52: Int', s53: Int', s54: Int', s55: Int', s56: String'}>]
+|   from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|     left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|     right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|     on: Apply Function = : Boolean
+|       0: Path s11.PRODUCT_TYPE_ID : Int'
+|       1: Path s12.TYPE_ID : Int'
+|   select: Pure t49 : Vector[t49<{s50: String', s51: Int', s52: Int', s53: Int', s54: Int', s55: Int', s56: String'}>]
+|     value: StructNode : {s50: String', s51: Int', s52: Int', s53: Int', s54: Int', s55: Int', s56: String'}
+|       s50: Path s48._1.PRODUCT_NAME : String'
+|       s51: Path s48._1.PRODUCT_QUANTITY : Int'
+|       s52: Path s48._1.PRODUCT_TYPE_ID : Int'
+|       s53: Path s48._1.PRODUCT_ID : Int'
+|       s54: Path s48._1.PRODUCT_PRICE : Int'
+|       s55: Path s48._2.TYPE_ID : Int'
+|       s56: Path s48._2.TYPE_NAME : String'
+
+15:37:56.569 [main] DEBUG slick.compiler.MergeToComprehensions - Replacements are: HashMap((t23,s29) -> s55, (t22,s27) -> s53, (t22,s26) -> s52, (t22,s25) -> s51, (t22,s28) -> s54, (t23,s30) -> s56, (t22,s24) -> s50)
+15:37:56.569 [main] DEBUG slick.compiler.MergeToComprehensions - Merging Bind into Comprehension as 'select':
+| Bind : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|   from s10: ...
+|   select: Pure t17 : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|     value: StructNode : {s31: Int', s32: String', s33: Int', s34: Int', s35: String'}
+|       s31: Path s10._1.s27 : Int'
+|       s32: Path s10._1.s24 : String'
+|       s33: Path s10._1.s28 : Int'
+|       s34: Path s10._1.s25 : Int'
+|       s35: Path s10._2.s30 : String'
+
+15:37:56.571 [main] DEBUG slick.compiler.MergeToComprehensions - Merged Bind into Comprehension as 'select':
+| Comprehension s48, None, None, ConstArray(), None, None, None, None, false : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|   from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|     left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|     right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|     on: Apply Function = : Boolean
+|       0: Path s11.PRODUCT_TYPE_ID : Int'
+|       1: Path s12.TYPE_ID : Int'
+|   select: Pure t17 : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|     value: StructNode : {s31: Int', s32: String', s33: Int', s34: Int', s35: String'}
+|       s31: Path s48._1.PRODUCT_ID : Int'
+|       s32: Path s48._1.PRODUCT_NAME : String'
+|       s33: Path s48._1.PRODUCT_PRICE : Int'
+|       s34: Path s48._1.PRODUCT_QUANTITY : Int'
+|       s35: Path s48._2.TYPE_NAME : String'
+
+15:37:56.571 [main] DEBUG slick.compiler.MergeToComprehensions - Replacements are: HashMap((t17,s34) -> s34, (t17,s31) -> s31, (t17,s35) -> s35, (t17,s33) -> s33, (t17,s32) -> s32)
+15:37:56.571 [main] DEBUG slick.compiler.MergeToComprehensions - Merging SortBy into Comprehension:
+| SortBy Ordering(Asc,NullsDefault) : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|   from s9: ...
+|   by0: Path s9.s35 : String'
+
+15:37:56.572 [main] DEBUG slick.compiler.MergeToComprehensions - Merged SortBy into Comprehension:
+| Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Asc,NullsDefault))), None, None, None, None, false : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|   from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|     left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|     right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|     on: Apply Function = : Boolean
+|       0: Path s11.PRODUCT_TYPE_ID : Int'
+|       1: Path s12.TYPE_ID : Int'
+|   select: Pure t17 : Vector[t17<{s31: Int', s32: String', s33: Int', s34: Int', s35: String'}>]
+|     value: StructNode : {s31: Int', s32: String', s33: Int', s34: Int', s35: String'}
+|       s31: Path s48._1.PRODUCT_ID : Int'
+|       s32: Path s48._1.PRODUCT_NAME : String'
+|       s33: Path s48._1.PRODUCT_PRICE : Int'
+|       s34: Path s48._1.PRODUCT_QUANTITY : Int'
+|       s35: Path s48._2.TYPE_NAME : String'
+|   orderBy Ordering(Asc,NullsDefault): Path s48._2.TYPE_NAME : String'
+
+15:37:56.573 [main] DEBUG slick.compiler.MergeToComprehensions - Merging Bind into Comprehension as 'select':
+| Bind : Vector[t47<{s42: Int', s44: Int', s43: String', s46: String', s45: Int'}>]
+|   from s20: ...
+|   select: Pure t47 : Vector[t47<{s42: Int', s44: Int', s43: String', s46: String', s45: Int'}>]
+|     value: StructNode : {s42: Int', s44: Int', s43: String', s46: String', s45: Int'}
+|       s42: Path s20.s31 : Int'
+|       s44: Path s20.s33 : Int'
+|       s43: Path s20.s32 : String'
+|       s46: Path s20.s35 : String'
+|       s45: Path s20.s34 : Int'
+
+15:37:56.575 [main] DEBUG slick.compiler.MergeToComprehensions - Merged Bind into Comprehension as 'select':
+| Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Asc,NullsDefault))), None, None, None, None, false : Vector[t47<{s42: Int', s44: Int', s43: String', s46: String', s45: Int'}>]
+|   from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|     left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|     right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|     on: Apply Function = : Boolean
+|       0: Path s11.PRODUCT_TYPE_ID : Int'
+|       1: Path s12.TYPE_ID : Int'
+|   select: Pure t47 : Vector[t47<{s42: Int', s44: Int', s43: String', s46: String', s45: Int'}>]
+|     value: StructNode : {s42: Int', s44: Int', s43: String', s46: String', s45: Int'}
+|       s42: Path s48._1.PRODUCT_ID : Int'
+|       s44: Path s48._1.PRODUCT_PRICE : Int'
+|       s43: Path s48._1.PRODUCT_NAME : String'
+|       s46: Path s48._2.TYPE_NAME : String'
+|       s45: Path s48._1.PRODUCT_QUANTITY : Int'
+|   orderBy Ordering(Asc,NullsDefault): Path s48._2.TYPE_NAME : String'
+
+15:37:56.575 [main] DEBUG slick.compiler.MergeToComprehensions - Replacements are: HashMap((t47,s44) -> s44, (t47,s42) -> s42, (t47,s45) -> s45, (t47,s46) -> s46, (t47,s43) -> s43)
+15:37:56.575 [main] DEBUG slick.compiler.MergeToComprehensions - Mappings are: ConstArray(((t47,s44),List(s44)), ((t47,s42),List(s42)), ((t47,s45),List(s45)), ((t47,s46),List(s46)), ((t47,s43),List(s43)))
+15:37:56.577 [main] DEBUG slick.compiler.QueryCompiler - After phase mergeToComprehensions:
+| ResultSetMapping : Vector[(Int', String', Int', Int', String')]
+|   from s41: Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Asc,NullsDefault))), None, None, None, None, false : Vector[t47<{s42: Int', s44: Int', s43: String', s46: String', s45: Int'}>]
+|     from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|       left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|       right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|       on: Apply Function = : Boolean
+|         0: Path s11.PRODUCT_TYPE_ID : Int'
+|         1: Path s12.TYPE_ID : Int'
+|     select: Pure t47 : Vector[t47<{s42: Int', s44: Int', s43: String', s46: String', s45: Int'}>]
+|       value: StructNode : {s42: Int', s44: Int', s43: String', s46: String', s45: Int'}
+|         s42: Path s48._1.PRODUCT_ID : Int'
+|         s44: Path s48._1.PRODUCT_PRICE : Int'
+|         s43: Path s48._1.PRODUCT_NAME : String'
+|         s46: Path s48._2.TYPE_NAME : String'
+|         s45: Path s48._1.PRODUCT_QUANTITY : Int'
+|     orderBy Ordering(Asc,NullsDefault): Path s48._2.TYPE_NAME : String'
+|   map: ProductNode : (Int', String', Int', Int', String')
+|     1: Path s41.s42 : Int'
+|     2: Path s41.s43 : String'
+|     3: Path s41.s44 : Int'
+|     4: Path s41.s45 : Int'
+|     5: Path s41.s46 : String'
+
+15:37:56.577 [main] DEBUG slick.compiler.QueryCompiler - After phase optimizeScalar: (no change)
+15:37:56.577 [main] DEBUG slick.compiler.RemoveFieldNames - Required symbols: s42 -> 0, s44 -> 2, s43 -> 1, s46 -> 4, s45 -> 3
+15:37:56.579 [main] DEBUG slick.compiler.RemoveFieldNames - Transformed RSM: 
+| ResultSetMapping
+|   from s41: Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Asc,NullsDefault))), None, None, None, None, false : Vector[t47<(Int', String', Int', Int', String')>]
+|     from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|       left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|       right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|       on: Apply Function = : Boolean
+|         0: Path s11.PRODUCT_TYPE_ID : Int'
+|         1: Path s12.TYPE_ID : Int'
+|     select: Pure t47 : Vector[t47<(Int', String', Int', Int', String')>]
+|       value: ProductNode : (Int', String', Int', Int', String')
+|         1: Path s48._1.PRODUCT_ID : Int'
+|         2: Path s48._1.PRODUCT_NAME : String'
+|         3: Path s48._1.PRODUCT_PRICE : Int'
+|         4: Path s48._1.PRODUCT_QUANTITY : Int'
+|         5: Path s48._2.TYPE_NAME : String'
+|     orderBy Ordering(Asc,NullsDefault): Path s48._2.TYPE_NAME : String'
+|   map: ProductNode : (Int', String', Int', Int', String')
+|     1: Path s41.s42 : Int'
+|     2: Path s41.s43 : String'
+|     3: Path s41.s44 : Int'
+|     4: Path s41.s45 : Int'
+|     5: Path s41.s46 : String'
+
+15:37:56.581 [main] DEBUG slick.compiler.QueryCompiler - After phase removeFieldNames:
+| ResultSetMapping : Vector[(Int', String', Int', Int', String')]
+|   from s41: Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Asc,NullsDefault))), None, None, None, None, false : Vector[t47<(Int', String', Int', Int', String')>]
+|     from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|       left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|       right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|       on: Apply Function = : Boolean
+|         0: Path s11.PRODUCT_TYPE_ID : Int'
+|         1: Path s12.TYPE_ID : Int'
+|     select: Pure t47 : Vector[t47<(Int', String', Int', Int', String')>]
+|       value: ProductNode : (Int', String', Int', Int', String')
+|         1: Path s48._1.PRODUCT_ID : Int'
+|         2: Path s48._1.PRODUCT_NAME : String'
+|         3: Path s48._1.PRODUCT_PRICE : Int'
+|         4: Path s48._1.PRODUCT_QUANTITY : Int'
+|         5: Path s48._2.TYPE_NAME : String'
+|     orderBy Ordering(Asc,NullsDefault): Path s48._2.TYPE_NAME : String'
+|   map: ProductNode : (Int', String', Int', Int', String')
+|     1: Path s41._1 : Int'
+|     2: Path s41._2 : String'
+|     3: Path s41._3 : Int'
+|     4: Path s41._4 : Int'
+|     5: Path s41._5 : String'
+
+15:37:56.582 [main] DEBUG slick.compiler.CodeGen - Compiling server-side and mapping with server-side:
+| Comprehension s48, None, None, ConstArray((Path s48._2.TYPE_NAME,Ordering(Asc,NullsDefault))), None, None, None, None, false : Vector[t47<(Int', String', Int', Int', String')>]
+|   from s48: Join Inner : Vector[(@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>, @t16<{TYPE_ID: Int', TYPE_NAME: String'}>)]
+|     left s11: Table PRODUCTS : Vector[@t14<{PRODUCT_NAME: String', PRODUCT_QUANTITY: Int', PRODUCT_TYPE_ID: Int', PRODUCT_ID: Int', PRODUCT_PRICE: Int'}>]
+|     right s12: Table TYPES : Vector[@t16<{TYPE_ID: Int', TYPE_NAME: String'}>]
+|     on: Apply Function = : Boolean
+|       0: Path s11.PRODUCT_TYPE_ID : Int'
+|       1: Path s12.TYPE_ID : Int'
+|   select: Pure t47 : Vector[t47<(Int', String', Int', Int', String')>]
+|     value: ProductNode : (Int', String', Int', Int', String')
+|       1: Path s48._1.PRODUCT_ID : Int'
+|       2: Path s48._1.PRODUCT_NAME : String'
+|       3: Path s48._1.PRODUCT_PRICE : Int'
+|       4: Path s48._1.PRODUCT_QUANTITY : Int'
+|       5: Path s48._2.TYPE_NAME : String'
+|   orderBy Ordering(Asc,NullsDefault): Path s48._2.TYPE_NAME : String'
+
+15:37:56.583 [main] DEBUG s.relational.ResultConverterCompiler - Compiled ResultConverter
+| ProductResultConverter
+|   1: BaseResultConverter$mcI$sp idx=1, name=<computed> : Int'
+|   2: SpecializedJdbcResultConverter$$anon$1 idx=2, name=<computed> : String'
+|   3: BaseResultConverter$mcI$sp idx=3, name=<computed> : Int'
+|   4: BaseResultConverter$mcI$sp idx=4, name=<computed> : Int'
+|   5: SpecializedJdbcResultConverter$$anon$1 idx=5, name=<computed> : String'
+
+15:37:56.583 [main] DEBUG slick.compiler.CodeGen - Compiled server-side to:
+| CompiledStatement "select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME`" : Vector[t47<(Int', String', Int', Int', String')>]
+
+15:37:56.584 [main] DEBUG slick.compiler.QueryCompiler - After phase codeGen:
+| ResultSetMapping : Vector[(Int', String', Int', Int', String')]
+|   from s41: CompiledStatement "select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME`" : Vector[t47<(Int', String', Int', Int', String')>]
+|   map: CompiledMapping : (Int', String', Int', Int', String')
+|     converter: ProductResultConverter
+|       1: BaseResultConverter$mcI$sp idx=1, name=<computed> : Int'
+|       2: SpecializedJdbcResultConverter$$anon$1 idx=2, name=<computed> : String'
+|       3: BaseResultConverter$mcI$sp idx=3, name=<computed> : Int'
+|       4: BaseResultConverter$mcI$sp idx=4, name=<computed> : Int'
+|       5: SpecializedJdbcResultConverter$$anon$1 idx=5, name=<computed> : String'
+
+15:37:56.584 [main] DEBUG s.compiler.QueryCompilerBenchmark - ------------------- Phase: Time ---------
+15:37:56.584 [main] DEBUG s.compiler.QueryCompilerBenchmark -       assignUniqueSymbols:    2.796684 ms
+15:37:56.584 [main] DEBUG s.compiler.QueryCompilerBenchmark -           unrollTailBinds:    0.242128 ms
+15:37:56.584 [main] DEBUG s.compiler.QueryCompilerBenchmark -                inferTypes:    0.299797 ms
+15:37:56.584 [main] DEBUG s.compiler.QueryCompilerBenchmark -              expandTables:    4.275696 ms
+15:37:56.584 [main] DEBUG s.compiler.QueryCompilerBenchmark -           forceOuterBinds:    3.901734 ms
+15:37:56.584 [main] DEBUG s.compiler.QueryCompilerBenchmark -         removeMappedTypes:    0.710801 ms
+15:37:56.585 [main] DEBUG s.compiler.QueryCompilerBenchmark -                expandSums:    0.059932 ms
+15:37:56.585 [main] DEBUG s.compiler.QueryCompilerBenchmark -         emulateOuterJoins:    0.254916 ms
+15:37:56.585 [main] DEBUG s.compiler.QueryCompilerBenchmark -             expandRecords:    2.951406 ms
+15:37:56.585 [main] DEBUG s.compiler.QueryCompilerBenchmark -        flattenProjections:   18.256146 ms
+15:37:56.585 [main] DEBUG s.compiler.QueryCompilerBenchmark -              rewriteJoins:    0.391187 ms
+15:37:56.585 [main] DEBUG s.compiler.QueryCompilerBenchmark -             verifySymbols:    0.370787 ms
+15:37:56.585 [main] DEBUG s.compiler.QueryCompilerBenchmark -             relabelUnions:    0.271334 ms
+15:37:56.585 [main] DEBUG s.compiler.QueryCompilerBenchmark -          createAggregates:    0.064939 ms
+15:37:56.586 [main] DEBUG s.compiler.QueryCompilerBenchmark -           resolveZipJoins:    0.317776 ms
+15:37:56.586 [main] DEBUG s.compiler.QueryCompilerBenchmark -          pruneProjections:    1.795728 ms
+15:37:56.586 [main] DEBUG s.compiler.QueryCompilerBenchmark -           rewriteDistinct:    0.085004 ms
+15:37:56.586 [main] DEBUG s.compiler.QueryCompilerBenchmark -    createResultSetMapping:    3.665011 ms
+15:37:56.586 [main] DEBUG s.compiler.QueryCompilerBenchmark -            hoistClientOps:    4.520882 ms
+15:37:56.586 [main] DEBUG s.compiler.QueryCompilerBenchmark -         reorderOperations:    0.222242 ms
+15:37:56.587 [main] DEBUG s.compiler.QueryCompilerBenchmark -     mergeToComprehensions:   15.595663 ms
+15:37:56.587 [main] DEBUG s.compiler.QueryCompilerBenchmark -            optimizeScalar:    0.132615 ms
+15:37:56.587 [main] DEBUG s.compiler.QueryCompilerBenchmark -          removeFieldNames:    4.133496 ms
+15:37:56.587 [main] DEBUG s.compiler.QueryCompilerBenchmark -                   codeGen:    2.685284 ms
+15:37:56.587 [main] DEBUG s.compiler.QueryCompilerBenchmark -                     TOTAL:   68.001188 ms
+15:37:56.589 [main] DEBUG slick.basic.BasicBackend.action - #1: result [select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME` desc]
+15:37:56.605 [main] DEBUG slick.basic.BasicBackend.action - #1: result [select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME`]
+15:37:56.976 [mydb-2] DEBUG slick.jdbc.JdbcBackend.statement - Preparing statement: select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME`
+15:37:56.976 [mydb-1] DEBUG slick.jdbc.JdbcBackend.statement - Preparing statement: select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME` desc
+15:37:56.994 [mydb-1] DEBUG slick.jdbc.JdbcBackend.statement - Executing prepared statement: com.mysql.cj.jdbc.ClientPreparedStatement: select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME` desc
+15:37:56.994 [mydb-2] DEBUG slick.jdbc.JdbcBackend.statement - Executing prepared statement: com.mysql.cj.jdbc.ClientPreparedStatement: select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME`
+15:37:56.995 [mydb-1] DEBUG s.j.J.statementAndParameter - Executing prepared statement: com.mysql.cj.jdbc.ClientPreparedStatement: select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME` desc
+15:37:56.995 [mydb-2] DEBUG s.j.J.statementAndParameter - Executing prepared statement: com.mysql.cj.jdbc.ClientPreparedStatement: select s11.`PRODUCT_ID`, s11.`PRODUCT_NAME`, s11.`PRODUCT_PRICE`, s11.`PRODUCT_QUANTITY`, s12.`TYPE_NAME` from `PRODUCTS` s11, `TYPES` s12 where s11.`PRODUCT_TYPE_ID` = s12.`TYPE_ID` order by s12.`TYPE_NAME`
+15:37:57.004 [mydb-1] DEBUG slick.jdbc.JdbcBackend.benchmark - Execution of prepared statement took 9ms
+15:37:57.004 [mydb-2] DEBUG slick.jdbc.JdbcBackend.benchmark - Execution of prepared statement took 9ms
+15:37:57.025 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - /------------+--------------+---------------+------------------+-------------\
+15:37:57.025 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - | 1          | 2            | 3             | 4                | 5           |
+15:37:57.025 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - | PRODUCT_ID | PRODUCT_NAME | PRODUCT_PRICE | PRODUCT_QUANTITY | TYPE_NAME   |
+15:37:57.025 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - |------------+--------------+---------------+------------------+-------------|
+15:37:57.025 [mydb-2] DEBUG slick.jdbc.StatementInvoker.result - /------------+--------------+---------------+------------------+-------------\
+15:37:57.025 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - | 1          | cana         | 20            | 100              | vesela      |
+15:37:57.025 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - | 3          | pian         | 5000          | 3                | muzica      |
+15:37:57.025 [mydb-2] DEBUG slick.jdbc.StatementInvoker.result - | 1          | 2            | 3             | 4                | 5           |
+15:37:57.025 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - | 2          | vaza         | 80            | 20               | decoratiuni |
+15:37:57.025 [mydb-2] DEBUG slick.jdbc.StatementInvoker.result - | PRODUCT_ID | PRODUCT_NAME | PRODUCT_PRICE | PRODUCT_QUANTITY | TYPE_NAME   |
+15:37:57.025 [mydb-1] DEBUG slick.jdbc.StatementInvoker.result - \------------+--------------+---------------+------------------+-------------/
+15:37:57.025 [mydb-2] DEBUG slick.jdbc.StatementInvoker.result - |------------+--------------+---------------+------------------+-------------|
+15:37:57.025 [mydb-2] DEBUG slick.jdbc.StatementInvoker.result - | 2          | vaza         | 80            | 20               | decoratiuni |
+15:37:57.025 [mydb-2] DEBUG slick.jdbc.StatementInvoker.result - | 3          | pian         | 5000          | 3                | muzica      |
+15:37:57.025 [mydb-2] DEBUG slick.jdbc.StatementInvoker.result - | 1          | cana         | 20            | 100              | vesela      |
+15:37:57.025 [mydb-2] DEBUG slick.jdbc.StatementInvoker.result - \------------+--------------+---------------+------------------+-------------/
