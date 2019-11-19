@@ -4,4 +4,5 @@ final case class Product(id: Int,
                          name: String,
                          price: Int,
                          typeID: Int,
-                         quantity: Int)
+                         quantity: Int,
+                         isDeleted: Boolean)

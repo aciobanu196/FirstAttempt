@@ -23,4 +23,5 @@ trait TableVariables {
   final val banksID = "BANK_ID"
   final val bankBalance = "BANK_BALANCE"
   final val userIDcart = "CART_USER_ID"
+  final val productDeletion = "IS_DELETED"
 }

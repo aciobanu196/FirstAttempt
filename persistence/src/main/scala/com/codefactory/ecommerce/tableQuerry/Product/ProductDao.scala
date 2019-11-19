@@ -8,6 +8,6 @@ trait ProductDao[T, U[_]] {
 
   def updateProducts(id: Int, row: T): U[Option[T]]
 
-  def insertProduct(row: T): U[Option[T]]
+  def insertProduct(row: T): U[T]
 
 }

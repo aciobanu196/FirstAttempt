@@ -18,8 +18,10 @@ class ProductT(tag: Tag)
 
   def quantity = column[Int](productQuantity)
 
+  def isDeleted = column[Boolean](productDeletion)
+
   def * =
-    (id, name, price, typeID, quantity) <> ((Product.apply _).tupled, Product.unapply)
+    (id, name, price, typeID, quantity, isDeleted) <> ((Product.apply _).tupled, Product.unapply)
 
   def typeP =
     foreignKey("TYPE_FK", typeID, types)(_.id,
