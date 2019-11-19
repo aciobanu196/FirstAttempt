@@ -17,5 +17,9 @@ class OrderT(tag: Tag)
 
   def * = (id, userID, status) <> ((Order.apply _).tupled, Order.unapply)
 
-  def user = foreignKey("USER_ORDER_FK", userID, users)(_.id)
+  def user =
+    foreignKey("USER_ORDER_FK", userID, users)(
+      _.id,
+      onDelete = ForeignKeyAction.Cascade,
+      onUpdate = ForeignKeyAction.Cascade)
 }

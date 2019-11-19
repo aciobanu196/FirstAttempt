@@ -21,6 +21,9 @@ class ProductT(tag: Tag)
   def * =
     (id, name, price, typeID, quantity) <> ((Product.apply _).tupled, Product.unapply)
 
-  def typeP = foreignKey("TYPE_FK", typeID, types)(_.id)
+  def typeP =
+    foreignKey("TYPE_FK", typeID, types)(_.id,
+                                         onDelete = ForeignKeyAction.Cascade,
+                                         onUpdate = ForeignKeyAction.Cascade)
 
 }

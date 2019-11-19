@@ -21,5 +21,9 @@ class CartT(tag: Tag)
   def * =
     (id, productID, quantity, status, total) <> ((Cart.apply _).tupled, Cart.unapply)
 
-  def product = foreignKey("PRODUCT_FK", productID, products)(_.id)
+  def product =
+    foreignKey("PRODUCT_FK", productID, products)(
+      _.id,
+      onDelete = ForeignKeyAction.Cascade,
+      onUpdate = ForeignKeyAction.Cascade)
 }

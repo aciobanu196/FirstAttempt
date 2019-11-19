@@ -17,6 +17,9 @@ class UserT(tag: Tag)
 
   def bankID = column[Int](userBankID)
 
-  def *    = (id, name, email, bankID) <> ((User.apply _).tupled, User.unapply)
-  def bank = foreignKey("BANK_FK", bankID, banks)(_.id)
+  def * = (id, name, email, bankID) <> ((User.apply _).tupled, User.unapply)
+  def bank =
+    foreignKey("BANK_FK", bankID, banks)(_.id,
+                                         onDelete = ForeignKeyAction.Cascade,
+                                         onUpdate = ForeignKeyAction.Cascade)
 }
