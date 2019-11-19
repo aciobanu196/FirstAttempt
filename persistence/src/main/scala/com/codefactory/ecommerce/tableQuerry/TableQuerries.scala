@@ -1,5 +1,5 @@
 package com.codefactory.ecommerce.tableQuerry
-import com.codefactory.ecommerce.tableModel.{Product}
+import com.codefactory.ecommerce.tableModel.{Cart, Product}
 import scala.concurrent.{Await, Future}
 import scala.concurrent.duration.Duration
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -18,13 +18,13 @@ object TableQuerries extends App with QuerryVariable with TableVariables {
   } yield (p.id, p.name, p.price, p.quantity, t.tname)
 
   val actionDesc = productsWithType.sortBy(_._5.desc).result
-  val actionAsc  = productsWithType.sortBy(_._5.asc).result
+  val actionAsc = productsWithType.sortBy(_._5.asc).result
   val resultDesc = db.run(actionDesc)
-  val resultAsc  = db.run(actionAsc)
+  val resultAsc = db.run(actionAsc)
   Await.result(resultDesc, Duration.Inf)
   Await.result(resultAsc, Duration.Inf)
   resultDesc.foreach(println) // To check if it works - need to write tests - TO BE DELETED
-  resultAsc.foreach(println)  // To check if it works - need to write tests - TO BE DELETED
+  resultAsc.foreach(println) // To check if it works - need to write tests - TO BE DELETED
 
   // I saw that you can encapsulate everything and sort by something specific , but how can you sort by both if you do not have 2 distinct values
 
@@ -66,6 +66,16 @@ object TableQuerries extends App with QuerryVariable with TableVariables {
     if c.quantity > p.quantity
   } yield c.status // TO BE DELETED
 
+  //POST /order/{accountsId} BODY [{"productId":1, "quantity": 10},{"productId":2, "quantity": 1}]
+  //path accountid | body lista de productId cu cantitati
+  //luam produsele din db
+  //validam cantitatile
+  //validam balanta
+  //creem carts
+  //creem ordered
+  //modificam balanta clientului
+  //updatam status la ordered
+
 //  val updateStatusRetrievalHigher = StatusRetrievalHigher.update("Out of stock")
 
   // HTTP methods begin
@@ -74,10 +84,10 @@ object TableQuerries extends App with QuerryVariable with TableVariables {
     db.run(products.filter(_.id === id).result.headOption)
 
   // Add one product into DB -echivalent la POST
-  def addProduct(product: Product): Future[Product] =
+  def addProductinList(product: Product): Future[Product] =
     db.run(
-      products returning products
-        .map(_.id) into ((product, id) => product.copy(id = id)) += product)
+     products returning products
+       .map(_.id) into ((product, id) => product.copy(id = id)) += product)
 
   // Update product - echivalent la PUT
   def updateProduct(id: Int, Update: Product): Future[Option[Product]] = {
@@ -90,13 +100,24 @@ object TableQuerries extends App with QuerryVariable with TableVariables {
     db.run(products.filter(_.id === id).update(updatedProduct))
       .map(_ => Some(updatedProduct))
   }
-
   // DELETE
   def deleteProduct(id: Int): Future[Int] =
     db.run(products.filter(_.id === id).delete)
-  // HTTP methods End
-  //Does not work
 
+  // POST TO CART
+  def addProductToCart(cart: Cart): Future[Cart] =
+    db.run(
+     carts returning carts
+       .map(_.id) into ((cart, id) => cart.copy(id = id)) += cart)
+
+  //PUT product in CART
+
+//  def updateCart(id:Int,Update:Cart):Future[Option[Cart]] = {
+//    val updatedCart = Cart(Update.productID,Update.quantity,_,_,_)
+//    db.run(carts.filter(_.id===id).update(updatedCart)).map(_=>Some(updatedCart))
+//
+//  }
+  // HTTP methods End
 //  val RetrieveQuantityFromCart = for {
 //    (c, p) <- carts join products on (_.productID === _.id)
 //  } yield multiply(c.quantity, p.price)
