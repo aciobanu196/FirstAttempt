@@ -1,10 +1,8 @@
 package com.codefactory.ecommerce.productservice
-
 import com.codefactory.ecommerce.tableModel.Product
 import com.codefactory.ecommerce.tableQuerry.Product.ProductDao
 import com.codefactory.ecommerce.tableQuerryVariable.QuerryVariable
 import slick.jdbc.MySQLProfile.api._
-
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 class ProductService extends QuerryVariable with ProductDao[Product, Future] {
