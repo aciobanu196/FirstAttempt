@@ -12,9 +12,9 @@ import slick.lifted.TableQuery
 
 import slick.jdbc.MySQLProfile.api._
 
-trait QuerryVariable {
+trait QueryVariable {
 
-  val db = Database.forConfig("mydb")
+//  val db = Database.forConfig("mydb")
 
   final val banks = TableQuery[BankT]
   final val carts = TableQuery[CartT]

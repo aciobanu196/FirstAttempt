@@ -1,4 +1,8 @@
-# Changelog for FirstAttempt project 
+# Changelog for Ecommerce app 
+
+## [0.3.0] - 2019-11-20
+### Added
+- added samples, some fixes, added runnable in API module, added configs
 
 ## [0.0.1] - 2019-11-11
 ### Added
