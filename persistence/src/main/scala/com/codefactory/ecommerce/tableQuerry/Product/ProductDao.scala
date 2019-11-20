@@ -15,4 +15,5 @@ trait ProductDao[T, U[_]] {
 
   def sortProductByTypeDesc()(implicit db: backend.Database): U[Seq[T]]
 
+//  def orderByProduct()(implicit db: backend.Database): U[Seq[T]] -Don't think its necessary
 }

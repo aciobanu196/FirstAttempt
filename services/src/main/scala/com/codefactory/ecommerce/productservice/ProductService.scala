@@ -34,4 +34,9 @@ class ProductService extends QueryVariable with ProductDao[Product, Future] {
   override def sortProductByTypeDesc()(
       implicit db: jdbc.MySQLProfile.backend.Database): Future[Seq[Product]] =
     db.run(products.sortBy(_.productType.desc.nullsFirst).result)
+
+//  override def orderByProduct()(
+//      implicit db: _root_.slick.jdbc.MySQLProfile.backend.DatabaseDef)
+//    : Future[Seq[Product]] =
+//    db.run(products.sortBy(_.id).result) - Don't think is necessary
 }

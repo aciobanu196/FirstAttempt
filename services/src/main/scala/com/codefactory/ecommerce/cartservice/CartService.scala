@@ -3,6 +3,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import com.codefactory.ecommerce.tableModel.Cart
 import com.codefactory.ecommerce.tableQuerry.Cart.CartDao
 import com.codefactory.ecommerce.tableQuerryVariable.QueryVariable
+import slick.jdbc
 import slick.jdbc.MySQLProfile
 import slick.jdbc.MySQLProfile.api._
 import slick.jdbc.MySQLProfile.backend
@@ -17,25 +18,24 @@ class CartService extends QueryVariable with CartDao[Cart, Future] {
      carts returning carts
        .map(_.id) into ((row, id) => row.copy(id = id)) += row)
 
-  override def updateProduct(id: Int, row: Cart)(
-      implicit db: backend.Database): Future[Int] = ???
-
-//  override def validateQuantity(id: Int)(implicit db: backend.Database): Future[Seq[String]] = {
-//    val statusEvaluationOK = for {
-//      (c, p) <- carts join products on (_.productID === _.id)
-//      if c.quantity <= p.quantity
-//    } yield c.status
-//
-//    val result = statusEvaluationOK.result
-//    db.run(result)
-//
-//    val statusEvaluationNotOK = for {
-//      (c, p) <- carts join products on (_.productID === _.id)
-//      if c.quantity > p.quantity
-//    } yield c.status
-//    val result2 = statusEvaluationNotOK.result
-//    db.run(result2)
-//  }
   override def validateQuantity(id: Int)(
-      implicit db: MySQLProfile.backend.Database): Future[Seq[String]] = ???
+      implicit db: jdbc.MySQLProfile.backend.Database): Future[Seq[String]] = {
+    val quantityComparisonOk = for {
+      (p, c) <- products join carts on (_.cartProductID === _.id)
+      if p.quantity >= c.quantity
+    } yield c.status
+    db.run(quantityComparisonOk.result)
+
+    val quantityComparisonNotOk = for {
+      (p, c) <- products join carts on (_.cartProductID === _.id)
+      if p.quantity < c.quantity
+    } yield c.status
+    db.run(quantityComparisonNotOk.result)
+  }
+
+  override def updateProduct(id: Int, row: Cart)(
+      implicit db: _root_.slick.jdbc.MySQLProfile.backend.DatabaseDef)
+    : Future[Option[Cart]] =
+    db.run(carts.filter(_.id === id).update(row))
+      .map(_ => Some(row))
 }

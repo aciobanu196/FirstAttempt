@@ -85,8 +85,14 @@
 
 - Bank and Types tables
 
-###[0.4.0] -2019 -11-20
+###[0.4.0] -2019-11-20
 
 ### Added
 
 - Sorting by type asc and desc methods in services 
+
+###[0.4.1] - 2019-11-20
+
+### Changes
+
+- Added small changes to the service files
