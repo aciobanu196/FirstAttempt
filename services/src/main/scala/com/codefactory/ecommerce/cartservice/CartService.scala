@@ -26,12 +26,11 @@ class CartService extends QuerryVariable with CartDao[Cart, Future] {
     db.run(result)
 
     val statusEvaluationNotOK = for {
-      (c, p) <- carts join products on (_.productID == _.id)
+      (c, p) <- carts join products on (_.productID === _.id)
       if c.quantity > p.quantity
     } yield c.status
     val result2 = statusEvaluationNotOK.result
-    db.run(result)
-
+    db.run(result2)
   }
 
 }
