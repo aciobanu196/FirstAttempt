@@ -10,7 +10,6 @@ class CartT(tag: Tag)
     with QueryVariable {
 
   def id = column[Int](cartID, O.PrimaryKey, O.AutoInc)
-  def productID = column[Int](cartProductID)
 
   def quantity = column[Int](cartProductQuantity)
 
@@ -18,18 +17,13 @@ class CartT(tag: Tag)
 
   def userID = column[Int](userIDcart)
 
-  def total = column[Int](cartTotal)
+  def total = column[Float](cartTotal)
 
   def * =
-    (id, productID, quantity, status, userID, total) <> ((Cart.apply _).tupled, Cart.unapply)
+    (id, quantity, status, userID, total) <> ((Cart.apply _).tupled, Cart.unapply)
 
-  def product =
-    foreignKey("PRODUCT_FK", productID, products)(
-     _.id,
-     onDelete = ForeignKeyAction.Cascade,
-     onUpdate = ForeignKeyAction.Cascade)
   def user =
-    foreignKey("USER_FK", userID, users)(_.id,
-                                         onDelete = ForeignKeyAction.Cascade,
-                                         onUpdate = ForeignKeyAction.Cascade)
+    foreignKey("USERS_FK", userID, users)(_.id,
+                                          onDelete = ForeignKeyAction.Cascade,
+                                          onUpdate = ForeignKeyAction.Cascade)
 }

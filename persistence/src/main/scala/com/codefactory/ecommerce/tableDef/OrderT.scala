@@ -15,11 +15,14 @@ class OrderT(tag: Tag)
 
   def status = column[String](orderStatus)
 
-  def * = (id, userID, status) <> ((Order.apply _).tupled, Order.unapply)
+  def orderCartID = column[Int](orderCartId)
 
-  def user =
-    foreignKey("USER_ORDER_FK", userID, users)(
-      _.id,
-      onDelete = ForeignKeyAction.Cascade,
-      onUpdate = ForeignKeyAction.Cascade)
+  def * =
+    (id, userID, status, orderCartID) <> ((Order.apply _).tupled, Order.unapply)
+
+  def cart =
+    foreignKey("CART_ORDER_FK", orderCartID, carts)(
+     _.id,
+     onDelete = ForeignKeyAction.Cascade,
+     onUpdate = ForeignKeyAction.Cascade)
 }

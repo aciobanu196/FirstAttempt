@@ -1,27 +1,36 @@
 package com.codefactory.ecommerce.tableVariables
 trait TableVariables {
 
+  // USER TABLE VARIABLES
   final val usersID = "USER_ID"
   final val userName = "USER_NAME"
   final val userEmail = "USER_EMAIL"
-  final val userBankID = "USER_BANK_ID"
-  final val typesID = "TYPE_ID"
-  final val typeName = "TYPE_NAME"
+  final val userBankBalance = "USER_BALANCE"
+  //END
+
+  // PRODUCTS TABLE VARIABLES
   final val productsID = "PRODUCT_ID"
   final val productName = "PRODUCT_NAME"
   final val productPrice = "PRODUCT_PRICE"
-  final val productTypeID = "PRODUCT_TYPE_ID"
+  final val productTypeName = "PRODUCT_TYPE"
   final val productQuantity = "PRODUCT_QUANTITY"
+  final val productDeletion = "IS_DELETED"
+  final val cartProductId = "CART_PRODUCT_ID"
+  //END
+
+  //ORDER TABLE VARIABLES
   final val orderID = "ORDER_ID"
   final val orderUserID = "ORDER_USER_ID"
   final val orderStatus = "ORDER_STATUS"
+  final val orderCartId = "ORDER_CART_ID"
+  //END
+
+  //CART TABLE VARIABLES
   final val cartID = "CART_ID"
-  final val cartProductID = "CART_PRODUCT_ID"
   final val cartProductQuantity = "CART_PRODUCT_QUANTITY"
   final val cartProductStatus = "CART_PRODUCT_STATUS"
   final val cartTotal = "CART_TOTAL"
-  final val banksID = "BANK_ID"
-  final val bankBalance = "BANK_BALANCE"
   final val userIDcart = "CART_USER_ID"
-  final val productDeletion = "IS_DELETED"
+  //END
+
 }

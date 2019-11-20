@@ -72,3 +72,15 @@
 ### Added
 
 - first part of queries which will be used for building the services 
+
+###[0.3.1] - 2019-11-20
+
+### Changed
+
+- migration files V1_CREATE TABLES.sql and V2_INSERT INTO TABLES files
+- Table models
+- Table persistence
+
+### Removed
+
+- Bank and Types tables 

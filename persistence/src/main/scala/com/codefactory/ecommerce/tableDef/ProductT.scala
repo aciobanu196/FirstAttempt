@@ -12,20 +12,17 @@ class ProductT(tag: Tag)
 
   def name = column[String](productName)
 
-  def price = column[Int](productPrice)
+  def price = column[Float](productPrice)
 
-  def typeID = column[Int](productTypeID)
+  def productType = column[String](productTypeName)
 
   def quantity = column[Int](productQuantity)
 
   def isDeleted = column[Boolean](productDeletion)
 
-  def * =
-    (id, name, price, typeID, quantity, isDeleted) <> ((Product.apply _).tupled, Product.unapply)
+  def cartProductID = column[Int](cartProductId)
 
-  def typeP =
-    foreignKey("TYPE_FK", typeID, types)(_.id,
-                                         onDelete = ForeignKeyAction.Cascade,
-                                         onUpdate = ForeignKeyAction.Cascade)
+  def * =
+    (id, name, price, productType, quantity, isDeleted, cartProductID) <> ((Product.apply _).tupled, Product.unapply)
 
 }
