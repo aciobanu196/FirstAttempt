@@ -83,4 +83,10 @@
 
 ### Removed
 
-- Bank and Types tables 
+- Bank and Types tables
+
+###[0.4.0] -2019 -11-20
+
+### Added
+
+- Sorting by type asc and desc methods in services 
