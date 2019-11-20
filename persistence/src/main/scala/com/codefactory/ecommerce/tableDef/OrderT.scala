@@ -2,12 +2,12 @@ package com.codefactory.ecommerce.tableDef
 import com.codefactory.ecommerce.tableModel.Order
 import slick.jdbc.MySQLProfile.api._
 import com.codefactory.ecommerce.tableVariables.TableVariables
-import com.codefactory.ecommerce.tableQuerryVariable.QuerryVariable
+import com.codefactory.ecommerce.tableQuerryVariable.QueryVariable
 
 class OrderT(tag: Tag)
     extends Table[Order](tag, "ORDERED")
     with TableVariables
-    with QuerryVariable {
+    with QueryVariable {
 
   def id = column[Int](orderID, O.PrimaryKey)
 

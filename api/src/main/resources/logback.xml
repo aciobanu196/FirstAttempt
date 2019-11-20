@@ -14,8 +14,54 @@
         </encoder>
     </appender>
 
+    <logger name="slick.basic.BasicBackend.action"          level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.basic.BasicBackend.stream"          level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler"                           level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.QueryCompiler"             level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.QueryCompilerBenchmark"    level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.Inline"                    level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.AssignUniqueSymbols"       level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.InferTypes"                level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.ExpandTables"              level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.EmulateOuterJoins"         level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.ForceOuterBinds"           level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.RemoveMappedTypes"         level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.CreateResultSetMapping"    level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.ExpandSums"                level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.ExpandRecords"             level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.ExpandConditionals"        level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.FlattenProjections"        level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.CreateAggregates"          level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.RewriteJoins"              level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.RemoveTakeDrop"            level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.ResolveZipJoins"           level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.HoistClientOps"            level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.ReorderOperations"         level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.MergeToComprehensions"     level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.OptimizeScalar"            level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.FixRowNumberOrdering"      level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.PruneProjections"          level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.RewriteDistinct"           level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.RewriteBooleans"           level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.SpecializeParameters"      level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.CodeGen"                   level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.RemoveFieldNames"          level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.InsertCompiler"            level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.compiler.VerifyTypes"               level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.jdbc.DriverDataSource"              level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.jdbc.JdbcBackend.statement"         level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.jdbc.JdbcBackend.parameter"         level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.jdbc.JdbcBackend.benchmark"         level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.jdbc.StatementInvoker.result"       level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.jdbc.JdbcModelBuilder"              level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.memory.HeapBackend"                 level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.memory.QueryInterpreter"            level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.relational.ResultConverterCompiler" level="${LOG_LEVEL:-INFO}" />
+    <logger name="slick.util.AsyncExecutor"                 level="${LOG_LEVEL:-INFO}" />
+    <logger name="akka"                                     level="${LOG_LEVEL:-INFO}" />
+
     <root level="debug">
         <appender-ref ref="STDOUT" />
-        <appender-ref ref="FILE" />
+<!--        <appender-ref ref="FILE" />-->
     </root>
 </configuration>
