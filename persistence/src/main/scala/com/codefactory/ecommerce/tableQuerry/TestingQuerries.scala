@@ -1,11 +1,39 @@
-//package com.codefactory.ecommerce.tableQuerry
-//
-//import com.codefactory.ecommerce.tableQuerryVariable.QuerryVariable
-//import com.codefactory.ecommerce.tableVariables.TableVariables
-//
-//object TestingQuerries extends App with QuerryVariable with TableVariables {
-//
-//  override val db = Database.forConfig("mydb")
+package com.codefactory.ecommerce.tableQuerry
+
+import com.codefactory.ecommerce.tableQuerryVariable.QueryVariable
+import com.codefactory.ecommerce.tableVariables.TableVariables
+import slick.jdbc.MySQLProfile.api._
+
+import scala.concurrent.Await
+import scala.concurrent.duration.Duration
+
+object TestingQuerries extends App with QueryVariable with TableVariables {
+
+  val db = Database.forConfig("mydb")
+
+  val quantityComparisonOk = for {
+    (p, c) <- products join carts on (_.cartProductID === _.id)
+    if p.quantity >= c.quantity
+  } yield c.status
+
+  val result = db.run(quantityComparisonOk.result)
+
+  Await.result(result, Duration.Inf)
+
+  print(result)
+
+  val quantityComparisonNotOk = for {
+    (p, c) <- products join carts on (_.cartProductID === _.id)
+    if p.quantity < c.quantity
+  } yield c.status
+
+  val result2 = db.run(quantityComparisonNotOk.result)
+
+  Await.result(result2, Duration.Inf)
+
+  print(result2)
+
+}
 //
 //  //returnează produsele valabile filtrate după tip
 //  val productsWithType = for {

@@ -85,7 +85,7 @@
 
 - Bank and Types tables
 
-###[0.4.0] -2019-11-20
+###[0.4.0] - 2019-11-20
 
 ### Added
 
@@ -96,3 +96,9 @@
 ### Changes
 
 - Added small changes to the service files
+
+### [0.4.2] - 2019-11-21
+
+### Changes
+
+- Changes to the migration files 
