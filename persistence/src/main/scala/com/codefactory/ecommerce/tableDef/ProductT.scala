@@ -20,9 +20,7 @@ class ProductT(tag: Tag)
 
   def isDeleted = column[Boolean](productDeletion)
 
-  def cartProductID = column[Int](cartProductId)
-
   def * =
-    (id, name, price, productType, quantity, isDeleted, cartProductID) <> ((Product.apply _).tupled, Product.unapply)
+    (id, name, price, productType, quantity, isDeleted) <> ((Product.apply _).tupled, Product.unapply)
 
 }

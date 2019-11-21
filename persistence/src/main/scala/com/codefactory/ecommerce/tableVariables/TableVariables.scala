@@ -15,7 +15,6 @@ trait TableVariables {
   final val productTypeName = "PRODUCT_TYPE"
   final val productQuantity = "PRODUCT_QUANTITY"
   final val productDeletion = "IS_DELETED"
-  final val cartProductId = "CART_PRODUCT_ID"
   //END
 
   //ORDER TABLE VARIABLES
@@ -31,6 +30,7 @@ trait TableVariables {
   final val cartProductStatus = "CART_PRODUCT_STATUS"
   final val cartTotal = "CART_TOTAL"
   final val userIDcart = "CART_USER_ID"
+  final val cartProductId = "CART_PRODUCT_ID"
   //END
 
 }

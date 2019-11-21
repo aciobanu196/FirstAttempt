@@ -5,5 +5,4 @@ final case class Product(id: Int,
                          price: Float, //Changed to float for more precision
                          productType: String,
                          quantity: Int,
-                         isDeleted: Boolean,
-                         cartProductID: Int)
+                         isDeleted: Boolean)

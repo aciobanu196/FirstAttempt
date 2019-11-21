@@ -9,6 +9,6 @@ trait CartDao[T, U[_]] {
   def updateProduct(id: Int, row: T)(
       implicit db: backend.Database): U[Option[T]]
 
-  def validateQuantity(id: Int)(implicit db: backend.Database): U[Seq[String]]
+//  def validateQuantity(id: Int)(implicit db: backend.Database): U[Seq[String]]
 
 }

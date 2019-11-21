@@ -102,3 +102,10 @@
 ### Changes
 
 - Changes to the migration files 
+
+### [0.4.3] - 2019-11-21
+
+### Changes
+
+- One user many carts relationship in migration file and in model/persistence
+- Modified the model/persistence files

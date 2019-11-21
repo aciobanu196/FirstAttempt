@@ -18,20 +18,20 @@ class CartService extends QueryVariable with CartDao[Cart, Future] {
      carts returning carts
        .map(_.id) into ((row, id) => row.copy(id = id)) += row)
 
-  override def validateQuantity(id: Int)(
-      implicit db: jdbc.MySQLProfile.backend.Database): Future[Seq[String]] = {
-    val quantityComparisonOk = for {
-      (p, c) <- products join carts on (_.cartProductID === _.id)
-      if p.quantity >= c.quantity
-    } yield c.status
-    db.run(quantityComparisonOk.result)
-
-    val quantityComparisonNotOk = for {
-      (p, c) <- products join carts on (_.cartProductID === _.id)
-      if p.quantity < c.quantity
-    } yield c.status
-    db.run(quantityComparisonNotOk.result)
-  }
+//  override def validateQuantity(id: Int)(
+//      implicit db: jdbc.MySQLProfile.backend.Database): Future[Seq[String]] = {
+//    val quantityComparisonOk = for {
+//      (p, c) <- products join carts on (_.cartProductID === _.id)
+//      if p.quantity >= c.quantity
+//    } yield c.status
+//    db.run(quantityComparisonOk.result)
+//
+//    val quantityComparisonNotOk = for {
+//      (p, c) <- products join carts on (_.cartProductID === _.id)
+//      if p.quantity < c.quantity
+//    } yield c.status
+//    db.run(quantityComparisonNotOk.result)
+//  } - TO BE CHANGED BASED ON FUTURE IMPLEMENTATION
 
   override def updateProduct(id: Int, row: Cart)(
       implicit db: _root_.slick.jdbc.MySQLProfile.backend.DatabaseDef)
