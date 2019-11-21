@@ -125,3 +125,9 @@
 ### Changed
 
 - CartT and ProductT in persistence
+
+### [0.5.1] - 2019-11-21
+
+### Changed
+
+- persistence and service changes to respect the norm

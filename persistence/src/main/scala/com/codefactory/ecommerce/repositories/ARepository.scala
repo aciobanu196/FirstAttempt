@@ -9,8 +9,11 @@ import scala.concurrent.ExecutionContext
 
 final case class ARepository() extends LazyLogging with QueryVariable {
 
-  def getProducts()(implicit ec: ExecutionContext, db: backend.Database) = db.run {
-    products.result
-  }
+  def getProducts()(implicit ec: ExecutionContext, db: backend.Database) =
+    db.run {
+      products.result
+    }
 
 }
+
+// WILL KEEP FOR NOW AS REFERENCE

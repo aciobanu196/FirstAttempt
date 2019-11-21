@@ -2,6 +2,7 @@ package com.codefactory.ecommerce.productservice
 import com.codefactory.ecommerce.tableModel.Product
 import com.codefactory.ecommerce.tableQuerry.Product.ProductDao
 import com.codefactory.ecommerce.tableQuerryVariable.QueryVariable
+import com.typesafe.scalalogging.LazyLogging
 import slick.jdbc
 import slick.jdbc.MySQLProfile
 import slick.jdbc.MySQLProfile.api._
@@ -9,7 +10,10 @@ import slick.jdbc.MySQLProfile.backend
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
-class ProductService extends QueryVariable with ProductDao[Product, Future] {
+class ProductService
+    extends QueryVariable
+    with ProductDao[Product, Future]
+    with LazyLogging {
 
   override def selectProductById(id: Int)(
       implicit db: backend.Database): Future[Option[Product]] =
