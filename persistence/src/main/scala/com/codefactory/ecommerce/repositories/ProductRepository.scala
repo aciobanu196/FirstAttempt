@@ -20,18 +20,19 @@ final case class ProductRepository() extends LazyLogging with QueryVariable {
                        db: backend.Database) =
     db.run(products.filter(_.id === id).result.headOption)
 
-//  def putProduct()(implicit ec: ExecutionContext, row: Product,
-//                   id: Int,
-//                   db: backend.Database) =
-//    db.run(products.filter(_.id === id).update(row))
-//      .map(_ => Some(row)) -NEED TO MAKE CHANGES IMPLICIT VALUE ROW MISSING IN SERVICES
+  def putProduct()(implicit ec: ExecutionContext,
+                   row: Product,
+                   id: Int,
+                   db: backend.Database) =
+    db.run(products.filter(_.id === id).update(row))
+      .map(_ => Some(row))
 
-//  def postProduct()(implicit ec: ExecutionContext,
-//                    row: Product,
-//                    db: backend.Database) =
-//    db.run(
-//     products returning products
-//       .map(_.id) into ((row, id) => row.copy(id = id)) += row)
+  def postProduct()(implicit ec: ExecutionContext,
+                    row: Product,
+                    db: backend.Database) =
+    db.run(
+     products returning products
+       .map(_.id) into ((row, id) => row.copy(id = id)) += row)
 
   def getProductByTypeAsc()(implicit ec: ExecutionContext,
                             db: backend.Database) =

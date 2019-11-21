@@ -137,3 +137,7 @@
 ### Removed
 
 - removed deprecated files from persistence and services 
+
+### [0.5.3] - 2019-11-21
+
+- minor changes to the services
