@@ -131,3 +131,9 @@
 ### Changed
 
 - persistence and service changes to respect the norm
+
+### [0.5.2] - 2019-11-21
+
+### Removed
+
+- removed deprecated files from persistence and services 
