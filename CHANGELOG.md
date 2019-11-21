@@ -109,3 +109,9 @@
 
 - One user many carts relationship in migration file and in model/persistence
 - Modified the model/persistence files
+
+### [0.4.4] - 2019-11-21
+
+### Changes
+
+- Changed IS_DELETED from BIT to TINYINT(1)<->Boolean
