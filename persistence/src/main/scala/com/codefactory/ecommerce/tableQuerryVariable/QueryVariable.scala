@@ -1,9 +1,13 @@
 package com.codefactory.ecommerce.tableQuerryVariable
 
-import com.codefactory.ecommerce.tableDef.{CartT, OrderT, ProductT, UserT}
+import com.codefactory.ecommerce.tableDef.{
+  CartProductT,
+  CartT,
+  OrderT,
+  ProductT,
+  UserT
+}
 import slick.lifted.TableQuery
-
-import slick.jdbc.MySQLProfile.api._
 
 trait QueryVariable {
 
@@ -11,5 +15,6 @@ trait QueryVariable {
   final val orders = TableQuery[OrderT]
   final val products = TableQuery[ProductT]
   final val users = TableQuery[UserT]
+  final val cartProduct = TableQuery[CartProductT]
 
 }

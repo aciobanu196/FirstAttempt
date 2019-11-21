@@ -115,3 +115,13 @@
 ### Changes
 
 - Changed IS_DELETED from BIT to TINYINT(1)<->Boolean
+
+### [0.5.0] - 2019-11-21
+
+### Added
+
+- Added CART - PRODUCT many to many relationship model + persistence + migration changes
+
+### Changed
+
+- CartT and ProductT in persistence

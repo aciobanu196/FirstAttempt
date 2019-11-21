@@ -4,5 +4,4 @@ final case class Cart(id: Int,
                       quantity: Int,
                       status: String,
                       userID: Int,
-                      total: Float,
-                      cartProductID: String)
+                      total: Float)
