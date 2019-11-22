@@ -159,3 +159,11 @@
 - changed the post method - currently encountering an error
 - changed the service files 
 - changed the cart table in the migration file
+
+### [0.6.0] - 2019-11-22
+
+### Added
+
+- Order repository
+- Started the implementation of the validation - Solved quantity validation and balance validation with status updates
+
