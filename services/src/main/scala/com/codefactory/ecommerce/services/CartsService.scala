@@ -8,9 +8,9 @@ import scala.concurrent.ExecutionContext
 
 case class CartsService(private val cRepo: CartRepository) extends LazyLogging {
 
-  def postCart()(implicit ec: ExecutionContext,
-                 toInsert: Cart,
-                 db: backend.Database) = cRepo.postCart()
+//  def postCart()(implicit ec: ExecutionContext,
+//                 toInsert: Cart,
+//                 db: backend.Database) = cRepo.postCart()
 
   def putCart()(implicit ec: ExecutionContext,
                 toUpdate: Cart,

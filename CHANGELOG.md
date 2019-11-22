@@ -151,3 +151,11 @@
 - changed the CartProduct table
 - changed the migration filed
 - changed the CartService
+
+### [0.5.5] - 2019-11-22
+
+### Changed
+
+- changed the post method - currently encountering an error
+- changed the service files 
+- changed the cart table in the migration file

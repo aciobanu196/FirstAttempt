@@ -9,12 +9,16 @@ import scala.concurrent.ExecutionContext
 
 case class CartRepository() extends LazyLogging with QueryVariable {
 
-  def postCart()(implicit ec: ExecutionContext,
-                 toInsert: Cart,
-                 db: backend.Database) =
-    db.run(
-     carts returning carts
-       .map(c => (c.productID, c.quantity)) += toInsert)
+  //PROPER WAY OF IMPLEMENTATION - HAS AN ERROR, NEED TO CHECK
+//  def postCart()(implicit ec: ExecutionContext,
+//                 product: Int,
+//                 quantity: Int,
+//                 db: backend.Database) = db.run {
+//    (carts.map(c => (c.productID, c.quantity))
+//      returning carts.map(_.id)
+//      into ((productQ, id) =>
+//              Cart(id, productQ._1, productQ._2)) += (product, quantity))
+//  }
 
   def putCart()(implicit ec: ExecutionContext,
                 toUpdate: Cart,
