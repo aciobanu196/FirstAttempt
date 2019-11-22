@@ -11,6 +11,8 @@ class CartT(tag: Tag)
 
   def id = column[Int](cartID, O.PrimaryKey, O.AutoInc)
 
+  def productID = column[Int](cartProductId)
+
   def quantity = column[Int](cartProductQuantity)
 
   def status = column[String](cartProductStatus)
@@ -20,6 +22,6 @@ class CartT(tag: Tag)
   def total = column[Float](cartTotal)
 
   def * =
-    (id, quantity, status, userID, total) <> ((Cart.apply _).tupled, Cart.unapply)
+    (id, productID, quantity, status, userID, total) <> ((Cart.apply _).tupled, Cart.unapply)
 
 }

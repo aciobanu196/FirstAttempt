@@ -9,21 +9,24 @@ import scala.concurrent.ExecutionContext
 
 case class CartRepository() extends LazyLogging with QueryVariable {
 
-  def putCart()(implicit ec: ExecutionContext,
-                row: Cart,
-                id: Int,
-                db: backend.Database) =
+  def postCart()(implicit ec: ExecutionContext,
+                 toInsert: Cart,
+                 db: backend.Database) =
     db.run(
      carts returning carts
-       .map(_.id) into ((row, id) => row.copy(id = id)) += row) //Needs to be changed to update only product Id and quantity
+       .map(c => (c.productID, c.quantity)) += toInsert)
 
-  def postCart()(implicit ec: ExecutionContext,
-                 id: Int,
-                 row: Cart,
-                 db: backend.Database) =
-    db.run(carts.filter(_.id === id).update(row))
-      .map(_ => Some(row)) // Needs to be changed to post only product Id and quantity
+  def putCart()(implicit ec: ExecutionContext,
+                toUpdate: Cart,
+                db: backend.Database) = {
+    db.run(
+     carts
+       .filter(_.id === toUpdate.id)
+       .map(carts => (carts.quantity, carts.productID))
+       .update(toUpdate.quantity, toUpdate.productID))
+  }
 
+  // Needs to be changed to post only product Id and quantity
   //   val quantityComparisonOk = for {
   //      (p, c) <- products join carts on (_.cartProductID === _.id)
   //      if p.quantity >= c.quantity
@@ -35,5 +38,8 @@ case class CartRepository() extends LazyLogging with QueryVariable {
   //      if p.quantity < c.quantity
   //    } yield c.status
   //    db.run(quantityComparisonNotOk.result) -NO LONGER APPLICABLE KEPT AS A PLACEHOLDER
-
+//  case Some(hotel) => {
+//    val updatedHotel = Hotel(hotel.id, toUpdate.name, toUpdate.address, toUpdate.zip)
+//    db.run(hotels.filter(_.id === id).update(updatedHotel)).map(_ => Some(updatedHotel))
+//  }
 }

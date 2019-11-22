@@ -26,6 +26,7 @@ trait TableVariables {
 
   //CART TABLE VARIABLES
   final val cartID = "CART_ID"
+  final val cartProductId = "CART_PRODUCT_ID"
   final val cartProductQuantity = "CART_PRODUCT_QUANTITY"
   final val cartProductStatus = "CART_PRODUCT_STATUS"
   final val cartTotal = "CART_TOTAL"

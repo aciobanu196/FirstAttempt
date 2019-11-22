@@ -8,12 +8,11 @@ class CartProductT(tag: Tag)
     with TableVariables
     with QueryVariable {
 
-  def id = column[Int](cartProductID, O.PrimaryKey, O.AutoInc)
   def c_id = column[Int](cartId)
   def p_id = column[Int](productId)
 
   def * =
-    (id, c_id, p_id) <> ((CartProduct.apply _).tupled, CartProduct.unapply)
+    (c_id, p_id) <> ((CartProduct.apply _).tupled, CartProduct.unapply)
 
   def cartForeign =
     foreignKey(cartId, c_id, carts)(_.id,

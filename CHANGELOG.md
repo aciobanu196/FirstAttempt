@@ -1,9 +1,5 @@
 # Changelog for Ecommerce app 
 
-## [0.3.0] - 2019-11-20
-### Added
-- added samples, some fixes, added runnable in API module, added configs
-
 ## [0.0.1] - 2019-11-11
 ### Added
 - .gitignore file
@@ -73,6 +69,10 @@
 
 - first part of queries which will be used for building the services 
 
+## [0.3.0] - 2019-11-20
+### Added
+- added samples, some fixes, added runnable in API module, added configs
+
 ###[0.3.1] - 2019-11-20
 
 ### Changed
@@ -140,4 +140,14 @@
 
 ### [0.5.3] - 2019-11-21
 
+### Changed
 - minor changes to the services
+
+###[0.5.4] - 2019-11-22
+
+### Changed
+
+- changes to the post and put methods in CartRepository
+- changed the CartProduct table
+- changed the migration filed
+- changed the CartService
