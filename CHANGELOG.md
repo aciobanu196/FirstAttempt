@@ -180,3 +180,7 @@
 
 - Changes to the methods in the Products Repository
 - Changes to the methods in the Products Service
+
+### [0.6.3] - 2019-11-25
+
+- Changed the routes method in ProductRoutes to accept multiple paths in the same method

@@ -20,17 +20,26 @@ final case class ProductsRoutes(private val productsService: ProductsService)
       db: backend.Database,
       request: HttpRequest
   ) = {
-    path {
-      "products"
-    } {
-      get {
-        onComplete(productsService.getProducts()) {
-          case Success(it) => complete(it)
-          case Failure(e)  => complete(StatusCodes.InternalServerError -> e)
+    pathPrefix("products") {
+      pathEndOrSingleSlash {
+        {
+          get {
+            onComplete(productsService.getProducts()) {
+              case Success(it) => complete(it)
+              case Failure(e)  => complete(StatusCodes.InternalServerError -> e)
+            }
+          }
         }
-      }
+      } ~
+        pathPrefix(IntNumber) { id =>
+          get {
+            onComplete(productsService.getProductById(id)) {
+              case Success(it) => complete(it)
+              case Failure(e)  => complete(StatusCodes.InternalServerError -> e)
+            }
+          }
+        }
     }
-
 //    path {
 //      "products" / IntNumber
 //    } { id =>
