@@ -174,3 +174,9 @@
 - Changes to the POST method
 - Changes to the routes and the services
 
+### [0.6.2] - 2019-11-25
+
+### Changed
+
+- Changes to the methods in the Products Repository
+- Changes to the methods in the Products Service

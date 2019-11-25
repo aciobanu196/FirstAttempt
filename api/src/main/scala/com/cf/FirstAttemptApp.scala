@@ -3,9 +3,13 @@ package com.cf
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.Materializer
-import com.cf.http.routes.ARoute
-import com.codefactory.ecommerce.repositories.{ARepository, CartRepository}
-import com.codefactory.ecommerce.services.CartsService
+import com.cf.http.routes.{ARoute, ProductsRoutes}
+import com.codefactory.ecommerce.repositories.{
+  ARepository,
+  CartRepository,
+  ProductRepository
+}
+import com.codefactory.ecommerce.services.{CartsService, ProductsService}
 import com.typesafe.scalalogging.LazyLogging
 import slick.jdbc.MySQLProfile.api._
 import akka.http.scaladsl.server.Directives._
@@ -26,18 +30,22 @@ object FirstAttemptApp extends App with LazyLogging {
 
   //routes
   lazy val aroute = ARoute(cartService)
+  lazy val proute = ProductsRoutes(productService)
 
   //services
   lazy val cartService = CartsService(cartRepository)
+  lazy val productService = ProductsService(productRepository)
 
   //repositories
   lazy val cartRepository = CartRepository()
+  lazy val productRepository = ProductRepository()
 
   logger.info(s"Starting HTTP server on $host:$port")
 
   lazy val routes = extractRequest { implicit request =>
     pathPrefix(`service-name`) {
       aroute.routes()
+      proute.routes()
     }
   }
 
