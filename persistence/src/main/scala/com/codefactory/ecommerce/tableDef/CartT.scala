@@ -22,6 +22,6 @@ class CartT(tag: Tag)
   def total = column[Float](cartTotal)
 
   def * =
-    (id, productID, quantity, status, userID, total) <> ((Cart.apply _).tupled, Cart.unapply)
+    (id, productID, quantity, userID, status , total) <> ((Cart.apply _).tupled, Cart.unapply)
 
 }

@@ -12,20 +12,28 @@ final case class ProductsService(private val pRepo: ProductRepository)
   def getProducts()(implicit ec: ExecutionContext, db: backend.Database) =
     pRepo.getProducts
 
-  def putProduct()(implicit ec: ExecutionContext,
-                   row: Product,
-                   id: Int,
-                   db: backend.Database) = pRepo.putProduct()
+  def putProduct()(
+      implicit ec: ExecutionContext,
+      row: Product,
+      id: Int,
+      db: backend.Database
+  ) = pRepo.putProduct()
 
-  def postProduct(implicit ec: ExecutionContext,
-                  row: Product,
-                  db: backend.Database) = pRepo.postProduct()
+  def postProduct(
+      implicit ec: ExecutionContext,
+      row: Product,
+      db: backend.Database
+  ) = pRepo.postProduct()
 
-  def getProductByTypeAsc()(implicit ec: ExecutionContext,
-                            db: backend.Database) = pRepo.getProductByTypeAsc()
+  def getProductByTypeAsc()(
+      implicit ec: ExecutionContext,
+      db: backend.Database
+  ) = pRepo.getProductByTypeAsc()
 
-  def getProductByTypeDesc()(implicit ec: ExecutionContext,
-                             db: backend.Database) =
+  def getProductByTypeDesc()(
+      implicit ec: ExecutionContext,
+      db: backend.Database
+  ) =
     pRepo.getProductByTypeDesc()
 
 }

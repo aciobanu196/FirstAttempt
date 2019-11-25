@@ -24,5 +24,6 @@ class OrderT(tag: Tag)
     foreignKey("CART_ORDER_FK", orderCartID, carts)(
      _.id,
      onDelete = ForeignKeyAction.Cascade,
-     onUpdate = ForeignKeyAction.Cascade)
+     onUpdate = ForeignKeyAction.Cascade
+    )
 }

@@ -1,3 +1,3 @@
 package com.codefactory.ecommerce.tableModel
 
-final case class Order(id: Int, userID: Int, status: String, orderCartID: Int)
+final case class Order(id: Int, userID: Int, status: String ="Pending", orderCartID: Int)

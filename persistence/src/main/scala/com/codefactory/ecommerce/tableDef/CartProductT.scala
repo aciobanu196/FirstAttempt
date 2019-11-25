@@ -15,12 +15,16 @@ class CartProductT(tag: Tag)
     (c_id, p_id) <> ((CartProduct.apply _).tupled, CartProduct.unapply)
 
   def cartForeign =
-    foreignKey(cartId, c_id, carts)(_.id,
-                                    onDelete = ForeignKeyAction.Cascade,
-                                    onUpdate = ForeignKeyAction.Cascade)
+    foreignKey(cartId, c_id, carts)(
+     _.id,
+     onDelete = ForeignKeyAction.Cascade,
+     onUpdate = ForeignKeyAction.Cascade
+    )
 
   def productForeign =
-    foreignKey(productId, p_id, products)(_.id,
-                                          onDelete = ForeignKeyAction.Cascade,
-                                          onUpdate = ForeignKeyAction.Cascade)
+    foreignKey(productId, p_id, products)(
+     _.id,
+     onDelete = ForeignKeyAction.Cascade,
+     onUpdate = ForeignKeyAction.Cascade
+    )
 }

@@ -167,3 +167,10 @@
 - Order repository
 - Started the implementation of the validation - Solved quantity validation and balance validation with status updates
 
+### [0.6.1] - 2019-11-25
+
+### Changed
+
+- Changes to the POST method
+- Changes to the routes and the services
+
