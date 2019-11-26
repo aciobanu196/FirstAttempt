@@ -184,3 +184,9 @@
 ### [0.6.3] - 2019-11-25
 
 - Changed the routes method in ProductRoutes to accept multiple paths in the same method
+
+### [0.6.4] - 2019-11-26
+
+### Changed
+
+- Fixed the Decode: Downfield error by changing the isDeleted column to BIT(1) and changing the column types in model and persistence to Int

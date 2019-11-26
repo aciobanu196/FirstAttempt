@@ -18,7 +18,7 @@ class ProductT(tag: Tag)
 
   def quantity = column[Int](productQuantity)
 
-  def isDeleted = column[Boolean](productDeletion)
+  def isDeleted = column[Int](productDeletion)
 
   def * =
     (id, name, price, productType, quantity, isDeleted) <> ((Product.apply _).tupled, Product.unapply)

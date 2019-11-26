@@ -29,7 +29,16 @@ final case class ProductsRoutes(private val productsService: ProductsService)
               case Failure(e)  => complete(StatusCodes.InternalServerError -> e)
             }
           }
-        }
+        } ~
+          post {
+            entity(as[Product]) { productToCreate =>
+              onComplete(productsService.postProduct(productToCreate)) {
+                case Success(it) => complete(it)
+                case Failure(e) =>
+                  complete(StatusCodes.InternalServerError -> e)
+              }
+            }
+          }
       } ~
         pathPrefix(IntNumber) { id =>
           get {
@@ -38,29 +47,20 @@ final case class ProductsRoutes(private val productsService: ProductsService)
               case Failure(e)  => complete(StatusCodes.InternalServerError -> e)
             }
           }
+        } ~
+        pathPrefix(IntNumber) {
+          { id =>
+            put {
+              entity(as[Product]) { productForUpdate =>
+                onComplete(productsService.putProduct(id, productForUpdate)) {
+                  case Success(it) => complete(it)
+                  case Failure(e) =>
+                    complete(StatusCodes.InternalServerError -> e)
+                }
+              }
+            }
+          }
         }
     }
-//    path {
-//      "products" / IntNumber
-//    } { id =>
-//      get {
-//        onComplete(productsService.getProductById(id)) {
-//          case Success(it) => complete(it)
-//          case Failure(e)  => complete(StatusCodes.InternalServerError -> e)
-//        }
-//      }
-//    }
-
-    //    path { "products" / IntNumber } { id =>
-    //      put {
-    //        entity(as[Product]) { productForUpdate =>
-    //          onComplete(productsService.putProduct(id, productForUpdate)) {
-    //            case Success(it) => complete(it)
-    //            case Failure(e)  => complete(StatusCodes.InternalServerError -> e)
-    //          }
-    //        }
-    //      }
-    //    }
-
   }
 }

@@ -17,11 +17,10 @@ final case class ProductsService(private val pRepo: ProductRepository)
       db: backend.Database
   ) = pRepo.putProduct(id, pUpdate)
 
-  def postProduct(
+  def postProduct(createProduct: Product)(
       implicit ec: ExecutionContext,
-      row: Product,
       db: backend.Database
-  ) = pRepo.postProduct()
+  ) = pRepo.postProduct(createProduct)
 
   def getProductByTypeAsc()(
       implicit ec: ExecutionContext,

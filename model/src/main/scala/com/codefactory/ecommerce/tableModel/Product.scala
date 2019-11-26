@@ -6,5 +6,5 @@ final case class Product(
     price: Float, //Changed to float for more precision
     productType: String,
     quantity: Int,
-    isDeleted: Boolean
+    isDeleted: Int
 )
