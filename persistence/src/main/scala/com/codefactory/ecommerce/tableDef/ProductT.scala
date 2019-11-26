@@ -8,7 +8,7 @@ class ProductT(tag: Tag)
     extends Table[Product](tag, "PRODUCTS")
     with TableVariables
     with QueryVariable {
-  implicit def id = column[Int](productsID, O.PrimaryKey)
+  implicit def id = column[Int](productsID, O.AutoInc, O.PrimaryKey)
 
   def name = column[String](productName)
 

@@ -190,3 +190,9 @@
 ### Changed
 
 - Fixed the Decode: Downfield error by changing the isDeleted column to BIT(1) and changing the column types in model and persistence to Int
+
+###[0.6.5] - 2019-11-26
+
+### Changed
+
+- Initial fix for POST PRODUCTS method/path, changes made in persistence ProductsT/Product Repository - with AutoIncrement

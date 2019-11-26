@@ -35,13 +35,6 @@ final case class ProductRepository() extends LazyLogging with QueryVariable {
      products returning products
        .map(_.id) into ((createProduct, id) => createProduct.copy(id = id)) += createProduct
     )
-
-//
-//  val userWithId =
-//    (users returning users.map(_.id)
-//      into ((user,id) => user.copy(id=Some(id)))
-//      ) += User(None, "Stefan", "Zeiger")
-
   def getProductByTypeAsc()(
       implicit ec: ExecutionContext,
       db: backend.Database
