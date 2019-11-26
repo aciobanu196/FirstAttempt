@@ -61,6 +61,22 @@ final case class ProductsRoutes(private val productsService: ProductsService)
               }
             }
           }
+        } ~
+        pathPrefix("typeAsc") {
+          get {
+            onComplete(productsService.getProductByTypeAsc()) {
+              case Success(it) => complete(it)
+              case Failure(e)  => complete(StatusCodes.InternalServerError -> e)
+            }
+          }
+        } ~
+        pathPrefix("typeDesc") {
+          get {
+            onComplete(productsService.getProductByTypeDesc()) {
+              case Success(it) => complete(it)
+              case Failure(e)  => complete(StatusCodes.InternalServerError -> e)
+            }
+          }
         }
     }
   }

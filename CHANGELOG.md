@@ -196,3 +196,9 @@
 ### Changed
 
 - Initial fix for POST PRODUCTS method/path, changes made in persistence ProductsT/Product Repository - with AutoIncrement
+
+### [0.7.0] - 2019-11-26
+
+### Added
+
+- Functioning implementation for: PUT Products, POST Product (autoincrement),GET Product, GET Product By Id, SORT Product BY TYPE ASC, SORT Product BY TYPE DESC

@@ -10,7 +10,6 @@ import scala.concurrent.ExecutionContext
 
 case class CartRepository() extends LazyLogging with QueryVariable {
 
-  //PROPER WAY OF IMPLEMENTATION - HAS AN ERROR, NEED TO CHECK
   def postCart(userId: Int, productsAndQuantities: List[ProductsAndQuantities])(
       implicit ec: ExecutionContext,
       db: backend.Database
@@ -28,7 +27,11 @@ case class CartRepository() extends LazyLogging with QueryVariable {
              quantity = productQ._2,
              userID = productQ._3
             )
-        ) ++= productsAndQuantities.iterator.map{ it => (it.product, it.quantity, userId, "pending", 0f)}.to(Iterable))
+        ) ++= productsAndQuantities.iterator
+      .map { it =>
+        (it.product, it.quantity, userId, "pending", 0f)
+      }
+      .to(Iterable))
   }
 
   def putCart()(
