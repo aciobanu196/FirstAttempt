@@ -202,3 +202,15 @@
 ### Added
 
 - Functioning implementation for: PUT Products, POST Product (autoincrement),GET Product, GET Product By Id, SORT Product BY TYPE ASC, SORT Product BY TYPE DESC
+
+### [0.7.1] - 2019-11-26
+
+### Changed
+
+- Small changes to variable names
+- Changed the CartRoutes
+- Changed the FirstAttemptApp
+
+### Removed
+
+- Deprecated files

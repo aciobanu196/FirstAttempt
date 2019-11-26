@@ -3,9 +3,8 @@ package com.cf
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.Materializer
-import com.cf.http.routes.{ARoute, ProductsRoutes}
+import com.cf.http.routes.{CartRoutes, ProductsRoutes}
 import com.codefactory.ecommerce.repositories.{
-  ARepository,
   CartRepository,
   ProductRepository
 }
@@ -29,7 +28,7 @@ object FirstAttemptApp extends App with LazyLogging {
   lazy val `service-name` = config.getString("service.name")
 
   //routes
-  lazy val aroute = ARoute(cartService)
+  lazy val croute = CartRoutes(cartService)
   lazy val proute = ProductsRoutes(productService)
 
   //services
@@ -44,8 +43,7 @@ object FirstAttemptApp extends App with LazyLogging {
 
   lazy val routes = extractRequest { implicit request =>
     pathPrefix(`service-name`) {
-      aroute.routes()
-      proute.routes()
+      croute.routes() ~ proute.routes()
     }
   }
 
