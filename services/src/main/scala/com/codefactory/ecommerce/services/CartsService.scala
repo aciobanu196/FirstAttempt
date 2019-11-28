@@ -14,11 +14,4 @@ case class CartsService(private val cRepo: CartRepository) extends LazyLogging {
       implicit ec: ExecutionContext,
       db: backend.Database
   ) = cRepo.postCart(userId, productsAndQuantities)
-//
-//  def patchCart(userId: Int, quantity: Int)(
-//      implicit ec: ExecutionContext,
-//      db: backend.Database
-//  ) =
-//    cRepo.patchCart(userId, quantity)
-
 }

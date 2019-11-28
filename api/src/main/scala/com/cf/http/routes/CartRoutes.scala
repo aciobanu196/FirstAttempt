@@ -22,7 +22,7 @@ final case class CartRoutes(private val cartService: CartsService)
       db: backend.Database,
       request: HttpRequest
   ) =
-    pathPrefix("cart") {
+    pathPrefix("order") {
       pathPrefix(IntNumber) { userId =>
         post {
           entity(as[List[ProductsAndQuantities]]) { productsAndQuantities =>

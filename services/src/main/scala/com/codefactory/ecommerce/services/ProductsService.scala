@@ -37,4 +37,18 @@ final case class ProductsService(private val pRepo: ProductRepository)
       implicit ec: ExecutionContext,
       db: backend.Database
   ) = pRepo.getProductById(id)
+
+  // Testing to see how it works this is a bad idea
+
+//  def partialUpdate(
+//      id: Int,
+//      name: Option[String],
+//      price: Option[Float],
+//      productType: Option[String],
+//      quantity: Option[Int],
+//      isDeleted: Option[Int]
+//  )(
+//      implicit ec: ExecutionContext,
+//      db: backend.Database
+//  ) = pRepo.partialUpdate(id, name, price, productType, quantity, isDeleted)
 }

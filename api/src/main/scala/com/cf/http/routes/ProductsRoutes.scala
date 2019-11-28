@@ -53,7 +53,9 @@ final case class ProductsRoutes(private val productsService: ProductsService)
           { id =>
             put {
               entity(as[Product]) { productForUpdate =>
-                onComplete(productsService.putProduct(id, productForUpdate)) {
+                onComplete(
+                 productsService.putProduct(id, productForUpdate)
+                ) {
                   case Success(it) => complete(it)
                   case Failure(e) =>
                     complete(StatusCodes.InternalServerError -> e)

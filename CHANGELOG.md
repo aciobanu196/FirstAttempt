@@ -223,3 +223,14 @@
 ### Changed
 
 - Changes to the migration file - constraints added - will be tested
+
+### [0.7.3] - 2019-11-28
+
+### Added
+
+- Small progress towards partial update/patch
+
+### Removed
+
+- Multiple irrelevant methods
+- Comments with examples kept as placeholders
