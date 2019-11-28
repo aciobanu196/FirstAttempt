@@ -214,3 +214,12 @@
 ### Removed
 
 - Deprecated files
+
+### [0.7.2] - 2019-11-28
+
+### Added
+- Some placeholders for the partial update - will be removed after proper implementation
+
+### Changed
+
+- Changes to the migration file - constraints added - will be tested

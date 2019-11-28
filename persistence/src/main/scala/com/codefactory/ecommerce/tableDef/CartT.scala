@@ -22,6 +22,20 @@ class CartT(tag: Tag)
   def total = column[Float](cartTotal)
 
   def * =
-    (id, productID, quantity, userID, status , total) <> ((Cart.apply _).tupled, Cart.unapply)
+    (id, productID, quantity, userID, status, total) <> ((Cart.apply _).tupled, Cart.unapply)
+
+  def cartForeign =
+    foreignKey(userIDcart, userID, users)(
+     _.id,
+     onDelete = ForeignKeyAction.Cascade,
+     onUpdate = ForeignKeyAction.Cascade
+    )
+
+  def productForeign =
+    foreignKey(cartProductId, productID, products)(
+     _.id,
+     onDelete = ForeignKeyAction.Cascade,
+     onUpdate = ForeignKeyAction.Cascade
+    )
 
 }
