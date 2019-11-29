@@ -234,3 +234,9 @@
 
 - Multiple irrelevant methods
 - Comments with examples kept as placeholders
+
+### [0.7.4] - 2019-11-29
+
+### Added
+
+- Small bits of code for partial update

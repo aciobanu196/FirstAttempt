@@ -1,11 +1,11 @@
 package com.codefactory.ecommerce.repositories
-import com.codefactory.ecommerce.tableModel.Product
+import com.codefactory.ecommerce.tableModel.{Product, ProductUpdate}
 import com.codefactory.ecommerce.tableQuerryVariable.QueryVariable
 import com.typesafe.scalalogging.LazyLogging
 import slick.jdbc.MySQLProfile.backend
 import slick.jdbc.MySQLProfile.api._
 
-import scala.concurrent.ExecutionContext
+import scala.concurrent.{ExecutionContext}
 
 final case class ProductRepository() extends LazyLogging with QueryVariable {
 
@@ -47,4 +47,24 @@ final case class ProductRepository() extends LazyLogging with QueryVariable {
   ) =
     db.run(products.sortBy(_.productType.desc.nullsFirst).result)
 
+  //Experimenting with a different type of implementation
+
+  def saveProducts(
+      product: Product
+  )(implicit ec: ExecutionContext, db: backend.Database) =
+    db.run(products.insertOrUpdate(product)).map(_ => product)
+
+//  def updateProduct(id:Int,productUpdate: ProductUpdate)(implicit ec:ExecutionContext,de:backend.Database) ={
+//      .getProductById(id)
+//  }
+//
+
+//  def updateProfile(
+//      id: String,
+//      profileUpdate: UserProfileUpdate
+//  ): Future[Option[UserProfile]] =
+//    userProfileStorage
+//      .getProfile(id)
+//      .mapT(profileUpdate.merge)
+//      .flatMapTOuter(userProfileStorage.saveProfile)
 }
